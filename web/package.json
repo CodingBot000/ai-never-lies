@@ -11,6 +11,7 @@
     "dev": "vite",
     "predev": "python3 ../tools/sync_web_assets.py",
     "build": "tsc -b && vite build && node scripts/generate-service-worker.mjs",
+    "build:vercel": "tsc -b && vite build && node scripts/generate-service-worker.mjs",
     "prebuild": "python3 ../tools/sync_web_assets.py",
     "preview": "vite preview",
     "lint": "oxlint .",
