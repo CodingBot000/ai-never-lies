@@ -30,3 +30,15 @@
 ## 제거 후 재검증
 
 `reports/ROUTE_VERIFICATION` 대신 아래 결과로 갈음한다. 제거 커밋 후 재실행 결과는 커밋 로그와 `reports/QA_REPORT.md`를 따른다.
+
+## 제거 후 재검증 결과 (2026-09-14, 커밋 97831ed)
+
+| 검증 | 결과 |
+| --- | --- |
+| 콘텐츠·라우트·아트·글리프 도구 4종 | PASS |
+| `npm run lint` / `typecheck` | PASS |
+| `npm run test:run` | PASS 61 |
+| `npm run test:e2e` | PASS 11 |
+| `npm run build` / `check:release` | PASS |
+
+Unity 없이 정적 production 빌드와 전체 테스트가 통과한다. 임시 백업(`$TMPDIR/anl-unity-backup`)은 원격 태그 검증 후 삭제해도 된다.
