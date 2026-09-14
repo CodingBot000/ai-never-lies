@@ -26,6 +26,7 @@ export const CommandKinds = {
   LoadSlot: 'LoadSlot',
   OpenHint: 'OpenHint',
   GoToScene: 'GoToScene',
+  EnterScene: 'EnterScene',
 } as const
 
 export type CommandType = (typeof CommandKinds)[keyof typeof CommandKinds]

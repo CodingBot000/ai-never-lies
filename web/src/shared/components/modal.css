@@ -20,6 +20,11 @@
   overflow: hidden;
 }
 
+.anl-modal__dialog--wide {
+  width: min(1180px, 100%);
+  max-height: min(90vh, 900px);
+}
+
 .anl-modal__header {
   display: flex;
   align-items: center;

@@ -5,12 +5,21 @@ import './title.css'
 
 interface TitleScreenProps {
   canContinue: boolean
+  archiveEnabled: boolean
   onNewGame: () => void
   onContinue: () => void
-  onOpenSettings: () => void
+  onArchive: () => void
+  onSettings: () => void
 }
 
-export function TitleScreen({ canContinue, onNewGame, onContinue, onOpenSettings }: TitleScreenProps) {
+export function TitleScreen({
+  canContinue,
+  archiveEnabled,
+  onNewGame,
+  onContinue,
+  onArchive,
+  onSettings,
+}: TitleScreenProps) {
   const [infoOpen, setInfoOpen] = useState(false)
 
   return (
@@ -41,13 +50,13 @@ export function TitleScreen({ canContinue, onNewGame, onContinue, onOpenSettings
             {!canContinue ? <p className="anl-title__reason">저장된 진행이 없습니다.</p> : null}
           </li>
           <li className="anl-title__item">
-            <button type="button" className="anl-menu-button" disabled>
+            <button type="button" className="anl-menu-button" onClick={onArchive} disabled={!archiveEnabled}>
               <span>사건 기록</span>
               <span className="anl-menu-button__hint">Episode 01 완료 후 열립니다</span>
             </button>
           </li>
           <li className="anl-title__item">
-            <button type="button" className="anl-menu-button" onClick={onOpenSettings}>
+            <button type="button" className="anl-menu-button" onClick={onSettings}>
               <span>설정</span>
               <span className="anl-menu-button__hint">글자 크기·출력 속도</span>
             </button>

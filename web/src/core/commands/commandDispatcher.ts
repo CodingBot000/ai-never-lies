@@ -122,6 +122,8 @@ export class CommandDispatcher {
         return reject('load_failed')
       case CommandKinds.GoToScene:
         return this.doGoToScene(command)
+      case CommandKinds.EnterScene:
+        return this.doEnterScene(command)
       default:
         break
     }
@@ -179,6 +181,38 @@ export class CommandDispatcher {
     this.enterScene(command.targetId)
     const result = accept('scene_entered_fixture')
     result.events.push({ kind: 'scene_entered', id: command.targetId, message: 'fixture' })
+    return result
+  }
+
+  /**
+   * 사용자 허브 이동. 현재 허브의 자식이며 진입 조건을 만족할 때만 허용한다.
+   * (기존 UI의 Dispatcher.EnterScene 직접 호출을 명령으로 승격)
+   */
+  private doEnterScene(command: GameCommand): CommandResult {
+    const hubId = this.state.currentSceneId
+    const hub = this.index.scene(hubId)
+    const targetId = command.targetId ?? ''
+    if (!targetId) return reject('missing_scene')
+    if (!hub) return reject('no_hub')
+    const required = hub.childSceneIds ?? []
+    const optional = hub.optionalChildSceneIds ?? []
+    const isChild = required.includes(targetId) || optional.includes(targetId)
+    if (!isChild) return reject('not_a_child')
+    if (!this.index.hasScene(targetId)) return reject('unknown_scene', targetId)
+    const child = this.index.scene(targetId)
+    if (!child) return reject('unknown_scene', targetId)
+    const hubLike = hub.screenType === 'hub' || (hub.childSceneIds?.length ?? 0) > 0
+    if (!hubLike) return reject('no_hub')
+    const phaseAllows = this.state.phase === Phases.HubActive || this.state.phase === Phases.ReadyToExit || this.state.phase === Phases.Completed
+    if (!phaseAllows) return reject('not_hub_active')
+    if (this.state.isSceneCompleted(targetId) === false) {
+      const met = allConditionsMet(child.entryConditions, this.state, this.index)
+      if (!met) return reject('child_locked', targetId)
+    }
+    this.enterScene(targetId)
+    const result = accept('scene_entered')
+    result.events.push({ kind: 'scene_entered', id: targetId, message: hubId })
+    result.events.push(this.phaseEvent())
     return result
   }
 

@@ -58,3 +58,18 @@
 **검증:** Vitest 61 PASS(이식 43 포함), Playwright 5 PASS(54개 이미지·콘텐츠 404 없음 포함), typecheck·lint·build·check:release·validate:content·assets:check·fonts:check PASS.
 
 **문서:** `02_CODE_GENERATION_INSTRUCTIONS.md` 5.4 진행 DTO를 실제 계약과 일치하도록 수정(새 SHA `8fcd66f7…`, ASSET_READY 갱신).
+
+---
+
+## 2026-09-14 — W4 현재 구현 범위의 웹 화면 이전
+
+**변경:**
+- `docs/04_WEB_DESIGN_SPEC.md` 작성: 레이아웃·토큰·라우팅·입력·증거·퍼즐 위젯·힌트/저장/설정·접근성 기준.
+- 콘텐츠 로더 + 세션을 React에 연결(`useGameSession`), 부팅/오류 화면, 저장·설정 연동.
+- 화면 구현: 타이틀/경고, 대화(타이프라이터·선택지·지점 대사), 조사 허브, 포인트앤클릭 조사(region 오버레이), 증거책(region·요약/원문), 심문(증언·추궁·증거 1~3개), 20개 퍼즐 위젯(매핑·순서·비교·선택·인과판·반사실·보고서), 사건 기록, 설정·힌트(H1~H3·개발 모드 정답 행동 실행)·저장/불러오기(백업 복원)·개발 패널(씬 점프·씬 자동 진행·진단).
+- 사용자 허브 진입을 `EnterScene` 명령으로 승격(진입 조건·자녀 검증). 기존 UI의 Dispatcher 직접 호출 제거.
+- W4 화면 증빙: `reports/screenshots/web_w4_*.png` 10장(타이틀·경고·대화·조사·허브·심문·시험표·인과판·보고서·증거책).
+
+**검증:** Vitest 61 PASS, Playwright 6 PASS(신규 전체 진행 E2E 포함: 시작→s710, 퍼즐 20/20), lint·typecheck·build·check:release PASS(릴리스 번들에 개발 도구 미포함). 화면은 실제 렌더 스크린샷으로 육안 확인.
+
+**남은 W4 후속:** 모든 screenType의 스크린샷 확대, 모바일 폭 전 화면 검수, 키보드 전용 완주 점검은 W5~W7에서 수행.

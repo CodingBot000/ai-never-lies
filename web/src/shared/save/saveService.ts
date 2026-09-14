@@ -167,6 +167,17 @@ export class SaveService {
     return this.storage.getItem(`${saveKeyFor(slotId)}.bak`)
   }
 
+  /** 백업이 유효하면 본 슬롯으로 복원한다. 사용자가 명시적으로 선택했을 때만 호출한다. */
+  restoreBackup(slotId: string): boolean {
+    if (!this.storage || !isValidSlotId(slotId)) return false
+    const backup = this.backupTextFor(slotId)
+    if (backup === null) return false
+    const verified = this.tryLoadText(backup)
+    if (verified.outcome !== 'Ok') return false
+    this.storage.setItem(saveKeyFor(slotId), backup)
+    return true
+  }
+
   exists(slotId: string): boolean {
     if (!this.storage || !isValidSlotId(slotId)) return false
     return this.storage.getItem(saveKeyFor(slotId)) !== null

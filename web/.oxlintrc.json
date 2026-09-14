@@ -7,6 +7,10 @@
   "rules": {
     "no-console": "off",
     "react/react-in-jsx-scope": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/set-state-in-effect": "off",
+    "react/memo-dependencies": "off",
+    "react/exhaustive-effect-dependencies": "off",
     "react/only-export-components": "off",
     "unicorn/no-array-sort": "off",
     "unicorn/prefer-node-protocol": "warn"

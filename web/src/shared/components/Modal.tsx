@@ -5,6 +5,7 @@ interface ModalProps {
   title: string
   onClose: () => void
   children: ReactNode
+  wide?: boolean
 }
 
 const FOCUSABLE =
@@ -13,7 +14,7 @@ const FOCUSABLE =
 /**
  * 접근성 있는 모달. Esc로 닫고, Tab 포커스가 모달 밖으로 나가지 않는다.
  */
-export function Modal({ title, onClose, children }: ModalProps) {
+export function Modal({ title, onClose, children, wide = false }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -57,7 +58,7 @@ export function Modal({ title, onClose, children }: ModalProps) {
     <div className="anl-modal" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
       <div
         ref={dialogRef}
-        className="anl-modal__dialog"
+        className={`anl-modal__dialog${wide ? ' anl-modal__dialog--wide' : ''}`}
         role="dialog"
         aria-modal="true"
         aria-label={title}
