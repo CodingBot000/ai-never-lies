@@ -9,15 +9,23 @@
   },
   "scripts": {
     "dev": "vite",
+    "predev": "python3 ../tools/sync_web_assets.py",
     "build": "tsc -b && vite build",
+    "prebuild": "python3 ../tools/sync_web_assets.py",
     "preview": "vite preview",
     "lint": "oxlint .",
     "typecheck": "tsc -b --force",
     "test": "vitest",
+    "pretest:run": "python3 ../tools/sync_web_assets.py",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "pretest:e2e": "python3 ../tools/sync_web_assets.py",
     "test:e2e": "playwright test",
-    "check:release": "node scripts/check-release-bundle.mjs"
+    "check:release": "node scripts/check-release-bundle.mjs",
+    "validate:content": "python3 ../tools/validate_content.py",
+    "assets:sync": "python3 ../tools/sync_web_assets.py",
+    "assets:check": "python3 ../tools/sync_web_assets.py --check",
+    "fonts:check": "python3 ../tools/check_font_glyphs.py"
   },
   "dependencies": {
     "react": "^19.2.8",

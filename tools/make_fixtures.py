@@ -8,8 +8,8 @@ import sys
 from pathlib import Path
 
 WORKSPACE = Path(__file__).resolve().parents[1]
-CONTENT_DIR = WORKSPACE / "Game/Assets/_Game/Content/ep01"
-FIXTURE_PATH = WORKSPACE / "Game/Assets/_Game/Resources/Content/fixtures.json"
+CONTENT_DIR = WORKSPACE / "content/ep01"
+FIXTURE_PATH = WORKSPACE / "content/dev/fixtures.json"
 
 CANONICAL_ROUTE = [
     "s000", "s010", "s020",

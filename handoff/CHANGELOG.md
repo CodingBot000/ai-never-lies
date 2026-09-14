@@ -34,3 +34,27 @@
 | `handoff/art/manifest.lock.json` | `8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3` (불변) |
 
 **미해결/후속:** W1~W8. Unity 제거는 W5·W6·W7 통과 후에만 수행한다. Unity 소스를 웹 코드가 참조하지 않도록 W2~W4에서 확인한다.
+
+---
+
+## 2026-09-14 — W1 웹 프로젝트 기반 구성
+
+**변경:** `web/`에 React 19 + TypeScript(strict) + Vite 8 프로젝트 생성. oxlint·Vitest·Testing Library·Playwright 구성, 디자인 토큰·나눔고딕 웹 폰트·접근성 기본 스타일·오류 경계·설정(글자 크기 100/125/150%)·타이틀 화면·기본 내비게이션 구현. `VITE_ANL_TEST_TOOLS` 개발/릴리스 경계와 `check:release` 번들 검사 추가.
+
+**검증:** lint·typecheck PASS, Vitest 14, Playwright 3, production build·preview PASS. 보고: `reports/environment.md`.
+
+---
+
+## 2026-09-14 — W2/W3 콘텐츠·아트 이전과 코어 TypeScript 포팅
+
+**변경:**
+- 정본 콘텐츠를 `Game/Assets/_Game/Content/ep01`에서 `content/ep01/`로 이전하고 이를 새 정본 위치로 지정. `content/dev/fixtures.json` 분리.
+- `tools/validate_content.py`·`check_story_routes.py`·`make_fixtures.py`의 Unity 경로 의존 제거.
+- `tools/sync_web_assets.py` 추가: manifest.lock 기반 이미지 54개·콘텐츠 11개를 `web/public/`으로 동기화하고 `assetCatalog.generated.json`(ID→URL·해시·region) 생성. `--check` 드리프트 검사.
+- `tools/check_font_glyphs.py` 추가: 나눔고딕이 정본 콘텐츠 전체 문자를 표시할 수 있음을 검증(누락 0). 결과 `reports/glyph_report.json`.
+- 코어 로직을 TypeScript로 포팅: DTO·ContentIndex·ContentValidator·GameState·ConditionEvaluator·PuzzleEvaluator(20개 판정기)·CommandDispatcher·TestAssistPlanner·HintService·SHA-256·SaveService(localStorage)·GameSession·정적 콘텐츠 로더.
+- 기존 Unity EditMode 테스트 43개의 의미를 Vitest로 이식(ST01~ST18, CT01~CT08, SV01~SV10, HI01~HI06, UI07).
+
+**검증:** Vitest 61 PASS(이식 43 포함), Playwright 5 PASS(54개 이미지·콘텐츠 404 없음 포함), typecheck·lint·build·check:release·validate:content·assets:check·fonts:check PASS.
+
+**문서:** `02_CODE_GENERATION_INSTRUCTIONS.md` 5.4 진행 DTO를 실제 계약과 일치하도록 수정(새 SHA `8fcd66f7…`, ASSET_READY 갱신).

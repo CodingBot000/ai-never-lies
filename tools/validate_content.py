@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 WORKSPACE = Path(__file__).resolve().parents[1]
-CONTENT_DIR = WORKSPACE / "Game/Assets/_Game/Content/ep01"
+CONTENT_DIR = WORKSPACE / "content/ep01"
 MANIFEST_PATH = WORKSPACE / "handoff/art/manifest.lock.json"
 REPORT_PATH = WORKSPACE / "reports/content_validation_py.json"
 

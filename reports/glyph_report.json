@@ -1,0 +1,17 @@
+{
+  "checkedChars": 663,
+  "fonts": [
+    {
+      "font": "web/public/fonts/NanumGothic-Regular.ttf",
+      "glyphCount": 11827,
+      "missing": [],
+      "missingCount": 0
+    },
+    {
+      "font": "web/public/fonts/NanumGothic-Bold.ttf",
+      "glyphCount": 11825,
+      "missing": [],
+      "missingCount": 0
+    }
+  ]
+}

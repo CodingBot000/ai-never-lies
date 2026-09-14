@@ -342,24 +342,32 @@ export interface SolutionDto {
 
 ### 5.4 진행 상태 DTO
 ```ts
+export interface PlacedCardDto { slot: string; value: string; }
+export interface EdgeProofSelectionDto { from: string; to: string; kind: string; evidenceIds: string[]; }
+export interface ReportPlacementDto { section: string; item: string; }
+export interface ReportEvidenceDto { item: string; evidenceIds: string[]; }
+
 export interface PuzzleDraftDto {
   puzzleId: string;
-  type: string;
   selectedStatementId: string;
   selectedEvidenceIds: string[];
-  orderedIds: string[];
-  placedCardIds: string[];
+  choiceIds: string[];
+  placedCards: PlacedCardDto[];
   edges: EdgeDto[];
-  selectedWindowId: string;
-  executedCaseIds: string[];
-  reportPlacements: StringPairDto[];
+  values: StringPairDto[];
+  edgeProofs: EdgeProofSelectionDto[];
+  reportPlacements: ReportPlacementDto[];
+  reportEvidence: ReportEvidenceDto[];
+  ranCaseIds: string[];
+  comparisonWindowId: string;
+  submitted: boolean;
 }
 
 export interface HintUsageDto {
   scopeId: string;
   maxLevel: number;
-  usedKinds: string[];
-  useCount: number;
+  openCount: number;
+  usedTestAssist: boolean;
 }
 
 export interface ProgressSnapshot {
@@ -381,13 +389,14 @@ export interface ProgressSnapshot {
   puzzleDrafts: PuzzleDraftDto[];
   hintUsage: HintUsageDto[];
   appliedEffectIds: string[];
+  preDialogueDoneSceneIds: string[];
+  postDialogueDoneSceneIds: string[];
   lastCommandSequence: number;
   savedAtUtc: string;
-  testAssistUsed: boolean;
 }
 ```
 
-`PuzzleDraftDto`에는 타입, 선택된 증언·증거, 카드 순서, 연결선, 비교 시점, 실험 실행 목록, 보고서 구역 배치를 저장한다. `HintUsageDto`에는 scopeId·최대 열람 수준·실행한 도움 종류·사용 횟수를 저장한다. 정의는 구체 타입으로 구현하며 `Record<string, unknown>`으로 뭉개지 않는다. 장면 완료와 현재 화면은 별개이므로 허브를 재방문해도 자식 완료가 사라지지 않는다.
+`PuzzleDraftDto`에는 선택된 증언·증거, 선택지, 카드 배치(`placedCards`), 연결선, 값 매핑, 간선별 근거, 보고서 배치·근거, 실행 사례, 비교 시점을 저장한다. `HintUsageDto`에는 scopeId·최대 열람 수준·열람 횟수·시험 지원 사용 여부를 저장한다. 정의는 구체 타입으로 구현하며 `Record<string, unknown>`으로 뭉개지 않는다. 장면 완료와 현재 화면은 별개이므로 허브를 재방문해도 자식 완료가 사라지지 않는다.
 
 ## 6. 진행 엔진
 

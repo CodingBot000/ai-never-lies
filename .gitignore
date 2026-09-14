@@ -45,3 +45,7 @@ web/coverage/
 web/playwright-report/
 web/test-results/
 *.tsbuildinfo
+
+# Web generated static assets (정본에서 tools/sync_web_assets.py로 동기화)
+web/public/art/
+web/public/content/

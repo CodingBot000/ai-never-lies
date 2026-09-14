@@ -42,7 +42,8 @@ if (!distStat.isDirectory()) {
 }
 
 const files = walk(distDir)
-const textExtensions = ['.js', '.mjs', '.css', '.html', '.json']
+// 코드 번들만 검사한다. dist/content의 정본 JSON은 UI 문자열을 포함할 수 있는 데이터다.
+const textExtensions = ['.js', '.mjs', '.css', '.html']
 let failures = 0
 let totalBytes = 0
 

@@ -8,6 +8,7 @@
     "no-console": "off",
     "react/react-in-jsx-scope": "off",
     "react/only-export-components": "off",
+    "unicorn/no-array-sort": "off",
     "unicorn/prefer-node-protocol": "warn"
   },
   "ignorePatterns": [
