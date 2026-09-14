@@ -1,0 +1,26 @@
+{
+    "name": "ANL.Tests.EditMode",
+    "rootNamespace": "ANL.Tests.EditMode",
+    "references": [
+        "ANL.Core",
+        "ANL.Runtime",
+        "ANL.UI",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

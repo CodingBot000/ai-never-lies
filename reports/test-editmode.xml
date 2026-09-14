@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="43" result="Passed" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.7464871">
+  <test-suite type="TestSuite" id="1000" name="AI Never Lies" fullname="AI Never Lies" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.746487" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1047" name="ANL.Tests.EditMode.dll" fullname="/Users/switch/Development/Game/WebGame/ai-never-lies/Game/Library/ScriptAssemblies/ANL.Tests.EditMode.dll" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.732670" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="59421" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1048" name="ANL" fullname="ANL" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.731957" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1049" name="Tests" fullname="ANL.Tests" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.731704" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1050" name="EditMode" fullname="ANL.Tests.EditMode" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.731383" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="ContentContractTests" fullname="ANL.Tests.EditMode.ContentContractTests" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.224975" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1002" name="CT01_FrozenIdSetsAreExactAndDuplicateFree" fullname="ANL.Tests.EditMode.ContentContractTests.CT01_FrozenIdSetsAreExactAndDuplicateFree" methodname="CT01_FrozenIdSetsAreExactAndDuplicateFree" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="543615704" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.060789" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1003" name="CT02_ContentValidatorReportsZeroErrors" fullname="ANL.Tests.EditMode.ContentContractTests.CT02_ContentValidatorReportsZeroErrors" methodname="CT02_ContentValidatorReportsZeroErrors" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="2013953176" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.028343" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="CT03_PuzzleRequiredEvidenceIsOwnedWhenPuzzleBecomesActive" fullname="ANL.Tests.EditMode.ContentContractTests.CT03_PuzzleRequiredEvidenceIsOwnedWhenPuzzleBecomesActive" methodname="CT03_PuzzleRequiredEvidenceIsOwnedWhenPuzzleBecomesActive" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="185536011" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.055358" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="CT04_S150PostStartGrantsArriveOnlyAfterPuzzleSolved" fullname="ANL.Tests.EditMode.ContentContractTests.CT04_S150PostStartGrantsArriveOnlyAfterPuzzleSolved" methodname="CT04_S150PostStartGrantsArriveOnlyAfterPuzzleSolved" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="1683654828" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.009137" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="CT05_FullRunWithoutOptionalScenesOwnsAllMandatoryEvidence" fullname="ANL.Tests.EditMode.ContentContractTests.CT05_FullRunWithoutOptionalScenesOwnsAllMandatoryEvidence" methodname="CT05_FullRunWithoutOptionalScenesOwnsAllMandatoryEvidence" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="1676318725" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.014627" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="CT06_AdvanceDialogueIsRejectedDuringPuzzleInteraction" fullname="ANL.Tests.EditMode.ContentContractTests.CT06_AdvanceDialogueIsRejectedDuringPuzzleInteraction" methodname="CT06_AdvanceDialogueIsRejectedDuringPuzzleInteraction" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="1895303846" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011410" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="CT07_S640DoesNotRequireP20AndIsReachedWithP20Unsolved" fullname="ANL.Tests.EditMode.ContentContractTests.CT07_S640DoesNotRequireP20AndIsReachedWithP20Unsolved" methodname="CT07_S640DoesNotRequireP20AndIsReachedWithP20Unsolved" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="1063846123" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.013246" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1009" name="CT08_ConditionsFailClosedAndUnknownPuzzleTypeIsRejected" fullname="ANL.Tests.EditMode.ContentContractTests.CT08_ConditionsFailClosedAndUnknownPuzzleTypeIsRejected" methodname="CT08_ConditionsFailClosedAndUnknownPuzzleTypeIsRejected" classname="ANL.Tests.EditMode.ContentContractTests" runstate="Runnable" seed="969436263" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011090" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1010" name="SaveAndHintTests" fullname="ANL.Tests.EditMode.SaveAndHintTests" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.282257" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1021" name="HI01_HintServiceResolvesEveryScene" fullname="ANL.Tests.EditMode.SaveAndHintTests.HI01_HintServiceResolvesEveryScene" methodname="HI01_HintServiceResolvesEveryScene" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="927575584" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.018302" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="HI02_EveryPuzzleHasExactlyThreeHintLevels" fullname="ANL.Tests.EditMode.SaveAndHintTests.HI02_EveryPuzzleHasExactlyThreeHintLevels" methodname="HI02_EveryPuzzleHasExactlyThreeHintLevels" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="733315880" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.012987" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="HI03_OpeningH3DoesNotChangeSolvedPuzzles" fullname="ANL.Tests.EditMode.SaveAndHintTests.HI03_OpeningH3DoesNotChangeSolvedPuzzles" methodname="HI03_OpeningH3DoesNotChangeSolvedPuzzles" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="1566849196" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.012386" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="HI04_AssistSolutionsMatchContentDrivenSolutions" fullname="ANL.Tests.EditMode.SaveAndHintTests.HI04_AssistSolutionsMatchContentDrivenSolutions" methodname="HI04_AssistSolutionsMatchContentDrivenSolutions" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="203900440" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.048170" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="HI05_AssistCannotSolveWithoutReachingRequiredEvidence" fullname="ANL.Tests.EditMode.SaveAndHintTests.HI05_AssistCannotSolveWithoutReachingRequiredEvidence" methodname="HI05_AssistCannotSolveWithoutReachingRequiredEvidence" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="1998245793" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011968" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="HI06_HubHintsDoNotLeakPuzzleHintsAndS310HintsAreP09" fullname="ANL.Tests.EditMode.SaveAndHintTests.HI06_HubHintsDoNotLeakPuzzleHintsAndS310HintsAreP09" methodname="HI06_HubHintsDoNotLeakPuzzleHintsAndS310HintsAreP09" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="811996773" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.009824" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="SV01_SnapshotRoundTripPreservesCollections" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV01_SnapshotRoundTripPreservesCollections" methodname="SV01_SnapshotRoundTripPreservesCollections" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="725974889" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.012507" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="SV02_HearingDraftSurvivesSaveAndLoad" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV02_HearingDraftSurvivesSaveAndLoad" methodname="SV02_HearingDraftSurvivesSaveAndLoad" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="1169429487" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.021637" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="SV03_CausalDraftEdgesSurviveSaveAndLoad" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV03_CausalDraftEdgesSurviveSaveAndLoad" methodname="SV03_CausalDraftEdgesSurviveSaveAndLoad" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="440431026" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011553" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="SV04_MidDialogueCursorSurvivesAndGrantsAreNotReplayed" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV04_MidDialogueCursorSurvivesAndGrantsAreNotReplayed" methodname="SV04_MidDialogueCursorSurvivesAndGrantsAreNotReplayed" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="2036822208" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.012960" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="SV05_TruncatedSaveIsCorruptAndFileIsPreserved" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV05_TruncatedSaveIsCorruptAndFileIsPreserved" methodname="SV05_TruncatedSaveIsCorruptAndFileIsPreserved" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="1908755506" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.012724" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[2026-09-14T10:53:28.6386100Z [WARN] SaveService: read failed for /Users/switch/Library/Application Support/ANL Studio/AI Never Lies/saves/test_sv.json: JSON parse error: Missing a closing quotation mark in string.
+]]></output>
+              </test-case>
+              <test-case id="1016" name="SV06_ChecksumMismatchIsCorruptAndFileIsPreserved" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV06_ChecksumMismatchIsCorruptAndFileIsPreserved" methodname="SV06_ChecksumMismatchIsCorruptAndFileIsPreserved" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="1891987074" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.010131" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1017" name="SV07_FutureSchemaVersionIsIncompatible" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV07_FutureSchemaVersionIsIncompatible" methodname="SV07_FutureSchemaVersionIsIncompatible" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="693324551" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011931" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1018" name="SV08_UnknownSceneIdIsDetectedWithoutCrashing" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV08_UnknownSceneIdIsDetectedWithoutCrashing" methodname="SV08_UnknownSceneIdIsDetectedWithoutCrashing" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="1263558559" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.017461" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[2026-09-14T10:53:28.6777770Z [ERROR] save references unknown scene: s999
+]]></output>
+              </test-case>
+              <test-case id="1019" name="SV09_InvalidSlotIdFailsWithoutTouchingState" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV09_InvalidSlotIdFailsWithoutTouchingState" methodname="SV09_InvalidSlotIdFailsWithoutTouchingState" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="660356731" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.022716" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[2026-09-14T10:53:28.7010030Z [ERROR] SaveService.Save failed for bad/slot: Could not find a part of the path "/Users/switch/Library/Application Support/ANL Studio/AI Never Lies/saves/bad/slot.json.tmp".
+]]></output>
+              </test-case>
+              <test-case id="1020" name="SV10_LastSaveWinsForTheSameSlot" fullname="ANL.Tests.EditMode.SaveAndHintTests.SV10_LastSaveWinsForTheSameSlot" methodname="SV10_LastSaveWinsForTheSameSlot" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="757016066" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.013233" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1027" name="UI07_ContainRectAndRegionLocalPointMath" fullname="ANL.Tests.EditMode.SaveAndHintTests.UI07_ContainRectAndRegionLocalPointMath" methodname="UI07_ContainRectAndRegionLocalPointMath" classname="ANL.Tests.EditMode.SaveAndHintTests" runstate="Runnable" seed="1800943666" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.013982" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1028" name="StateTests" fullname="ANL.Tests.EditMode.StateTests" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.221780" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1029" name="ST01_DuplicateEvidenceGrantsAreIdempotent" fullname="ANL.Tests.EditMode.StateTests.ST01_DuplicateEvidenceGrantsAreIdempotent" methodname="ST01_DuplicateEvidenceGrantsAreIdempotent" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="264561899" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.010799" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1030" name="ST02_DuplicateCommandIsRejected" fullname="ANL.Tests.EditMode.StateTests.ST02_DuplicateCommandIsRejected" methodname="ST02_DuplicateCommandIsRejected" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="1148139221" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.008052" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1031" name="ST03_WrongStatementIsRejectedAndCorrectStatementSolves" fullname="ANL.Tests.EditMode.StateTests.ST03_WrongStatementIsRejectedAndCorrectStatementSolves" methodname="ST03_WrongStatementIsRejectedAndCorrectStatementSolves" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="418411777" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011041" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1032" name="ST04_EvidenceSelectionOrderDoesNotMatter" fullname="ANL.Tests.EditMode.StateTests.ST04_EvidenceSelectionOrderDoesNotMatter" methodname="ST04_EvidenceSelectionOrderDoesNotMatter" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="896620613" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.008161" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1033" name="ST05_PartialEvidenceReturnsPartial" fullname="ANL.Tests.EditMode.StateTests.ST05_PartialEvidenceReturnsPartial" methodname="ST05_PartialEvidenceReturnsPartial" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="1003862752" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.010938" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1034" name="ST06_ExtraEvidenceStillSolves" fullname="ANL.Tests.EditMode.StateTests.ST06_ExtraEvidenceStillSolves" methodname="ST06_ExtraEvidenceStillSolves" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="457749882" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.010625" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1035" name="ST07_SelectingUnownedEvidenceIsRejected" fullname="ANL.Tests.EditMode.StateTests.ST07_SelectingUnownedEvidenceIsRejected" methodname="ST07_SelectingUnownedEvidenceIsRejected" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="1450173905" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.008725" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1036" name="ST08_CausalCyclesAndSelfEdgesAreRejected" fullname="ANL.Tests.EditMode.StateTests.ST08_CausalCyclesAndSelfEdgesAreRejected" methodname="ST08_CausalCyclesAndSelfEdgesAreRejected" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="1314346524" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011417" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1037" name="ST09_SignalKindOnCausalPairDoesNotCountAsRequiredCausalEdge" fullname="ANL.Tests.EditMode.StateTests.ST09_SignalKindOnCausalPairDoesNotCountAsRequiredCausalEdge" methodname="ST09_SignalKindOnCausalPairDoesNotCountAsRequiredCausalEdge" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="444637164" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.012346" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1038" name="ST10_NoPublicityNodeCanBeUsedAsCauseAndP19DoesNotNeedIt" fullname="ANL.Tests.EditMode.StateTests.ST10_NoPublicityNodeCanBeUsedAsCauseAndP19DoesNotNeedIt" methodname="ST10_NoPublicityNodeCanBeUsedAsCauseAndP19DoesNotNeedIt" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="1831773484" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.008795" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1039" name="ST11_P18NeedsTheKpiEvidenceSetNotJustEv21" fullname="ANL.Tests.EditMode.StateTests.ST11_P18NeedsTheKpiEvidenceSetNotJustEv21" methodname="ST11_P18NeedsTheKpiEvidenceSetNotJustEv21" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="248955884" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011883" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1040" name="ST12_ReconstructionKinematicsMatchFrozenValues" fullname="ANL.Tests.EditMode.StateTests.ST12_ReconstructionKinematicsMatchFrozenValues" methodname="ST12_ReconstructionKinematicsMatchFrozenValues" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="823083236" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.009263" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1041" name="ST13_HistoricalDistanceIsFrameIndependent" fullname="ANL.Tests.EditMode.StateTests.ST13_HistoricalDistanceIsFrameIndependent" methodname="ST13_HistoricalDistanceIsFrameIndependent" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="238712772" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.023397" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1042" name="ST14_S530DeclineKeepsEv35UnlikeAccept" fullname="ANL.Tests.EditMode.StateTests.ST14_S530DeclineKeepsEv35UnlikeAccept" methodname="ST14_S530DeclineKeepsEv35UnlikeAccept" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="553765445" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.012588" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1043" name="ST15_BothEndingsKeepIdenticalReportFacts" fullname="ANL.Tests.EditMode.StateTests.ST15_BothEndingsKeepIdenticalReportFacts" methodname="ST15_BothEndingsKeepIdenticalReportFacts" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="1338154924" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.015482" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1044" name="ST16_HubChildOrderDoesNotChangeResults" fullname="ANL.Tests.EditMode.StateTests.ST16_HubChildOrderDoesNotChangeResults" methodname="ST16_HubChildOrderDoesNotChangeResults" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="1131699462" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.017326" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1045" name="ST17_S411UnlocksOnlyAfterS410Completes" fullname="ANL.Tests.EditMode.StateTests.ST17_S411UnlocksOnlyAfterS410Completes" methodname="ST17_S411UnlocksOnlyAfterS410Completes" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="227148063" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.011798" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="ST18_S510S540OrderFlipAndOptionalVariationReachS550" fullname="ANL.Tests.EditMode.StateTests.ST18_S510S540OrderFlipAndOptionalVariationReachS550" methodname="ST18_S510S540OrderFlipAndOptionalVariationReachS550" classname="ANL.Tests.EditMode.StateTests" runstate="Runnable" seed="223158671" result="Passed" start-time="2026-09-14 10:53:28Z" end-time="2026-09-14 10:53:28Z" duration="0.014418" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: /Users/switch/Development/Game/WebGame/ai-never-lies/reports/test-editmode.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

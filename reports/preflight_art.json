@@ -1,0 +1,132 @@
+{
+  "generatedAtUtc": "2026-09-14T07:53:20Z",
+  "masterDocumentSha256": {
+    "path": "docs/00_MASTER_PLAN.md",
+    "actual": "9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786"
+  },
+  "artInstructionSha256": {
+    "path": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+    "actual": "58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38"
+  },
+  "codeInstructionSha256": {
+    "path": "docs/02_CODE_GENERATION_INSTRUCTIONS.md",
+    "actual": "4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951"
+  },
+  "manifestSha256": {
+    "path": "handoff/art/manifest.lock.json",
+    "actual": "8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3"
+  },
+  "ready": {
+    "schemaVersion": 1,
+    "episodeId": "ep01",
+    "contractVersion": "art.v1",
+    "documentVersion": "1.0.0",
+    "ready": true,
+    "requiredAssetCount": 54,
+    "approvedAssetCount": 54,
+    "manifestPath": "handoff/art/manifest.lock.json",
+    "manifestSha256": "8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3",
+    "masterDocumentSha256": "9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786",
+    "artInstructionSha256": "58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38",
+    "codeInstructionSha256": "4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951",
+    "verifiedAtUtc": "2026-09-14T07:38:19Z",
+    "verificationReport": "handoff/art/ART_REVIEW.md",
+    "blockers": []
+  },
+  "checks": [
+    {
+      "name": "ready.ready",
+      "ok": true,
+      "detail": "ready must be true"
+    },
+    {
+      "name": "ready.contractVersion",
+      "ok": true,
+      "detail": "art.v1 required"
+    },
+    {
+      "name": "ready.episodeId",
+      "ok": true,
+      "detail": "ep01 required"
+    },
+    {
+      "name": "ready.counts",
+      "ok": true,
+      "detail": "required=54 approved=54"
+    },
+    {
+      "name": "ready.blockers",
+      "ok": true,
+      "detail": "blockers must be empty"
+    },
+    {
+      "name": "doc.masterDocumentSha256",
+      "ok": true,
+      "detail": "expected 9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786 actual 9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786"
+    },
+    {
+      "name": "doc.artInstructionSha256",
+      "ok": true,
+      "detail": "expected 58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38 actual 58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38"
+    },
+    {
+      "name": "doc.codeInstructionSha256",
+      "ok": true,
+      "detail": "expected 4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951 actual 4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951"
+    },
+    {
+      "name": "manifest.sha256",
+      "ok": true,
+      "detail": "expected 8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3 actual 8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3"
+    },
+    {
+      "name": "lock.count",
+      "ok": true,
+      "detail": "count=54 unique=54"
+    },
+    {
+      "name": "plan.count",
+      "ok": true,
+      "detail": "count=54 unique=54"
+    },
+    {
+      "name": "id-set.lock",
+      "ok": true,
+      "detail": "missing=[] extra=[]"
+    },
+    {
+      "name": "id-set.plan",
+      "ok": true,
+      "detail": "missing=[] extra=[]"
+    },
+    {
+      "name": "path-set",
+      "ok": true,
+      "detail": "plan and lock paths must match"
+    },
+    {
+      "name": "path.lowercase",
+      "ok": true,
+      "detail": "non-lowercase paths: []"
+    },
+    {
+      "name": "runtime.png.count",
+      "ok": true,
+      "detail": "actual=54"
+    },
+    {
+      "name": "runtime.png.set",
+      "ok": true,
+      "detail": "missing=[] extra=[]"
+    }
+  ],
+  "runtimePngCount": 54,
+  "validateArt": {
+    "returncode": 0,
+    "stdout": "{\"ok\": true, \"checked\": 54, \"issues\": 0, \"report\": \"/Users/switch/Development/Game/WebGame/ai-never-lies/handoff/art/ART_REVIEW.md\"}",
+    "stderr": ""
+  },
+  "ok": true,
+  "issueCount": 0,
+  "issues": []
+}

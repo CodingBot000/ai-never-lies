@@ -1,0 +1,2835 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "dlg_s000_001",
+      "sceneId": "s000",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s000_001",
+      "text": "이 작품의 인물·회사·사건·조사기관은 허구입니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s000_002",
+      "sceneId": "s000",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s000_002",
+      "text": "교통사고와 사망에 관한 대화가 포함되어 있습니다. 직접적인 신체 훼손 장면은 없습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s000_003",
+      "sceneId": "s000",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s000_003",
+      "text": "읽기 속도, 글자 크기, 화면 흔들림, 점멸과 힌트 수준은 언제든 바꿀 수 있습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s000_004",
+      "sceneId": "s000",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s000_004",
+      "text": "테스트 지원이 켜진 빌드입니다. 팁에서 정답을 확인하거나 현재 문제의 정답 행동을 실행할 수 있습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_001",
+      "sceneId": "s010",
+      "speakerId": "vehicle_ui",
+      "speaker": "차량 안내",
+      "textId": "dlg_s010_001",
+      "text": "목적지까지 약 8분 남았습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_002",
+      "sceneId": "s010",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s010_002",
+      "text": "오늘은 길이 막히지 않네요.",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_003",
+      "sceneId": "s010",
+      "speakerId": "narration",
+      "speaker": "내레이션",
+      "textId": "dlg_s010_003",
+      "text": "창밖의 신호가 젖은 차도에 번진다. 앞유리의 빗방울 사이로 검은 우산 하나가 보인다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_004",
+      "sceneId": "s010",
+      "speakerId": "vehicle_ui",
+      "speaker": "차량 안내",
+      "textId": "dlg_s010_004",
+      "text": "긴급 대응 중입니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_005",
+      "sceneId": "s010",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s010_005",
+      "text": "지금, 사람…….",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_006",
+      "sceneId": "s010",
+      "speakerId": "narration",
+      "speaker": "내레이션",
+      "textId": "dlg_s010_006",
+      "text": "짧은 경고음. 화면이 어두워진다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_007",
+      "sceneId": "s010",
+      "speakerId": "news",
+      "speaker": "뉴스 자막",
+      "textId": "dlg_s010_007",
+      "text": "자율주행 로보택시, 횡단 중이던 시민과 충돌. 탑승 승객은 구조됐으며 보행자는 사망했다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_008",
+      "sceneId": "s010",
+      "speakerId": "company",
+      "speaker": "회사 발표",
+      "textId": "dlg_s010_008",
+      "text": "현재로서는 폭우에 따른 인식 지연이 주요 원인으로 추정됩니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s010_009",
+      "sceneId": "s010",
+      "speakerId": "narration",
+      "speaker": "내레이션",
+      "textId": "dlg_s010_009",
+      "text": "다음 날 오전. 당신에게 사고 기록 보존 명령이 전달된다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_001",
+      "sceneId": "s020",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s020_001",
+      "text": "사고 차량은 NV-017. 보행자는 임도현 씨, 서른여덟 살입니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_002",
+      "sceneId": "s020",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s020_002",
+      "text": "회사는 이미 인식 오류라고 발표했군요.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_003",
+      "sceneId": "s020",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s020_003",
+      "text": "회사의 가설입니다. 우리의 결론은 아닙니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_004",
+      "sceneId": "s020",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s020_004",
+      "text": "제 권한은 어디까지입니까?",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_005",
+      "sceneId": "s020",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s020_005",
+      "text": "관련 기록 보존과 제출 요구, 관계자 면담, 기술적 원인 조사입니다. 법정의 판결을 대신하는 자리는 아닙니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_006",
+      "sceneId": "s020",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s020_006",
+      "text": "무엇이 일어났는지, 누가 무엇을 알고 어떤 결정을 했는지 나누어 적으십시오.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_007",
+      "sceneId": "s020",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s020_007",
+      "text": "먼저 사고 시각과 현장, 탑승자의 기억부터 맞추겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_008",
+      "sceneId": "s020",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s020_008",
+      "text": "증거를 읽는 것과 그 증거로 결론을 내리는 것은 별개의 일입니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s020_009",
+      "sceneId": "s020",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s020_009",
+      "text": "증거에는 “확인할 수 있는 것”과 “아직 알 수 없는 것”이 함께 표시됩니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s100_001",
+      "sceneId": "s100",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s100_001",
+      "text": "회사의 숫자만으로는 사고를 설명할 수 없다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s100_002",
+      "sceneId": "s100",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s100_002",
+      "text": "현장, 승객, 발표 자료. 서로 다른 출처부터 확보하자.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s100_003",
+      "sceneId": "s100",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s100_003",
+      "text": "조사 순서는 자유입니다. 필수 자료를 놓쳤을 때는 해당 장소에 남은 조사 항목이 표시됩니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s110_001",
+      "sceneId": "s110",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s110_001",
+      "text": "횡단보도는 사고 차량 진행 방향 바로 앞에 있다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s110_002",
+      "sceneId": "s110",
+      "speakerId": "field_record",
+      "speaker": "현장 기록",
+      "textId": "dlg_s110_002",
+      "text": "피해자 이동 경로와 차량 위치는 별도 사고도에 표시돼 있습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s110_003",
+      "sceneId": "s110",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s110_003",
+      "text": "영상만 보고 보행자가 갑자기 뛰어들었다고 단정할 수는 없겠군.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s110_004",
+      "sceneId": "s110",
+      "speakerId": "signal_record",
+      "speaker": "신호 기록",
+      "textId": "dlg_s110_004",
+      "text": "보행 허용 구간: 23시 42분 09초부터 21초까지.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s110_005",
+      "sceneId": "s110",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s110_005",
+      "text": "충돌은 17초대. 이 사건의 기록상 피해자는 허용된 구간에 건너고 있었다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s110_006",
+      "sceneId": "s110",
+      "speakerId": "vehicle_handover",
+      "speaker": "차량 인계",
+      "textId": "dlg_s110_006",
+      "text": "블랙박스와 차량 이벤트 기록은 보존 복제했습니다. 정밀 레코더 자료는 별도 인계 중입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s110_007",
+      "sceneId": "s110",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s110_007",
+      "text": "현장의 사실과 차 안의 판단은 분리해서 봐야 한다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s120_001",
+      "sceneId": "s120",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s120_001",
+      "text": "사람이 바로 앞에 있었어요. 그런데 차는 멈추지 않았어요.",
+      "portraitAssetId": "chr_nari_distressed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s120_002",
+      "sceneId": "s120",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s120_002",
+      "text": "당시 느끼신 것부터 말씀해 주세요. 확실하지 않은 기억도 괜찮습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s120_003",
+      "sceneId": "s120",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s120_003",
+      "text": "몸이 앞으로 쏠리거나 하는 게 없었어요. 마지막 순간 전까지는요.",
+      "portraitAssetId": "chr_nari_distressed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s120_004",
+      "sceneId": "s120",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s120_004",
+      "text": "차 안에서 들린 소리나 화면은 기억나십니까?",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s120_005",
+      "sceneId": "s120",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s120_005",
+      "text": "제가 친구한테 비 오는 길을 찍어 보내려고 했어요. 잠깐 영상이 남았을 거예요.",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s120_006",
+      "sceneId": "s120",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s120_006",
+      "text": "사고 전후 구간만 확인해도 되겠습니까? 다른 내용은 복제하지 않겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s120_007",
+      "sceneId": "s120",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s120_007",
+      "text": "네. 여기…… 경고음이 있네요.",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s120_008",
+      "sceneId": "s120",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s120_008",
+      "text": "영상의 안내가 있었던 시점과 감속을 느낀 시점은 다를 수 있습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s120_009",
+      "sceneId": "s120",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s120_009",
+      "text": "제 기억이 잘못됐다는 건가요?",
+      "portraitAssetId": "chr_nari_remembering",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s120_010",
+      "sceneId": "s120",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s120_010",
+      "text": "거짓말하셨다는 뜻은 아닙니다. 느낀 것과 기록된 것을 함께 확인하는 겁니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s130_001",
+      "sceneId": "s130",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s130_001",
+      "text": "피해자와 유가족께 깊은 애도를 표합니다. 조사에는 최대한 협조하겠습니다.",
+      "portraitAssetId": "chr_han_composed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_002",
+      "sceneId": "s130",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s130_002",
+      "text": "41%는 차량이 사고 당시에 산출한 값입니까?",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_003",
+      "sceneId": "s130",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s130_003",
+      "text": "사고 분석 시스템이 확인한 수치입니다.",
+      "portraitAssetId": "chr_han_composed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_004",
+      "sceneId": "s130",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s130_004",
+      "text": "분석 시점과 실제 판단 시점이 같다는 뜻은 아니군요.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_005",
+      "sceneId": "s130",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s130_005",
+      "text": "정밀 자료는 담당 팀에서 설명하는 편이 정확하겠습니다.",
+      "portraitAssetId": "chr_han_composed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_006",
+      "sceneId": "s130",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s130_006",
+      "text": "원본 판단 기록과 이 보고서의 생성 조건을 함께 제출해 주십시오.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_007",
+      "sceneId": "s130",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s130_007",
+      "text": "법무와 보안 검토 뒤 인계하겠습니다. 제출을 거부하는 것은 아닙니다.",
+      "portraitAssetId": "chr_han_composed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_008",
+      "sceneId": "s130",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s130_008",
+      "text": "차내 경고도 남아 있습니다. 인식 실패라는 설명을 확정할 단계는 아닙니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_009",
+      "sceneId": "s130",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s130_009",
+      "text": "경고 표시만으로는 어떤 대상을 인식했는지 알 수 없습니다.",
+      "portraitAssetId": "chr_han_composed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s130_010",
+      "sceneId": "s130",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s130_010",
+      "text": "동의합니다. 그래서 원본을 요청하는 겁니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s140_001",
+      "sceneId": "s140",
+      "speakerId": "forensic",
+      "speaker": "포렌식 인계",
+      "textId": "dlg_s140_001",
+      "text": "차량 레코더 원본의 보존 사본입니다. 인계 목록, 연속 패킷, 시계 검증은 별도 첨부했습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s140_002",
+      "sceneId": "s140",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s140_002",
+      "text": "보행자 P-127. 분류 점수 0.947.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s140_003",
+      "sceneId": "s140",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s140_003",
+      "text": "그리고…… 충돌 1.82초 전, 긴급제동 요청.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s140_004",
+      "sceneId": "s140",
+      "speakerId": "forensic_memo",
+      "speaker": "포렌식 메모",
+      "textId": "dlg_s140_004",
+      "text": "요청값과 실제 감속값은 서로 다른 기록입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s140_005",
+      "sceneId": "s140",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s140_005",
+      "text": "41%는 어디서 나온 거지?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s140_006",
+      "sceneId": "s140",
+      "speakerId": "data_info",
+      "speaker": "자료 정보",
+      "textId": "dlg_s140_006",
+      "text": "사고 이후 재구성한 입력을 오프라인 분석 모델로 처리한 값입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s140_007",
+      "sceneId": "s140",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s140_007",
+      "text": "같은 장면을 가리키지만, 같은 실행이 아니었다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s140_008",
+      "sceneId": "s140",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s140_008",
+      "text": "그렇다면 회사가 내세운 숫자로 당시 AI가 사람을 못 봤다고 말할 수는 없다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s140_009",
+      "sceneId": "s140",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s140_009",
+      "text": "출처가 확인된 원본 기록과 사후 분석표를 구분하십시오.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s150_001",
+      "sceneId": "s150",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s150_001",
+      "text": "첫 쟁점은 사고 당시 보행자 인식 여부입니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s150_002",
+      "sceneId": "s150",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s150_002",
+      "text": "폭우로 인식 신뢰도가 낮아졌고, 제동 판단 역시 늦었던 것으로 봅니다.",
+      "portraitAssetId": "chr_han_composed",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s150_003",
+      "sceneId": "s150",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s150_003",
+      "text": "41%는 당시 차량의 출력이 아닙니다. 여기에는 실시간 판단 기록과 그 출처가 있습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s150_004",
+      "sceneId": "s150",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s150_004",
+      "text": "보행자 인식 모듈은 그렇게 판단했더라도 전체 시스템의 대응이 늦었던 것은 사실입니다.",
+      "portraitAssetId": "chr_han_strained",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s150_005",
+      "sceneId": "s150",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s150_005",
+      "text": "그 두 주장은 구분해야 합니다. 차량은 1.82초 전에 긴급제동을 요청했습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s150_006",
+      "sceneId": "s150",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s150_006",
+      "text": "인식하지 못했다는 설명은 수정하십시오. 다음은 그 요청이 어떻게 실행됐는지입니다.",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s150_007",
+      "sceneId": "s150",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s150_007",
+      "text": "실행 자료도 제출했습니다.",
+      "portraitAssetId": "chr_han_strained",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s150_008",
+      "sceneId": "s150",
+      "speakerId": "forensic",
+      "speaker": "포렌식 인계",
+      "textId": "dlg_s150_008",
+      "text": "제어기 속도·압력 기록과 시계 동기화 검증표를 추가합니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s150_009",
+      "sceneId": "s150",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s150_009",
+      "text": "강한 감속은 0.46초 전부터. 요청과 실행 사이에 무슨 일이 있었는지 확인하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s160_001",
+      "sceneId": "s160",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s160_001",
+      "text": "1.82초 전 요청, 0.46초 전 강한 제동. 차이는 1.36초.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s160_002",
+      "sceneId": "s160",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s160_002",
+      "text": "하지만 중간이 비어 있지는 않다. 약한 제동이 있다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s160_003",
+      "sceneId": "s160",
+      "speakerId": "record_note",
+      "speaker": "기록 설명",
+      "textId": "dlg_s160_003",
+      "text": "T-1.74부터 감속 약 -2.0m/s². 강한 감속이 시작된 것은 T-0.46.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s160_004",
+      "sceneId": "s160",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s160_004",
+      "text": "강나리 씨가 아무 반응도 없다고 느낀 이유도 설명이 된다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s160_005",
+      "sceneId": "s160",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s160_005",
+      "text": "차가 명령을 받지 못한 건가, 아니면 다른 명령을 받았던 건가?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s160_006",
+      "sceneId": "s160",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s160_006",
+      "text": "시간 간격을 “통신 두절”로 해석하지 않도록 기록된 사건을 모두 배치하십시오.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s170_001",
+      "sceneId": "s170",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s170_001",
+      "text": "첫 가설은 배제됐습니다. 하지만 AI 전체에 면죄부를 준 것은 아닙니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s170_002",
+      "sceneId": "s170",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s170_002",
+      "text": "맞습니다. 인식이 맞았다는 것과 시스템이 안전했다는 것은 다릅니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s170_003",
+      "sceneId": "s170",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s170_003",
+      "text": "다음에는 요청을 전달받은 모든 경계를 확인하십시오.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s170_004",
+      "sceneId": "s170",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s170_004",
+      "text": "누가 말했느냐보다, 어느 지점에서 말이 바뀌었는지부터 보겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s200_001",
+      "sceneId": "s200",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s200_001",
+      "text": "차량이 따랐던 명령, 센서가 본 물체, 정비가 판단한 상태.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s200_002",
+      "sceneId": "s200",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s200_002",
+      "text": "이 세 가지를 맞춰 보자.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s210_001",
+      "sceneId": "s210",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s210_001",
+      "text": "제동 조정기는 배포된 코드대로 작동했습니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s210_002",
+      "sceneId": "s210",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s210_002",
+      "text": "그 말은 안전하게 작동했다는 뜻입니까?",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s210_003",
+      "sceneId": "s210",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s210_003",
+      "text": "아닙니다. 지금은 실행 오류와 설계 문제를 구분해서 말씀드리는 겁니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s210_004",
+      "sceneId": "s210",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s210_004",
+      "text": "앞에서 급제동을 요청해도 후방 위험 입력에 따라 허용 강도를 바꾸는 경로가 있습니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s210_005",
+      "sceneId": "s210",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s210_005",
+      "text": "이번에도 -8.1이 -2.0으로 바뀌었군요.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s210_006",
+      "sceneId": "s210",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s210_006",
+      "text": "후방위험 점수가 71로 들어왔습니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s210_007",
+      "sceneId": "s210",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s210_007",
+      "text": "그 점수가 실제로 얼마나 위험했는지, 이 정책이 정당했는지는 별개입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s210_008",
+      "sceneId": "s210",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s210_008",
+      "text": "동의합니다. 우선 뒤에 무엇이 있었다고 입력됐는지 확인해야 합니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s210_009",
+      "sceneId": "s210",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s210_009",
+      "text": "여기 INVALID라는 상태도 보이는데요.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s210_010",
+      "sceneId": "s210",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s210_010",
+      "text": "현재 버전이 이 상태를 어떻게 사용하는지는 변경 이력까지 보겠습니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s220_001",
+      "sceneId": "s220",
+      "speakerId": "radar_log",
+      "speaker": "레이더 기록",
+      "textId": "dlg_s220_001",
+      "text": "후방 객체 R-09. 거리 4.7m. 상대 접근속도 11km/h.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s220_002",
+      "sceneId": "s220",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s220_002",
+      "text": "차 뒤 4.7m라면 가까운 거리다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s220_003",
+      "sceneId": "s220",
+      "speakerId": "rear_video",
+      "speaker": "후방 영상",
+      "textId": "dlg_s220_003",
+      "text": "기준 구간에 차량 확인 안 됨.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s220_004",
+      "sceneId": "s220",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s220_004",
+      "text": "한 영상의 사각일 가능성은 남아 있다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s220_005",
+      "sceneId": "s220",
+      "speakerId": "cctv",
+      "speaker": "외부 CCTV",
+      "textId": "dlg_s220_005",
+      "text": "독립 시야에서도 해당 차로에 접근 차량 확인 안 됨.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s220_006",
+      "sceneId": "s220",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s220_006",
+      "text": "시간 오차까지 적용해도 레이더의 차는 두 영상에 없다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s220_007",
+      "sceneId": "s220",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s220_007",
+      "text": "센서가 없는 물체를 보고했을 가능성. 아직은 그 원인을 확인해야 한다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s230_001",
+      "sceneId": "s230",
+      "speakerId": "yun",
+      "speaker": "윤해린",
+      "textId": "dlg_s230_001",
+      "text": "그 센서는 없는 물체를 간헐적으로 잡았습니다. 저희는 유령 객체라고 불렀어요.",
+      "portraitAssetId": "chr_yun_firm",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s230_002",
+      "sceneId": "s230",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s230_002",
+      "text": "처음 발견했을 때 바로 교체했습니까?",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s230_003",
+      "sceneId": "s230",
+      "speakerId": "yun",
+      "speaker": "윤해린",
+      "textId": "dlg_s230_003",
+      "text": "부품이 없었습니다. 제가 임시 보정을 적용했습니다.",
+      "portraitAssetId": "chr_yun_uneasy",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s230_004",
+      "sceneId": "s230",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s230_004",
+      "text": "그 사실을 처음 설명에서는 빼셨군요.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s230_005",
+      "sceneId": "s230",
+      "speakerId": "yun",
+      "speaker": "윤해린",
+      "textId": "dlg_s230_005",
+      "text": "네. 제 판단도 조사 대상이라는 건 압니다. 하지만 건조 조건의 제한 시험을 통과한 것뿐입니다.",
+      "portraitAssetId": "chr_yun_uneasy",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s230_006",
+      "sceneId": "s230",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s230_006",
+      "text": "우천 운행은 허용하지 않았고요?",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s230_007",
+      "sceneId": "s230",
+      "speakerId": "yun",
+      "speaker": "윤해린",
+      "textId": "dlg_s230_007",
+      "text": "재시험 전 금지였습니다. 비가 오자 재발했고, 그때는 이전 승인도 철회했습니다.",
+      "portraitAssetId": "chr_yun_uneasy",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s230_008",
+      "sceneId": "s230",
+      "speakerId": "yun",
+      "speaker": "윤해린",
+      "textId": "dlg_s230_008",
+      "text": "마지막 상태는 운행중지입니다. 그 뒤 배차된 것은 제 승인과 다릅니다.",
+      "portraitAssetId": "chr_yun_resolved",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s230_009",
+      "sceneId": "s230",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s230_009",
+      "text": "그 변경 이력을 확인하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s240_001",
+      "sceneId": "s240",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s240_001",
+      "text": "잘못된 후방 입력이 제동 강도를 바꿨다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s240_002",
+      "sceneId": "s240",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s240_002",
+      "text": "그런데 이 차량은 전날 운행중지 상태였다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s240_003",
+      "sceneId": "s240",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s240_003",
+      "text": "센서가 고장났다는 사실만으로는, 왜 그 차가 도로에 있었는지 설명되지 않는다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s240_004",
+      "sceneId": "s240",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s240_004",
+      "text": "새 조사 쟁점: 마지막 운행 상태를 바꾼 기록.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s300_001",
+      "sceneId": "s300",
+      "speakerId": "ops_handover",
+      "speaker": "운영 인계",
+      "textId": "dlg_s300_001",
+      "text": "NV-017의 배차 상태 변경 이력과 최근 예외 운행 목록을 제출합니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s300_002",
+      "sceneId": "s300",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s300_002",
+      "text": "계정 이름만으로 끝내지 말자. 누가 무엇을 보고 어떤 결정을 했는지 확인해야 한다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s310_001",
+      "sceneId": "s310",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s310_001",
+      "text": "그 센서 경고는 흔합니다. 매번 차를 세우면 운행이 안 됩니다.",
+      "portraitAssetId": "chr_min_defensive",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s310_002",
+      "sceneId": "s310",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s310_002",
+      "text": "이번에는 재발과 제동 제한 가능성까지 보고됐습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s310_003",
+      "sceneId": "s310",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s310_003",
+      "text": "그 정도로 위험하다는 보고는 못 받았습니다.",
+      "portraitAssetId": "chr_min_defensive",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s310_004",
+      "sceneId": "s310",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s310_004",
+      "text": "09시 19분 회신에 “위험 내용 확인”이라고 적으셨습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s310_005",
+      "sceneId": "s310",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s310_005",
+      "text": "…….",
+      "portraitAssetId": "chr_min_cornered",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s310_006",
+      "sceneId": "s310",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s310_006",
+      "text": "그리고 12분 뒤 운행을 해제했습니다. 계정만이 아니라 본인의 행위가 맞습니까?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s310_007",
+      "sceneId": "s310",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s310_007",
+      "text": "제가 했습니다. 그날 배차를 맞춰야 했습니다.",
+      "portraitAssetId": "chr_min_resigned",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s310_008",
+      "sceneId": "s310",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s310_008",
+      "text": "그 결정의 배경은 듣겠습니다. 하지만 보고를 몰랐다는 주장은 철회하십시오.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s310_009",
+      "sceneId": "s310",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s310_009",
+      "text": "철회하겠습니다.",
+      "portraitAssetId": "chr_min_resigned",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s320_001",
+      "sceneId": "s320",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s320_001",
+      "text": "지난 석 달에 마흔일곱 대를 풀었습니다. 사고가 난 건 한 대예요.",
+      "portraitAssetId": "chr_min_defensive",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s320_002",
+      "sceneId": "s320",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s320_002",
+      "text": "그렇게 위험했다면 나머지도 사고가 났어야 하지 않습니까?",
+      "portraitAssetId": "chr_min_defensive",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s320_003",
+      "sceneId": "s320",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s320_003",
+      "text": "같은 결함, 같은 소프트웨어, 같은 비, 같은 긴급상황을 겪었다는 자료가 있습니까?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s320_004",
+      "sceneId": "s320",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s320_004",
+      "text": "거기까지 비교한 자료는 없습니다.",
+      "portraitAssetId": "chr_min_cornered",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s320_005",
+      "sceneId": "s320",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s320_005",
+      "text": "그렇다면 안전했다는 근거가 아닙니다. 해제가 반복됐다는 근거입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s320_006",
+      "sceneId": "s320",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s320_006",
+      "text": "가동률 목표는 98.5입니다. 안전 때문에 세운 차도 목표에서 빠지지 않아요.",
+      "portraitAssetId": "chr_min_cornered",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s320_007",
+      "sceneId": "s320",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s320_007",
+      "text": "목표 때문에 멈추기 어려웠다는 말씀이군요.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s320_008",
+      "sceneId": "s320",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s320_008",
+      "text": "제가 잘했다는 말은 아닙니다. 저 혼자만 그렇게 일한 건 아니라는 겁니다.",
+      "portraitAssetId": "chr_min_cornered",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s320_009",
+      "sceneId": "s320",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s320_009",
+      "text": "그 구조도 확인하겠습니다. 해제한 사실과는 별도로요.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s330_001",
+      "sceneId": "s330",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s330_001",
+      "text": "위험 보고를 읽었습니다. 이전에도 임시조치로 버틴 적이 있어서 이번에도 괜찮을 거라 생각했습니다.",
+      "portraitAssetId": "chr_min_resigned",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s330_002",
+      "sceneId": "s330",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s330_002",
+      "text": "그 뒤의 해제도 직접 하셨고요.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s330_003",
+      "sceneId": "s330",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s330_003",
+      "text": "네. 시스템이 멈췄고, 제가 다시 켰습니다.",
+      "portraitAssetId": "chr_min_resigned",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s330_004",
+      "sceneId": "s330",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s330_004",
+      "text": "진술은 그 범위로 기록하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s330_005",
+      "sceneId": "s330",
+      "speakerId": "min",
+      "speaker": "최민규",
+      "textId": "dlg_s330_005",
+      "text": "이걸로 끝입니까?",
+      "portraitAssetId": "chr_min_resigned",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s330_006",
+      "sceneId": "s330",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s330_006",
+      "text": "당신의 결정은 확인됐습니다. 그 차량의 결함을 다른 안전장치가 왜 막지 못했는지는 아직 남았습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s340_001",
+      "sceneId": "s340",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s340_001",
+      "text": "결함을 알고 운행시킨 행위는 확인됐습니다. 이것으로 보고서를 닫겠습니까?",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s340_002",
+      "sceneId": "s340",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s340_002",
+      "text": "운행시킨 이유는 찾았습니다. 하지만 센서 상태가 INVALID인데 왜 제동 제한에 쓰였는지는 남아 있습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s340_003",
+      "sceneId": "s340",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s340_003",
+      "text": "그 질문을 계속하십시오. 책임자가 있다는 것과 원인을 모두 찾았다는 것은 다릅니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s340_004",
+      "sceneId": "s340",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s340_004",
+      "text": "운영팀장의 행위를 지우지 않으면서, 다른 경계도 보겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s400_001",
+      "sceneId": "s400",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s400_001",
+      "text": "설계가 바뀌었다면, 변경 내용과 승인 조건, 실제 배포를 따로 확인해야 한다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s400_002",
+      "sceneId": "s400",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s400_002",
+      "text": "검토 대상은 제동 조정기 3.4와 사고 차량의 3.5입니다. 최신 버전을 임의로 비교하지 않습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s410_001",
+      "sceneId": "s410",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s410_001",
+      "text": "현재 버전에는 건강정보 확인 경로가 없습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s410_002",
+      "sceneId": "s410",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s410_002",
+      "text": "원래 설계에는 있었습니다. 저는 없애면 안 된다고 했습니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s410_003",
+      "sceneId": "s410",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s410_003",
+      "text": "제거로 21밀리초를 줄였다는 기록이 있습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s410_004",
+      "sceneId": "s410",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s410_004",
+      "text": "숫자 비교가 오래 걸린 것이 아닙니다. 상태를 동기화해 기다리는 경로가 병목이었습니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s410_005",
+      "sceneId": "s410",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s410_005",
+      "text": "기다림을 없앤 뒤에는 배차 시스템이 결함차를 막는다는 전제를 두었군요.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s410_006",
+      "sceneId": "s410",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s410_006",
+      "text": "그 전제가 지켜져야 했습니다.",
+      "portraitAssetId": "chr_park_analytical",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s410_007",
+      "sceneId": "s410",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s410_007",
+      "text": "어떤 조건으로 승인했는지도 확인하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s411_001",
+      "sceneId": "s411",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s411_001",
+      "text": "제 최초 의견은 반대였습니다.",
+      "portraitAssetId": "chr_park_defensive",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s411_002",
+      "sceneId": "s411",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s411_002",
+      "text": "후속 기록에는 승인자가 박도윤이라고 되어 있습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s411_003",
+      "sceneId": "s411",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s411_003",
+      "text": "조건부였습니다. 수동 해제 차량을 제외하고 조합 시험을 끝내야 했습니다.",
+      "portraitAssetId": "chr_park_shaken",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s411_004",
+      "sceneId": "s411",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s411_004",
+      "text": "조건의 완료 증거는 어디에 있습니까?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s411_005",
+      "sceneId": "s411",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s411_005",
+      "text": "여기 링크가…… 비어 있습니다.",
+      "portraitAssetId": "chr_park_shaken",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s411_006",
+      "sceneId": "s411",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s411_006",
+      "text": "조건을 달았다는 사실은 중요합니다. 이행을 확인하지 않았다는 사실도 중요합니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s411_007",
+      "sceneId": "s411",
+      "speakerId": "park",
+      "speaker": "박도윤",
+      "textId": "dlg_s411_007",
+      "text": "제가 마지막 확인을 하지 못했습니다.",
+      "portraitAssetId": "chr_park_regretful",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s411_008",
+      "sceneId": "s411",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s411_008",
+      "text": "시험 결과와 실제 배포가 어디서 어긋났는지 추적하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s420_001",
+      "sceneId": "s420",
+      "speakerId": "lee",
+      "speaker": "이재현",
+      "textId": "dlg_s420_001",
+      "text": "118밀리초를 97밀리초로 줄였습니다. 더 빨리 반응하게 만들려는 변경이었습니다.",
+      "portraitAssetId": "chr_lee_confident",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s420_002",
+      "sceneId": "s420",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s420_002",
+      "text": "그 과정에서 센서 상태 검증이 사라졌습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s420_003",
+      "sceneId": "s420",
+      "speakerId": "lee",
+      "speaker": "이재현",
+      "textId": "dlg_s420_003",
+      "text": "위쪽의 진단시스템이 결함차를 막으니 같은 검사를 두 번 하지 않는 설계였습니다.",
+      "portraitAssetId": "chr_lee_confident",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s420_004",
+      "sceneId": "s420",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s420_004",
+      "text": "수동 해제로 그 차가 운행된다면요?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s420_005",
+      "sceneId": "s420",
+      "speakerId": "lee",
+      "speaker": "이재현",
+      "textId": "dlg_s420_005",
+      "text": "그러면…… 그 전제는 깨집니다.",
+      "portraitAssetId": "chr_lee_shaken",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s420_006",
+      "sceneId": "s420",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s420_006",
+      "text": "그런 운행 예외가 있다는 문서를 확인했습니까?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s420_007",
+      "sceneId": "s420",
+      "speakerId": "lee",
+      "speaker": "이재현",
+      "textId": "dlg_s420_007",
+      "text": "있다는 것은 봤습니다. 제 변경의 적용 대상과 연결해서 검토하지 않았습니다.",
+      "portraitAssetId": "chr_lee_shaken",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s420_008",
+      "sceneId": "s420",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s420_008",
+      "text": "각자 다른 세계를 기준으로 안전하다고 생각한 셈이군요.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s420_009",
+      "sceneId": "s420",
+      "speakerId": "lee",
+      "speaker": "이재현",
+      "textId": "dlg_s420_009",
+      "text": "네. 하지만 실제로는 같은 차에서 만나고 있었습니다.",
+      "portraitAssetId": "chr_lee_shaken",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s430_001",
+      "sceneId": "s430",
+      "speakerId": "test_summary",
+      "speaker": "시험 요약",
+      "textId": "dlg_s430_001",
+      "text": "시뮬레이션 12,400,000회. 임계 회귀 0.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s430_002",
+      "sceneId": "s430",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s430_002",
+      "text": "규모만 보면 충분해 보인다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s430_003",
+      "sceneId": "s430",
+      "speakerId": "test_scope",
+      "speaker": "시험 범위",
+      "textId": "dlg_s430_003",
+      "text": "결함 상태 입력은 운행진단에서 차단되는 것으로 가정. 수동 해제 차량은 검증 대상에서 제외.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s430_004",
+      "sceneId": "s430",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s430_004",
+      "text": "그렇다면 사고의 입력은 처음부터 시험에 들어오지 않았군.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s430_005",
+      "sceneId": "s430",
+      "speakerId": "qa_memo",
+      "speaker": "품질 메모",
+      "textId": "dlg_s430_005",
+      "text": "결함센서와 수동 해제, 새 제동기 조합 시험: 미완료.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s430_006",
+      "sceneId": "s430",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s430_006",
+      "text": "시험을 했다는 사실은 참이다. 우리가 필요한 시험을 했다는 주장은 참이 아니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s440_001",
+      "sceneId": "s440",
+      "speakerId": "deploy_log",
+      "speaker": "배포 기록",
+      "textId": "dlg_s440_001",
+      "text": "NV-017: pilot-12. 제동 조정기 3.5. 설치 해시와 사고 레코더 build_id 일치.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s440_002",
+      "sceneId": "s440",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s440_002",
+      "text": "설계상 문제가 있는 코드를 발견한 것에서 끝나지 않는다. 그 코드가 사고 차량에서 실행됐다는 연결이 필요하다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s440_003",
+      "sceneId": "s440",
+      "speakerId": "release_check",
+      "speaker": "출시 점검",
+      "textId": "dlg_s440_003",
+      "text": "수동 해제 차량 제외: 미구현. 조합 시험: 보류.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s440_004",
+      "sceneId": "s440",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s440_004",
+      "text": "조건이 닫히지 않았는데 제한 운영으로 넘어갔다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s440_005",
+      "sceneId": "s440",
+      "speakerId": "doc_ref",
+      "speaker": "문서 참조",
+      "textId": "dlg_s440_005",
+      "text": "연관 위험 보고 RISK-20321016. 배포·운영 예외 중첩에 관한 공동 검토.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s440_006",
+      "sceneId": "s440",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s440_006",
+      "text": "사고 전 문서다. 누가 받았고, 무엇을 결정했는지 제출받자.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s450_001",
+      "sceneId": "s450",
+      "speakerId": "risk_report",
+      "speaker": "위험 보고",
+      "textId": "dlg_s450_001",
+      "text": "수동 해제 차량에 3.5가 적용되면 결함 입력에 대한 제약이 사라집니다. 대상 차량 운행 중지 또는 3.4 복귀를 권고합니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s450_002",
+      "sceneId": "s450",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s450_002",
+      "text": "인수 확인만 있는 메일이 아니다. 회의에서 위험 내용을 확인한 발언까지 있다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s450_003",
+      "sceneId": "s450",
+      "speakerId": "meeting_log",
+      "speaker": "회의 기록",
+      "textId": "dlg_s450_003",
+      "text": "서지원: 중지·복귀 권고와 예외 대상을 확인했습니다. 추가 검증 전까지 현행 제한 운영을 유지하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s450_004",
+      "sceneId": "s450",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s450_004",
+      "text": "구체적 위험을 모른 채 목표만 제시한 상황이 아니었다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s450_005",
+      "sceneId": "s450",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s450_005",
+      "text": "하지만 이것만으로 고의를 말할 수도 없다. 인지하고도 유지한 관리 판단을 묻는다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s460_001",
+      "sceneId": "s460",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s460_001",
+      "text": "문서의 연결은 확보했습니다. 실제 결과가 달라지는지도 검증해야 합니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s460_002",
+      "sceneId": "s460",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s460_002",
+      "text": "같은 입력으로 검증 경로를 복원한 경우와 운행중지를 유지한 경우를 비교하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s460_003",
+      "sceneId": "s460",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s460_003",
+      "text": "실제 사람을 위험에 노출시키는 실험은 아닙니다. 보존 입력과 제한된 재구성만 사용합니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s460_004",
+      "sceneId": "s460",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s460_004",
+      "text": "확실한 사실과 재구성 가정을 보고서에서 분리하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s500_001",
+      "sceneId": "s500",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s500_001",
+      "text": "마지막으로 사고 결과에 대한 검증과, 사고 뒤 설명이 만들어진 과정을 확인하자.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s500_002",
+      "sceneId": "s500",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s500_002",
+      "text": "유족 방문과 승객 보충 면담은 선택 조사입니다. 방문하지 않아도 핵심 사실과 결론은 바뀌지 않습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s510_001",
+      "sceneId": "s510",
+      "speakerId": "replay_test",
+      "speaker": "재현 시험",
+      "textId": "dlg_s510_001",
+      "text": "동일 입력, 배포본 3.5: 강도 제한 -2.0. 이전 검증 경로 적용: INVALID 입력을 제약 근거에서 제외.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s510_002",
+      "sceneId": "s510",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s510_002",
+      "text": "검증 경로가 있었다면 전방 긴급제동 요청이 유지되는군.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s510_003",
+      "sceneId": "s510",
+      "speakerId": "road_report",
+      "speaker": "노면 보고",
+      "textId": "dlg_s510_003",
+      "text": "요청 -8.1이 그대로 실현되는 것은 아닙니다. 사건 내 측정 조건에서 실제 강한 감속은 약 -6.2입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s510_004",
+      "sceneId": "s510",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s510_004",
+      "text": "그 값과 작동 지연으로도 충돌 지점 전 정지 여지가 있다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s510_005",
+      "sceneId": "s510",
+      "speakerId": "recon_caution",
+      "speaker": "재구성 주의",
+      "textId": "dlg_s510_005",
+      "text": "입력·노면·보행 경로를 고정한 반사실 분석이며 현실 전체의 완전한 재현은 아닙니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s510_006",
+      "sceneId": "s510",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s510_006",
+      "text": "그리고 운행중지를 유지했다면 이 차량은 여기에 없었다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s510_007",
+      "sceneId": "s510",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s510_007",
+      "text": "두 경계 중 하나라도 작동하면 이 사건 경로는 끊긴다. 이번에는 둘 다 무너졌다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s520_001",
+      "sceneId": "s520",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s520_001",
+      "text": "제 말 때문에 AI가 못 봤다고 생각하신 건 아닌가요?",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s520_002",
+      "sceneId": "s520",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s520_002",
+      "text": "회사 설명과 원본 기록을 대조했습니다. 당신의 기억 하나로 결론을 내리지 않았습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s520_003",
+      "sceneId": "s520",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s520_003",
+      "text": "아무 반응도 없었다는 말은 고쳐야겠네요.",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s520_004",
+      "sceneId": "s520",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s520_004",
+      "text": "기록에는 약한 감속이 있습니다. 몸으로 느꼈던 것과 다를 수 있습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s520_005",
+      "sceneId": "s520",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s520_005",
+      "text": "그래도 강하게 멈추려던 느낌은 정말 마지막이었어요.",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s520_006",
+      "sceneId": "s520",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s520_006",
+      "text": "그 부분은 기록과 일치합니다. 보충 진술로 남겨도 되겠습니까?",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s520_007",
+      "sceneId": "s520",
+      "speakerId": "nari",
+      "speaker": "강나리",
+      "textId": "dlg_s520_007",
+      "text": "네. 제가 확실히 기억하는 만큼만요.",
+      "portraitAssetId": "chr_nari_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_001",
+      "sceneId": "s530",
+      "speakerId": "mira",
+      "speaker": "정미라",
+      "textId": "dlg_s530_001",
+      "text": "남편이 회사와 무슨 관계가 있었던 건 아니에요.",
+      "portraitAssetId": "chr_mira_reserved",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_002",
+      "sceneId": "s530",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s530_002",
+      "text": "그런 정황은 발견하지 못했습니다. 통상의 귀가 중이었다고 확인했습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_003",
+      "sceneId": "s530",
+      "speakerId": "mira",
+      "speaker": "정미라",
+      "textId": "dlg_s530_003",
+      "text": "뉴스에서는 자꾸 누군가의 비밀이 있을 것처럼 말하더라고요.",
+      "portraitAssetId": "chr_mira_reserved",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_004",
+      "sceneId": "s530",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s530_004",
+      "text": "없던 사연을 만들지는 않겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_005",
+      "sceneId": "s530",
+      "speakerId": "mira",
+      "speaker": "정미라",
+      "textId": "dlg_s530_005",
+      "text": "이 사진과 마지막 문장만 보여드릴게요. 다른 내용은 저희 가족 것으로 남기고 싶어요.",
+      "portraitAssetId": "chr_mira_grief",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_006",
+      "sceneId": "s530",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s530_006",
+      "text": "원하시는 자료만 받겠습니다. 개인적인 기록은 사건 원인을 입증하는 데 필요하지 않습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_007",
+      "sceneId": "s530",
+      "speakerId": "mira",
+      "speaker": "정미라",
+      "textId": "dlg_s530_007",
+      "text": "거의 다 왔다고 썼더라고요. 보내지는 못했지만요.",
+      "portraitAssetId": "chr_mira_grief",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s530_008",
+      "sceneId": "s530",
+      "speakerId": "narration",
+      "speaker": "내레이션",
+      "textId": "dlg_s530_008",
+      "text": "잠시 대화가 멈춘다. 다음을 누르기 전에는 장면을 넘기지 않는다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s540_001",
+      "sceneId": "s540",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s540_001",
+      "text": "발표 초안과 수정 이력을 제출하겠습니다.",
+      "portraitAssetId": "chr_han_guarded",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s540_002",
+      "sceneId": "s540",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s540_002",
+      "text": "초안에는 사후 재분석이라고 써 있었군요.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s540_003",
+      "sceneId": "s540",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s540_003",
+      "text": "보도자료는 기술적인 설명을 줄이는 과정이 있습니다.",
+      "portraitAssetId": "chr_han_guarded",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s540_004",
+      "sceneId": "s540",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s540_004",
+      "text": "설명을 줄인 것과 다른 종류의 자료를 당시 판단처럼 보이게 만든 것은 다릅니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s540_005",
+      "sceneId": "s540",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s540_005",
+      "text": "위원회에서 답하겠습니다.",
+      "portraitAssetId": "chr_han_guarded",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s540_006",
+      "sceneId": "s540",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s540_006",
+      "text": "이 행위는 사고 이후의 일입니다. 제동 실패 원인과는 구분해 기록하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s550_001",
+      "sceneId": "s550",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s550_001",
+      "text": "제동 요청, 명령 변경, 운행 승인, 검증 제거, 위험 보고. 서로 다른 종류의 기록이 한 사고에서 만난다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s550_002",
+      "sceneId": "s550",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s550_002",
+      "text": "사고 원인을 설명하는 일과 책임을 흐리는 일은 다르다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s550_003",
+      "sceneId": "s550",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s550_003",
+      "text": "최종 심리에서는 기록 출처, 인과관계, 행위별 책임 범위를 차례로 확인합니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s600_001",
+      "sceneId": "s600",
+      "speakerId": "seo",
+      "speaker": "서지원",
+      "textId": "dlg_s600_001",
+      "text": "센서 결함, 운영 예외, 소프트웨어 변경이 겹쳤습니다. 개선하겠습니다.",
+      "portraitAssetId": "chr_seo_calm",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s600_002",
+      "sceneId": "s600",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s600_002",
+      "text": "우연히 겹쳤다는 표현 전에, 각 경계가 왜 사라졌는지 확인하겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s600_003",
+      "sceneId": "s600",
+      "speakerId": "seo",
+      "speaker": "서지원",
+      "textId": "dlg_s600_003",
+      "text": "어느 한 사람의 결정만으로 일어난 사고는 아닙니다.",
+      "portraitAssetId": "chr_seo_calm",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s600_004",
+      "sceneId": "s600",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s600_004",
+      "text": "그 말이 각 사람이 한 결정을 없애지는 않습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s600_005",
+      "sceneId": "s600",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s600_005",
+      "text": "추정과 입증을 구분하며 사고 경로를 제시하십시오.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s610_001",
+      "sceneId": "s610",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s610_001",
+      "text": "레이더 결함만 있었다면 운행중지가 막아야 했습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s610_002",
+      "sceneId": "s610",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s610_002",
+      "text": "차가 운행됐더라도 제어기의 검증 경로가 결함 입력을 걸러야 했습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s610_003",
+      "sceneId": "s610",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s610_003",
+      "text": "하지만 운행중지는 해제됐고, 검증 경로는 제거됐습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s610_004",
+      "sceneId": "s610",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s610_004",
+      "text": "존재하지 않는 뒤차가 강한 제동을 제한하는 근거가 되었습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s610_005",
+      "sceneId": "s610",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s610_005",
+      "text": "마지막 연결, 제동 제한이 결과를 바꾸었다는 근거는 무엇입니까?",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s610_006",
+      "sceneId": "s610",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s610_006",
+      "text": "배포본 대조시험과 조건을 명시한 제동 거리 재구성입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s610_007",
+      "sceneId": "s610",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s610_007",
+      "text": "사고 당시 인식 모듈은 보행자를 발견했고, 주행 계획은 긴급제동을 요청했습니다. 그 사실도 같은 판에 남깁니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s610_008",
+      "sceneId": "s610",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s610_008",
+      "text": "기술적 경로는 확인했습니다. 이제 조직의 결정과 연결하십시오.",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s620_001",
+      "sceneId": "s620",
+      "speakerId": "seo",
+      "speaker": "서지원",
+      "textId": "dlg_s620_001",
+      "text": "가동률을 높이라고 한 것은 맞습니다. 안전 기준을 낮추라고 지시하지는 않았습니다.",
+      "portraitAssetId": "chr_seo_stern",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s620_002",
+      "sceneId": "s620",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s620_002",
+      "text": "오늘 묻는 것은 목표 문구가 아닙니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s620_003",
+      "sceneId": "s620",
+      "speakerId": "seo",
+      "speaker": "서지원",
+      "textId": "dlg_s620_003",
+      "text": "부서의 예외가 동시에 적용된다는 구체적 위험까지 보고받은 적은 없습니다.",
+      "portraitAssetId": "chr_seo_stern",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s620_004",
+      "sceneId": "s620",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s620_004",
+      "text": "사고 이틀 전 보고서와 회의 기록을 보겠습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s620_005",
+      "sceneId": "s620",
+      "speakerId": "seo",
+      "speaker": "서지원",
+      "textId": "dlg_s620_005",
+      "text": "…… 그 보고는 받았습니다.",
+      "portraitAssetId": "chr_seo_accepting",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s620_006",
+      "sceneId": "s620",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s620_006",
+      "text": "중지나 이전 버전 복귀를 권고받고도 운영 유지를 결정했습니까?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s620_007",
+      "sceneId": "s620",
+      "speakerId": "seo",
+      "speaker": "서지원",
+      "textId": "dlg_s620_007",
+      "text": "추가 검증을 기다리는 것이 맞다고 판단했습니다.",
+      "portraitAssetId": "chr_seo_accepting",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s620_008",
+      "sceneId": "s620",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s620_008",
+      "text": "그 판단의 권한과 결과를 기록하겠습니다. 직접 코드를 수정하지 않았다는 설명으로는 대신할 수 없습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s620_009",
+      "sceneId": "s620",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s620_009",
+      "text": "관리 차원의 인지와 결정이 확인됐습니다. 법적 책임은 이 사실관계를 바탕으로 별도 검토될 것입니다.",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s630_001",
+      "sceneId": "s630",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s630_001",
+      "text": "초기에는 자료가 충분하지 않았습니다. 오해가 생긴 점은 유감입니다.",
+      "portraitAssetId": "chr_han_strained",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s630_002",
+      "sceneId": "s630",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s630_002",
+      "text": "원본이 별도로 존재한다는 사실과 사후 재분석 표기는 초안에 있었습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s630_003",
+      "sceneId": "s630",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s630_003",
+      "text": "맞습니다.",
+      "portraitAssetId": "chr_han_admitting",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s630_004",
+      "sceneId": "s630",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s630_004",
+      "text": "그 표기를 빼고 당시 인식 실패로 설명한 발표를 승인했습니까?",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s630_005",
+      "sceneId": "s630",
+      "speakerId": "han",
+      "speaker": "한서진",
+      "textId": "dlg_s630_005",
+      "text": "제가 승인했습니다.",
+      "portraitAssetId": "chr_han_admitting",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s630_006",
+      "sceneId": "s630",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s630_006",
+      "text": "이것은 충돌을 일으킨 행위가 아닙니다. 사고의 원인을 잘못 설명한 별도의 행위입니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s630_007",
+      "sceneId": "s630",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s630_007",
+      "text": "최종 보고에서 사후 정보 공개 문제로 구분하여 다루겠습니다.",
+      "portraitAssetId": "chr_cho_neutral",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s640_001",
+      "sceneId": "s640",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s640_001",
+      "text": "시스템적 원인이라고만 쓰면 누가 무엇을 했는지가 사라집니다.",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s640_002",
+      "sceneId": "s640",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s640_002",
+      "text": "운영 승인, 변경 승인, 출시 조건 검증, 위험 인지 후 유지, 발표 왜곡을 분리해 기록했습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s640_003",
+      "sceneId": "s640",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s640_003",
+      "text": "인식 모듈에 대해서는요?",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s640_004",
+      "sceneId": "s640",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s640_004",
+      "text": "이 사건의 해당 시점에서 보행자 판정과 긴급제동 요청이 확인됐다고만 씁니다. 모든 상황의 안전성을 주장하지 않습니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s640_005",
+      "sceneId": "s640",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s640_005",
+      "text": "의도적 가해나 형사 죄명은요?",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s640_006",
+      "sceneId": "s640",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s640_006",
+      "text": "이 조사로는 확정하지 않습니다. 확인한 행위와 근거를 넘깁니다.",
+      "portraitAssetId": "",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s640_007",
+      "sceneId": "s640",
+      "speakerId": "cho",
+      "speaker": "조정우",
+      "textId": "dlg_s640_007",
+      "text": "그 범위로 보고서를 채택합니다.",
+      "portraitAssetId": "chr_cho_firm",
+      "phase": "post"
+    },
+    {
+      "id": "dlg_s650_001",
+      "sceneId": "s650",
+      "speakerId": "record",
+      "speaker": "기록",
+      "textId": "dlg_s650_001",
+      "text": "T-1.84. 보행자 판정.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_002",
+      "sceneId": "s650",
+      "speakerId": "record",
+      "speaker": "기록",
+      "textId": "dlg_s650_002",
+      "text": "T-1.82. 긴급제동 요청.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_003",
+      "sceneId": "s650",
+      "speakerId": "record",
+      "speaker": "기록",
+      "textId": "dlg_s650_003",
+      "text": "T-1.80. 후방 입력을 근거로 제동 강도 제한.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_004",
+      "sceneId": "s650",
+      "speakerId": "record",
+      "speaker": "기록",
+      "textId": "dlg_s650_004",
+      "text": "T-1.74. 약한 제동 시작.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_005",
+      "sceneId": "s650",
+      "speakerId": "record",
+      "speaker": "기록",
+      "textId": "dlg_s650_005",
+      "text": "T-0.46. 강한 제동 시작.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_006",
+      "sceneId": "s650",
+      "speakerId": "record",
+      "speaker": "기록",
+      "textId": "dlg_s650_006",
+      "text": "T=0. 충돌.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_007",
+      "sceneId": "s650",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s650_007",
+      "text": "1.8초 전에 요청은 있었습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_008",
+      "sceneId": "s650",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s650_008",
+      "text": "문제는 그 요청이 어떤 조건과 결정을 거쳐 다른 행동이 되었는가였습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_009",
+      "sceneId": "s650",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s650_009",
+      "text": "AI라는 한 단어로는 그 경로를 설명할 수도, 책임을 대신할 수도 없습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s650_010",
+      "sceneId": "s650",
+      "speakerId": "narration",
+      "speaker": "내레이션",
+      "textId": "dlg_s650_010",
+      "text": "정적 뒤로 위원회 녹음 장치의 작동 표시가 꺼진다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_001",
+      "sceneId": "s700",
+      "speakerId": "mira",
+      "speaker": "정미라",
+      "textId": "dlg_s700_001",
+      "text": "그래서, 누구의 책임인 건가요?",
+      "portraitAssetId": "chr_mira_grief",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_002",
+      "sceneId": "s700",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s700_002",
+      "text": "모두의 일이어서 아무의 책임도 없다는 결론은 아닙니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_003",
+      "sceneId": "s700",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s700_003",
+      "text": "누가 위험을 알고 운행을 승인했는지, 누가 확인 없이 변경을 진행했는지, 누가 중지 권고 뒤에도 유지했는지 기록했습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_004",
+      "sceneId": "s700",
+      "speakerId": "mira",
+      "speaker": "정미라",
+      "textId": "dlg_s700_004",
+      "text": "그 기록으로 달라지는 게 있을까요?",
+      "portraitAssetId": "chr_mira_grief",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_005",
+      "sceneId": "s700",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s700_005",
+      "text": "법적 판단은 별도로 남아 있습니다. 하지만 무엇을 바꿔야 같은 일이 반복되지 않는지도 보고서에 적었습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_006",
+      "sceneId": "s700",
+      "speakerId": "mira",
+      "speaker": "정미라",
+      "textId": "dlg_s700_006",
+      "text": "그러면…… 남편 일을 그냥 AI 오류라고 부르지는 말아 주세요.",
+      "portraitAssetId": "chr_mira_grief",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_007",
+      "sceneId": "s700",
+      "speakerId": "investigator",
+      "speaker": "조사관",
+      "textId": "dlg_s700_007",
+      "text": "그렇게 끝내지 않겠습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s700_008",
+      "sceneId": "s700",
+      "speakerId": "narration",
+      "speaker": "내레이션",
+      "textId": "dlg_s700_008",
+      "text": "복도 끝의 창문 너머로 비가 그친 도로가 보인다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s710_001",
+      "sceneId": "s710",
+      "speakerId": "report",
+      "speaker": "보고서",
+      "textId": "dlg_s710_001",
+      "text": "직접 원인: 결함 입력이 긴급제동 제한에 사용된 제어 경로.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s710_002",
+      "sceneId": "s710",
+      "speakerId": "report",
+      "speaker": "보고서",
+      "textId": "dlg_s710_002",
+      "text": "기여 요인: 결함 차량 운행 해제, 건강정보 검증 제거, 충족되지 않은 출시 조건.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s710_003",
+      "sceneId": "s710",
+      "speakerId": "report",
+      "speaker": "보고서",
+      "textId": "dlg_s710_003",
+      "text": "관리 요인: 안전 운휴와 충돌한 성과 구조, 구체적 위험을 인지한 뒤 운영 유지.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s710_004",
+      "sceneId": "s710",
+      "speakerId": "report",
+      "speaker": "보고서",
+      "textId": "dlg_s710_004",
+      "text": "별도 확인: 사후 분석 자료를 당시 판단처럼 제시한 정보 공개.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s710_005",
+      "sceneId": "s710",
+      "speakerId": "report",
+      "speaker": "보고서",
+      "textId": "dlg_s710_005",
+      "text": "미확정: 고의, 개별 형사 죄명, 장기적 모델 안전성.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s710_006",
+      "sceneId": "s710",
+      "speakerId": "report",
+      "speaker": "보고서",
+      "textId": "dlg_s710_006",
+      "text": "예방 권고: 운행 제한 우회 통제, 조건부 승인 이행 검증, 결함·운영 예외 조합시험, 자료 출처 표기.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    },
+    {
+      "id": "dlg_s710_007",
+      "sceneId": "s710",
+      "speakerId": "system",
+      "speaker": "시스템",
+      "textId": "dlg_s710_007",
+      "text": "Episode 01 완료. 이 기록은 다음 사건의 정답을 보장하지 않습니다.",
+      "portraitAssetId": "",
+      "phase": "pre"
+    }
+  ]
+}

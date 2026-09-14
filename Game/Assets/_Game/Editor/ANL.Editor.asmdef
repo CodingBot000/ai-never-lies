@@ -1,0 +1,23 @@
+{
+    "name": "ANL.Editor",
+    "rootNamespace": "ANL.Editor",
+    "references": [
+        "ANL.Core",
+        "ANL.Runtime",
+        "ANL.UI",
+        "Unity.InputSystem",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

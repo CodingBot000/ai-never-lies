@@ -1,0 +1,116 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "content.parse",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "episode.contract",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "ids.scenes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "ids.evidence",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "ids.puzzles",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "ids.duplicates",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scene.dialogue_refs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scene.grant_refs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scene.transition_refs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "scene.interaction_refs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "branch.refs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "branch.effects",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "puzzle.evidence_refs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "puzzle.target_statements",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "puzzle.sufficient_evidence_sets",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "puzzle.required_edges",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "puzzle.p20_report",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.coverage",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contract.s150_grants",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "hints.coverage",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "text.completeness",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "assets.manifest",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "errorCount": 0
+}

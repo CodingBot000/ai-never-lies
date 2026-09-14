@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Passed" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.6321427">
+  <test-suite type="TestSuite" id="1011" name="AI Never Lies" fullname="AI Never Lies" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.632143" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1005" name="ANL.Tests.PlayMode.dll" fullname="/Users/switch/Development/Game/WebGame/ai-never-lies/Game/Library/ScriptAssemblies/ANL.Tests.PlayMode.dll" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.619010" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="59540" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1006" name="ANL" fullname="ANL" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.618252" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1007" name="Tests" fullname="ANL.Tests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.617898" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1008" name="PlayMode" fullname="ANL.Tests.PlayMode" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.617564" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="PlaythroughTests" fullname="ANL.Tests.PlayMode.PlaythroughTests" classname="ANL.Tests.PlayMode.PlaythroughTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.615897" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1002" name="FullRequiredPlaythrough_ReachesS710WithAllMandatoryContent" fullname="ANL.Tests.PlayMode.PlaythroughTests.FullRequiredPlaythrough_ReachesS710WithAllMandatoryContent" methodname="FullRequiredPlaythrough_ReachesS710WithAllMandatoryContent" classname="ANL.Tests.PlayMode.PlaythroughTests" runstate="Runnable" seed="898667780" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:20Z" duration="0.113942" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="MainSceneBootsWithoutAppRootErrors" fullname="ANL.Tests.PlayMode.PlaythroughTests.MainSceneBootsWithoutAppRootErrors" methodname="MainSceneBootsWithoutAppRootErrors" classname="ANL.Tests.PlayMode.PlaythroughTests" runstate="Runnable" seed="65787424" result="Passed" start-time="2026-09-14 10:54:20Z" end-time="2026-09-14 10:54:27Z" duration="6.454225" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[2026-09-14T10:54:20.8168460Z [WARN] TMP font asset creation failed (headless graphics?): Value cannot be null.
+Parameter name: shader
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+The LiberationSans SDF Font Asset was not found. There is no Font Asset assigned to Label.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+Please assign a Font Asset to this Label gameobject.
+]]></output>
+              </test-case>
+              <test-case id="1003" name="RuntimeSaveAndReload_RestoresScenePhaseAndCursor" fullname="ANL.Tests.PlayMode.PlaythroughTests.RuntimeSaveAndReload_RestoresScenePhaseAndCursor" methodname="RuntimeSaveAndReload_RestoresScenePhaseAndCursor" classname="ANL.Tests.PlayMode.PlaythroughTests" runstate="Runnable" seed="1905403857" result="Passed" start-time="2026-09-14 10:54:27Z" end-time="2026-09-14 10:54:27Z" duration="0.029530" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: /Users/switch/Development/Game/WebGame/ai-never-lies/reports/test-playmode.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    { "id": "n_fault", "label": "후방 센서 결함", "kind": "physical", "evidenceIds": ["ev15", "ev17", "ev14"] },
+    { "id": "n_false_rear", "label": "실재하지 않는 후방 객체 입력", "kind": "physical", "evidenceIds": ["ev12", "ev13", "ev14"] },
+    { "id": "n_override", "label": "재발 경고 뒤 운행중지 해제", "kind": "operational", "evidenceIds": ["ev17", "ev18", "ev19", "ev31"] },
+    { "id": "n_onroad", "label": "결함 상태로 도로에 투입", "kind": "operational", "evidenceIds": ["ev01", "ev18"] },
+    { "id": "n_gate_removed", "label": "배포본의 건강정보 확인 제거", "kind": "software", "evidenceIds": ["ev22", "ev27"] },
+    { "id": "n_trusted_rear", "label": "결함 입력이 제동 제약 근거로 채택", "kind": "and", "evidenceIds": ["ev10", "ev32"] },
+    { "id": "n_brake_limit", "label": "긴급제동 요청 강도 제한", "kind": "and", "evidenceIds": ["ev06", "ev08", "ev10"] },
+    { "id": "n_collision", "label": "제동 제한이 충돌 경로에 기여", "kind": "outcome", "evidenceIds": ["ev33"] },
+    { "id": "n_request", "label": "적시에 기록된 긴급제동 요청", "kind": "signal", "evidenceIds": ["ev06", "ev07"] }
+  ],
+  "causalEdges": [
+    { "from": "n_fault", "to": "n_false_rear", "kind": "causal" },
+    { "from": "n_override", "to": "n_onroad", "kind": "causal" },
+    { "from": "n_false_rear", "to": "n_trusted_rear", "kind": "causal" },
+    { "from": "n_gate_removed", "to": "n_trusted_rear", "kind": "causal" },
+    { "from": "n_trusted_rear", "to": "n_brake_limit", "kind": "causal" },
+    { "from": "n_onroad", "to": "n_brake_limit", "kind": "causal" },
+    { "from": "n_brake_limit", "to": "n_collision", "kind": "causal" }
+  ],
+  "signalEdges": [
+    { "from": "n_request", "to": "n_brake_limit", "kind": "signal" }
+  ],
+  "eventLog": [
+    { "id": "detect", "relativeMs": -1840, "source": "perception", "type": "object_classified", "payload": "objectId=P-127; class=PEDESTRIAN; classScore=0.947", "firstEvidenceId": "ev06", "display": "T-1.84 보행자 판정" },
+    { "id": "request", "relativeMs": -1820, "source": "planner", "type": "brake_requested", "payload": "requestId=BR-884; frontRiskScore=91.2; requestedDecel=-8.1", "firstEvidenceId": "ev06", "display": "T-1.82 긴급제동 요청" },
+    { "id": "limit", "relativeMs": -1800, "source": "brake_supervisor", "type": "brake_limited", "payload": "requestId=BR-884; rearObject=R-09; rearRiskScore=71; allowedDecel=-2.0; healthValidationExecuted=false", "firstEvidenceId": "ev10", "display": "T-1.80 제동 강도 제한" },
+    { "id": "warning", "relativeMs": -1790, "source": "cabin_ui", "type": "warning_displayed", "payload": "label=EMERGENCY MANEUVER", "firstEvidenceId": "ev05", "display": "T-1.79 차내 경고 표시" },
+    { "id": "weak_apply", "relativeMs": -1740, "source": "vehicle_controller", "type": "measured_deceleration", "payload": "measuredDecel=-2.0", "firstEvidenceId": "ev08", "display": "T-1.74 약한 제동 시작" },
+    { "id": "bypass", "relativeMs": -540, "source": "imminent_channel", "type": "brake_limit_overridden", "payload": "independentImminent=true; rearLimitBypassed=true", "firstEvidenceId": "ev10", "display": "T-0.54 독립 충돌임박 경로가 제한 해제" },
+    { "id": "strong_apply", "relativeMs": -460, "source": "vehicle_controller", "type": "measured_deceleration", "payload": "measuredDecel=-6.2", "firstEvidenceId": "ev08", "display": "T-0.46 강한 제동 시작" },
+    { "id": "impact", "relativeMs": 0, "source": "event_recorder", "type": "impact_recorded", "payload": "speedKmh=27.5168", "firstEvidenceId": "ev01", "display": "T=0 충돌" }
+  ],
+  "kinematics": {
+    "speedKmh": 47.0,
+    "actuatorDelaySeconds": 0.08,
+    "weakDurationSeconds": 1.28,
+    "weakDeceleration": 2.0,
+    "strongDurationSeconds": 0.46,
+    "strongDeceleration": 6.2,
+    "historicalDistanceMeters": 20.28915111,
+    "historicalImpactKmh": 27.5168,
+    "fullBrakeStopMeters": 14.79021306,
+    "roadDecelerationMin": 5.6,
+    "roadDecelerationMax": 6.8,
+    "stopDistanceMinMeters": 13.58,
+    "stopDistanceMaxMeters": 16.26,
+    "requestToStrongMs": 1360,
+    "note": "작품 내부 일관성을 위한 운동학 예제이며 실제 감정 결과가 아니다."
+  }
+}

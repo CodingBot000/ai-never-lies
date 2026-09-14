@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "episodeId": "ep01",
+  "contractVersion": "art.v1",
+  "documentVersion": "1.0.0",
+  "ready": true,
+  "requiredAssetCount": 54,
+  "approvedAssetCount": 54,
+  "manifestPath": "handoff/art/manifest.lock.json",
+  "manifestSha256": "8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3",
+  "masterDocumentSha256": "9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786",
+  "artInstructionSha256": "58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38",
+  "codeInstructionSha256": "4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951",
+  "verifiedAtUtc": "2026-09-14T07:38:19Z",
+  "verificationReport": "handoff/art/ART_REVIEW.md",
+  "blockers": []
+}

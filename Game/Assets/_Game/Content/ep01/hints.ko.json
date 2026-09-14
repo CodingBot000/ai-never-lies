@@ -1,0 +1,932 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "hint_p01_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p01",
+      "level": 1,
+      "textId": "hint_p01_h1",
+      "text": "우선 사고 시각과 장소를 고정하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p01_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p01",
+      "level": 2,
+      "textId": "hint_p01_h2",
+      "text": "횡단보도·신호기·사고 차량 표시를 조사하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p01_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p01",
+      "level": 3,
+      "textId": "hint_p01_h3",
+      "text": "세 조사 표시를 모두 누르면 전방 영상과 신호기 기록을 확보합니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p02_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p02",
+      "level": 1,
+      "textId": "hint_p02_h1",
+      "text": "반응이 없었다는 말과 감속을 못 느꼈다는 말은 다릅니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p02_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p02",
+      "level": 2,
+      "textId": "hint_p02_h2",
+      "text": "승객 휴대전화 영상의 표시창을 확인하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p02_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p02",
+      "level": 3,
+      "textId": "hint_p02_h3",
+      "text": "증언 st120_02에 ev05를 제시하세요. 이 반박은 거짓말을 입증하는 것이 아니라 기억을 보정합니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p03_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p03",
+      "level": 1,
+      "textId": "hint_p03_h1",
+      "text": "두 자료의 생성 시각과 처리 과정을 보세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p03_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p03",
+      "level": 2,
+      "textId": "hint_p03_h2",
+      "text": "ev07은 실시간 레코더와 사후 보고서의 출처를 구분합니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p03_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p03",
+      "level": 3,
+      "textId": "hint_p03_h3",
+      "text": "당시 판단=ev06, 사후 재분석=ev02, 출처 확인=ev07로 배치하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p04_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p04",
+      "level": 1,
+      "textId": "hint_p04_h1",
+      "text": "회사 주장은 사고 당시의 인식을 대상으로 합니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p04_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p04",
+      "level": 2,
+      "textId": "hint_p04_h2",
+      "text": "원본 판단에 출처 확인 자료를 붙이세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p04_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p04",
+      "level": 3,
+      "textId": "hint_p04_h3",
+      "text": "st150_02를 선택하고 ev06과 ev07을 함께 제시하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p05_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p05",
+      "level": 1,
+      "textId": "hint_p05_h1",
+      "text": "명령 시각과 실제 감속 시각을 구분하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p05_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p05",
+      "level": 2,
+      "textId": "hint_p05_h2",
+      "text": "ev08의 약한 제동과 강한 제동은 서로 다른 사건입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p05_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p05",
+      "level": 3,
+      "textId": "hint_p05_h3",
+      "text": "인식→요청→약한 제동→강한 제동→충돌. 1.36초는 요청(-1.82)에서 강한 제동(-0.46)까지입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p06_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p06",
+      "level": 1,
+      "textId": "hint_p06_h1",
+      "text": "입력과 출력이 처음 달라진 경계를 찾으세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p06_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p06",
+      "level": 2,
+      "textId": "hint_p06_h2",
+      "text": "ev10의 requested와 allowed 값을 비교하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p06_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p06",
+      "level": 3,
+      "textId": "hint_p06_h3",
+      "text": "변경 모듈은 brake_supervisor, 요청 -8.1→허용 -2.0입니다. 실제 강제동 -6.2와 혼동하지 마세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p07_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p07",
+      "level": 1,
+      "textId": "hint_p07_h1",
+      "text": "레이더의 물체가 다른 기록에도 나타나는지 확인하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p07_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p07",
+      "level": 2,
+      "textId": "hint_p07_h2",
+      "text": "후방 영상과 외부 CCTV를 같은 시간 구간에 맞추세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p07_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p07",
+      "level": 3,
+      "textId": "hint_p07_h3",
+      "text": "T-2.0~T-0.3에서 ev12·ev13·ev14를 연결합니다. 여기서는 결함 가설까지, 정비 원인은 아직 미확정입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p08_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p08",
+      "level": 1,
+      "textId": "hint_p08_h1",
+      "text": "수리 이력은 한 장이 아니라 변화 기록입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p08_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p08",
+      "level": 2,
+      "textId": "hint_p08_h2",
+      "text": "D-11 경고, D-9 제한 승인, D-1 재발을 나누세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p08_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p08",
+      "level": 3,
+      "textId": "hint_p08_h3",
+      "text": "ev15→ev16→ev17. 사고 전날의 최종 상태는 승인 철회·운행중지입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p09_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p09",
+      "level": 1,
+      "textId": "hint_p09_h1",
+      "text": "그가 한 행위와 당시 알고 있던 내용을 각각 입증하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p09_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p09",
+      "level": 2,
+      "textId": "hint_p09_h2",
+      "text": "메일 회신은 09:19, 수동 해제는 09:31입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p09_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p09",
+      "level": 3,
+      "textId": "hint_p09_h3",
+      "text": "st310_02에 ev19와 ev18을 함께 제시하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p10_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p10",
+      "level": 1,
+      "textId": "hint_p10_h1",
+      "text": "사고가 없었다는 것과 안전하다는 것은 다른 주장입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p10_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p10",
+      "level": 2,
+      "textId": "hint_p10_h2",
+      "text": "정비 사유·소프트웨어·날씨·긴급상황이 같았는지 보세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p10_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p10",
+      "level": 3,
+      "textId": "hint_p10_h3",
+      "text": "“같은 위험 조건에 노출되었다는 근거가 없다”를 선택하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p11_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p11",
+      "level": 1,
+      "textId": "hint_p11_h1",
+      "text": "변경 전과 후에서 사라진 정보 확인 절차를 보세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p11_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p11",
+      "level": 2,
+      "textId": "hint_p11_h2",
+      "text": "health snapshot을 기다리고 valid·fresh를 검사하던 블록입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p11_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p11",
+      "level": 3,
+      "textId": "hint_p11_h3",
+      "text": "health_snapshot_validation 전체를 선택하세요. 21ms를 단순 비교 연산 비용이라고 설명하지 않습니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p12_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p12",
+      "level": 1,
+      "textId": "hint_p12_h1",
+      "text": "한 사람의 리뷰는 여러 시점에 걸쳐 달라질 수 있습니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p12_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p12",
+      "level": 2,
+      "textId": "hint_p12_h2",
+      "text": "최초 반대와 후속 조건부 승인을 모두 펼치세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p12_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p12",
+      "level": 3,
+      "textId": "hint_p12_h3",
+      "text": "st411_02에 ev23을 제시하고 결론은 conditional_approval_unverified로 선택하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p13_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p13",
+      "level": 1,
+      "textId": "hint_p13_h1",
+      "text": "빠진 확인을 누가 대신한다는 설계였는지 보세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p13_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p13",
+      "level": 2,
+      "textId": "hint_p13_h2",
+      "text": "진단시스템의 운행중지를 사람이 해제할 수 있었습니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p13_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p13",
+      "level": 3,
+      "textId": "hint_p13_h3",
+      "text": "ev25의 “결함차는 배차되지 않는다”에 ev18의 수동 해제를 연결하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p14_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p14",
+      "level": 1,
+      "textId": "hint_p14_h1",
+      "text": "총 횟수 아래에 있는 제외 조건을 보세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p14_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p14",
+      "level": 2,
+      "textId": "hint_p14_h2",
+      "text": "결함센서와 수동 해제, 새 버전이 동시에 있는 행을 찾으세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p14_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p14",
+      "level": 3,
+      "textId": "hint_p14_h3",
+      "text": "faulty_sensor + manual_override + supervisor_3_5 + rain_night 조합을 선택하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p15_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p15",
+      "level": 1,
+      "textId": "hint_p15_h1",
+      "text": "설계→설치→조건 이행을 각각 확인하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p15_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p15",
+      "level": 2,
+      "textId": "hint_p15_h2",
+      "text": "차량 레코더 build_id와 배포 이력을 대조하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p15_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p15",
+      "level": 3,
+      "textId": "hint_p15_h3",
+      "text": "ev22→ev27→ev28을 연결하고 deployed_with_open_conditions를 선택하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p16_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p16",
+      "level": 1,
+      "textId": "hint_p16_h1",
+      "text": "한 번에 하나의 조건만 바꾸어 보세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p16_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p16",
+      "level": 2,
+      "textId": "hint_p16_h2",
+      "text": "역사적 조건, 검증 경로 복원, 운행중지 유지 세 경우를 비교하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p16_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p16",
+      "level": 3,
+      "textId": "hint_p16_h3",
+      "text": "historical=충돌; gate_restored=보고서 가정에서 회피 가능; dispatch_blocked=운행 자체 없음. 세 결과를 모두 확인하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p17_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p17",
+      "level": 1,
+      "textId": "hint_p17_h1",
+      "text": "운영 경로와 제어 경로를 따로 만들고 마지막에 결합하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p17_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p17",
+      "level": 2,
+      "textId": "hint_p17_h2",
+      "text": "결함 입력이 신뢰된 이유는 유령 객체와 검증 제거가 함께 있었기 때문입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p17_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p17",
+      "level": 3,
+      "textId": "hint_p17_h3",
+      "text": "정답 연결 7개를 표시합니다. n_fault→n_false_rear; n_override→n_onroad; n_false_rear+n_gate_removed→n_trusted_rear; n_trusted_rear+n_onroad→n_brake_limit; n_brake_limit→n_collision. n_request는 신호 입력선입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p18_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p18",
+      "level": 1,
+      "textId": "hint_p18_h1",
+      "text": "그의 일반적인 경영 방침보다 사고 전에 무엇을 알았는지가 쟁점입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p18_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p18",
+      "level": 2,
+      "textId": "hint_p18_h2",
+      "text": "결합 위험 보고와 그 이후의 결정 기록을 함께 보세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p18_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p18",
+      "level": 3,
+      "textId": "hint_p18_h3",
+      "text": "st620_03에 ev29와 ev30을 제시하세요. KPI ev21은 기여 요인으로만 연결합니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p19_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p19",
+      "level": 1,
+      "textId": "hint_p19_h1",
+      "text": "사후 설명의 책임은 사고 원인과 별도로 입증하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p19_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p19",
+      "level": 2,
+      "textId": "hint_p19_h2",
+      "text": "자료의 출처와 실제 수정 승인 이력을 함께 제시하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p19_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p19",
+      "level": 3,
+      "textId": "hint_p19_h3",
+      "text": "st630_02에 ev36·ev07·ev02를 연결하세요. 결론은 사고 후 정보 왜곡입니다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p20_h1",
+      "scopeType": "puzzle",
+      "scopeId": "p20",
+      "level": 1,
+      "textId": "hint_p20_h1",
+      "text": "사고를 만든 행위와 사고 뒤 설명을 왜곡한 행위를 구분하세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p20_h2",
+      "scopeType": "puzzle",
+      "scopeId": "p20",
+      "level": 2,
+      "textId": "hint_p20_h2",
+      "text": "직접 원인·기여·조직·사후 행위·판단 한계 다섯 구역을 채우세요.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_p20_h3",
+      "scopeType": "puzzle",
+      "scopeId": "p20",
+      "level": 3,
+      "textId": "hint_p20_h3",
+      "text": "직접=제동 제한; 기여=결함·해제·검증 제거·미완료 출시; 조직=상충 KPI·위험 인지 후 운영 유지; 사후=분석표 왜곡; 한계=고의·죄명 미확정.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s000_h1",
+      "scopeType": "scene",
+      "scopeId": "s000",
+      "level": 1,
+      "textId": "hint_scene_s000_h1",
+      "text": "처음 실행은 “새 사건”. 저장이 없으면 이어하기를 비활성화하고 이유를 표시한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s010_h1",
+      "scopeType": "scene",
+      "scopeId": "s010",
+      "level": 1,
+      "textId": "hint_scene_s010_h1",
+      "text": "“다음” 또는 “프롤로그 건너뛰기”를 선택한다. 건너뛰어도 s020의 필수 증거는 동일하게 지급된다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s020_h1",
+      "scopeType": "scene",
+      "scopeId": "s020",
+      "level": 1,
+      "textId": "hint_scene_s020_h1",
+      "text": "사고 기초 기록과 회사 분석표를 한 번씩 연다. 탐문 순서는 다음 화면에서 자유롭게 정할 수 있다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s100_h1",
+      "scopeType": "scene",
+      "scopeId": "s100",
+      "level": 1,
+      "textId": "hint_scene_s100_h1",
+      "text": "미완료 장소 중 현장→승객→회사 순으로 추천하되, 이미 끝낸 장소는 건너뛴다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s110_h1",
+      "scopeType": "scene",
+      "scopeId": "s110",
+      "level": 1,
+      "textId": "hint_scene_s110_h1",
+      "text": "팁 p01을 연다. 숨은 픽셀 찾기를 요구하지 않으며 조사 표시 켜기를 제공한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s120_h1",
+      "scopeType": "scene",
+      "scopeId": "s120",
+      "level": 1,
+      "textId": "hint_scene_s120_h1",
+      "text": "먼저 “촬영한 영상”을 선택해 ev05를 얻고, 증언을 다시 열어 p02를 진행한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s130_h1",
+      "scopeType": "scene",
+      "scopeId": "s130",
+      "level": 1,
+      "textId": "hint_scene_s130_h1",
+      "text": "41%의 생성 조건, 당시 원본, 제동 판단을 질문한 뒤 제출 요구를 확정한다. 이 장면에서 완전한 반박은 아직 불가능하다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s140_h1",
+      "scopeType": "scene",
+      "scopeId": "s140",
+      "level": 1,
+      "textId": "hint_scene_s140_h1",
+      "text": "p03의 세 칸을 채운다. 숫자의 크기가 아니라 생성 과정이 정답 기준이다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s150_h1",
+      "scopeType": "scene",
+      "scopeId": "s150",
+      "level": 1,
+      "textId": "hint_scene_s150_h1",
+      "text": "p04: st150_02에 ev06+ev07. 성공 이후 새로 들어오는 ev08·ev09를 확인한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s160_h1",
+      "scopeType": "scene",
+      "scopeId": "s160",
+      "level": 1,
+      "textId": "hint_scene_s160_h1",
+      "text": "p05의 카드 정렬 후 “약한 제동 뒤 강한 제동”을 선택한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s170_h1",
+      "scopeType": "scene",
+      "scopeId": "s170",
+      "level": 1,
+      "textId": "hint_scene_s170_h1",
+      "text": "“제동 실행 경로 조사”를 선택한다. 이후 세 조사 지점을 원하는 순서로 방문한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s200_h1",
+      "scopeType": "scene",
+      "scopeId": "s200",
+      "level": 1,
+      "textId": "hint_scene_s200_h1",
+      "text": "미완료 s210→s220→s230 순으로 안내한다. 자료가 없는 상태에서는 후속 결론을 미리 말하지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s210_h1",
+      "scopeType": "scene",
+      "scopeId": "s210",
+      "level": 1,
+      "textId": "hint_scene_s210_h1",
+      "text": "p06에서 요청값이 처음 바뀐 모듈을 선택한다. INVALID는 수첩에 기록되며 즉시 최종 원인을 확정하지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s220_h1",
+      "scopeType": "scene",
+      "scopeId": "s220",
+      "level": 1,
+      "textId": "hint_scene_s220_h1",
+      "text": "p07에서 T-2.0~T-0.3 구간을 선택하고 두 영상과 레이더 자료를 연결한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s230_h1",
+      "scopeType": "scene",
+      "scopeId": "s230",
+      "level": 1,
+      "textId": "hint_scene_s230_h1",
+      "text": "p08에서 세 문서를 시간순으로 배치하고 최종 승인 상태를 “철회”로 표시한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s240_h1",
+      "scopeType": "scene",
+      "scopeId": "s240",
+      "level": 1,
+      "textId": "hint_scene_s240_h1",
+      "text": "세 사실을 확인한 뒤 “운행 상태 변경 이력 요청”을 선택한다. 아직 최종 인과판은 열리지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s300_h1",
+      "scopeType": "scene",
+      "scopeId": "s300",
+      "level": 1,
+      "textId": "hint_scene_s300_h1",
+      "text": "“운행팀장 면담”을 선택한다. 후속 통계 화면은 첫 면담 뒤 해금된다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s310_h1",
+      "scopeType": "scene",
+      "scopeId": "s310",
+      "level": 1,
+      "textId": "hint_scene_s310_h1",
+      "text": "p09: st310_02에 ev19+ev18. 성공 후 “운영 통계”를 연다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s320_h1",
+      "scopeType": "scene",
+      "scopeId": "s320",
+      "level": 1,
+      "textId": "hint_scene_s320_h1",
+      "text": "p10 정답은 “노출 조건이 같다는 근거가 없다”. 가동률 문서도 열어 조사 수첩에 보존한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s330_h1",
+      "scopeType": "scene",
+      "scopeId": "s330",
+      "level": 1,
+      "textId": "hint_scene_s330_h1",
+      "text": "진술의 세 사실을 확인하고 채택한다. 법적 죄명 선택은 없으며, “추가 기술 조사”로 이어진다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s340_h1",
+      "scopeType": "scene",
+      "scopeId": "s340",
+      "level": 1,
+      "textId": "hint_scene_s340_h1",
+      "text": "“운영 승인과 별도로 제어 경계의 실패를 조사한다”를 선택한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s400_h1",
+      "scopeType": "scene",
+      "scopeId": "s400",
+      "level": 1,
+      "textId": "hint_scene_s400_h1",
+      "text": "변경 비교→리뷰→설계 전제→시험 범위 순으로 추천한다. 마지막에는 실제 차량 배포를 확인한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s410_h1",
+      "scopeType": "scene",
+      "scopeId": "s410",
+      "level": 1,
+      "textId": "hint_scene_s410_h1",
+      "text": "p11에서 health_snapshot_validation 경로를 선택한다. 완료 후 승인 이력으로 이동한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s411_h1",
+      "scopeType": "scene",
+      "scopeId": "s411",
+      "level": 1,
+      "textId": "hint_scene_s411_h1",
+      "text": "p12: st411_02에 ev23. 최초 반대와 후속 승인을 모두 읽어야 결론 선택이 열린다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s420_h1",
+      "scopeType": "scene",
+      "scopeId": "s420",
+      "level": 1,
+      "textId": "hint_scene_s420_h1",
+      "text": "p13에서 ev25의 전제와 ev18의 수동 해제를 연결한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s430_h1",
+      "scopeType": "scene",
+      "scopeId": "s430",
+      "level": 1,
+      "textId": "hint_scene_s430_h1",
+      "text": "p14에서 사고 조건 네 가지가 겹치는 미검증 행을 선택한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s440_h1",
+      "scopeType": "scene",
+      "scopeId": "s440",
+      "level": 1,
+      "textId": "hint_scene_s440_h1",
+      "text": "p15의 설계→설치→조건 연결을 완료한 뒤 RISK-20321016 제출 요청을 누른다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s450_h1",
+      "scopeType": "scene",
+      "scopeId": "s450",
+      "level": 1,
+      "textId": "hint_scene_s450_h1",
+      "text": "보고 시각, 확인 발언, 운영 유지 결정을 각각 눌러 쟁점표에 등록한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s460_h1",
+      "scopeType": "scene",
+      "scopeId": "s460",
+      "level": 1,
+      "textId": "hint_scene_s460_h1",
+      "text": "“보존 입력 대조 시험”을 시작한다. 실제 도로 시뮬레이터나 물리엔진 구현은 요구하지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s500_h1",
+      "scopeType": "scene",
+      "scopeId": "s500",
+      "level": 1,
+      "textId": "hint_scene_s500_h1",
+      "text": "미완료 필수 조사 s510→s540 순으로 안내한다. 선택 조사는 필수 경로에 넣지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s510_h1",
+      "scopeType": "scene",
+      "scopeId": "s510",
+      "level": 1,
+      "textId": "hint_scene_s510_h1",
+      "text": "p16에서 역사적 조건·검증 복원·배차 차단을 각각 한 번 실행하고 결과와 가정을 확인한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s520_h1",
+      "scopeType": "scene",
+      "scopeId": "s520",
+      "level": 1,
+      "textId": "hint_scene_s520_h1",
+      "text": "대화를 마치면 보충 진술을 획득한다. 이 장면은 선택 조사이며 건너뛰어도 주사건에 불이익이 없다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s530_h1",
+      "scopeType": "scene",
+      "scopeId": "s530",
+      "level": 1,
+      "textId": "hint_scene_s530_h1",
+      "text": "사진 자료의 수신 여부를 선택한다. 두 선택 모두 정상 진행이며 감정 평가 점수는 없다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s540_h1",
+      "scopeType": "scene",
+      "scopeId": "s540",
+      "level": 1,
+      "textId": "hint_scene_s540_h1",
+      "text": "원본 초안, 표기 삭제, 최종 승인 행을 확인한다. 문서만으로 바로 범인 체포 장면을 만들지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s550_h1",
+      "scopeType": "scene",
+      "scopeId": "s550",
+      "level": 1,
+      "textId": "hint_scene_s550_h1",
+      "text": "필수 두 조사가 끝났으면 “최종 심리 시작”. 선택 조사 미완료는 경고가 아니라 안내만 한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s600_h1",
+      "scopeType": "scene",
+      "scopeId": "s600",
+      "level": 1,
+      "textId": "hint_scene_s600_h1",
+      "text": "“사고 재구성”으로 이동한다. 이 시점부터 세 심문 사이에서도 증거책과 저장을 사용할 수 있다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s610_h1",
+      "scopeType": "scene",
+      "scopeId": "s610",
+      "level": 1,
+      "textId": "hint_scene_s610_h1",
+      "text": "p17 정답 표시로 7개 인과 연결과 1개 신호선을 볼 수 있다. 자동해결은 같은 edge 명령을 순차 실행한다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s620_h1",
+      "scopeType": "scene",
+      "scopeId": "s620",
+      "level": 1,
+      "textId": "hint_scene_s620_h1",
+      "text": "p18: st620_03에 ev29+ev30. KPI만으로는 통과되지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s630_h1",
+      "scopeType": "scene",
+      "scopeId": "s630",
+      "level": 1,
+      "textId": "hint_scene_s630_h1",
+      "text": "p19: st630_02에 ev36+ev07+ev02. 올바른 책임 구역은 “사고 후 정보 왜곡”이다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s640_h1",
+      "scopeType": "scene",
+      "scopeId": "s640",
+      "level": 1,
+      "textId": "hint_scene_s640_h1",
+      "text": "p20의 다섯 구역을 완성한다. “모두 같은 책임”이나 “아무도 책임 없음”은 수정 피드백을 받는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s650_h1",
+      "scopeType": "scene",
+      "scopeId": "s650",
+      "level": 1,
+      "textId": "hint_scene_s650_h1",
+      "text": "다음으로 진행하거나 재구성 재생을 건너뛴다. 보고서 결과는 이미 확정되어 바뀌지 않는다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s700_h1",
+      "scopeType": "scene",
+      "scopeId": "s700",
+      "level": 1,
+      "textId": "hint_scene_s700_h1",
+      "text": "응답의 우선순위만 고른다. 유족에게 잘 대답했는지 평가하는 점수나 다른 진실 엔딩은 없다.",
+      "focusTarget": ""
+    },
+    {
+      "id": "hint_scene_s710_h1",
+      "scopeType": "scene",
+      "scopeId": "s710",
+      "level": 1,
+      "textId": "hint_scene_s710_h1",
+      "text": "사건 기록을 열람하거나 타이틀로 돌아간다. 다음 에피소드 콘텐츠는 이번 개발 범위에 없다.",
+      "focusTarget": ""
+    }
+  ]
+}

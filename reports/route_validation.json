@@ -1,0 +1,229 @@
+{
+  "ok": true,
+  "routeCount": 37,
+  "routes": [
+    {
+      "name": "s100_order_s110_s120_s130",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s100_order_s110_s130_s120",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s100_order_s120_s110_s130",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s100_order_s120_s130_s110",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s100_order_s130_s110_s120",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s100_order_s130_s120_s110",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s200_order_s210_s220_s230",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s200_order_s210_s230_s220",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s200_order_s220_s210_s230",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s200_order_s220_s230_s210",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s200_order_s230_s210_s220",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s200_order_s230_s220_s210",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s410_s411_s420_s430",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s410_s411_s430_s420",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s410_s420_s411_s430",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s410_s420_s430_s411",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s410_s430_s411_s420",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s410_s430_s420_s411",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s420_s410_s411_s430",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s420_s410_s430_s411",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s420_s430_s410_s411",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s430_s410_s411_s420",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s430_s410_s420_s411",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s400_order_s430_s420_s410_s411",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s510-s540_opt_none",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s510-s540_opt_s520",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s510-s540_opt_s530",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s510-s540_opt_s520-s530",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s540-s510_opt_none",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s540-s510_opt_s520",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s540-s510_opt_s530",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_req_s540-s510_opt_s520-s530",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_optional_s520_full",
+      "ok": true,
+      "finalEvidenceCount": 35,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_optional_s530_accept",
+      "ok": true,
+      "finalEvidenceCount": 35,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "s500_optional_both",
+      "ok": true,
+      "finalEvidenceCount": 36,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "canonical_13_1",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    },
+    {
+      "name": "canonical_save_load_3pt",
+      "ok": true,
+      "finalEvidenceCount": 34,
+      "finalPuzzleCount": 20
+    }
+  ],
+  "errors": []
+}

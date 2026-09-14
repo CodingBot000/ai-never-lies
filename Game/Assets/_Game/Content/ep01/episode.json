@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "episode": {
+    "id": "ep01",
+    "contentVersion": "ep01.v1.0.0",
+    "title": "AI는 거짓말을 하지 않는다",
+    "subtitle": "Episode 01 — 1.8초 전의 명령",
+    "startSceneId": "s000",
+    "saveSchemaVersion": 1,
+    "artContractVersion": "art.v1",
+    "requiredPuzzleIds": [
+      "p01", "p02", "p03", "p04", "p05", "p06", "p07", "p08", "p09", "p10",
+      "p11", "p12", "p13", "p14", "p15", "p16", "p17", "p18", "p19", "p20"
+    ],
+    "optionalSceneIds": ["s520", "s530"]
+  }
+}

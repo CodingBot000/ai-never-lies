@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "episodeId": "ep01",
+  "sourceMasterPlan": "docs/00_MASTER_PLAN.md",
+  "sourceInstruction": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+  "sourceTool": "OpenAI built-in image_gen",
+  "assetCount": 54,
+  "promptSet": {
+    "style": "cinematic Korean investigative visual novel, restrained realistic digital painting, cool blue-gray palette, controlled contrast",
+    "globalAvoid": "no readable text, no logos, no UI, no watermark, no captions, no gore, no invented damage",
+    "alphaRule": "portraits are transparent RGBA; variants inherit the approved base silhouette alpha",
+    "assetPrompts": "per-asset prompt blocks in docs/01_IMAGE_GENERATION_INSTRUCTIONS.md"
+  },
+  "assets": [
+    {
+      "id": "bg_bureau_night",
+      "path": "ep01/backgrounds/bg_bureau_night.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_interview_room",
+      "path": "ep01/backgrounds/bg_interview_room.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_neovia_meeting",
+      "path": "ep01/backgrounds/bg_neovia_meeting.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_hearing_room",
+      "path": "ep01/backgrounds/bg_hearing_room.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_crosswalk_rain",
+      "path": "ep01/backgrounds/bg_crosswalk_rain.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_crosswalk_dawn",
+      "path": "ep01/backgrounds/bg_crosswalk_dawn.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_maintenance_bay",
+      "path": "ep01/backgrounds/bg_maintenance_bay.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_development_lab",
+      "path": "ep01/backgrounds/bg_development_lab.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_operations_room",
+      "path": "ep01/backgrounds/bg_operations_room.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "bg_hearing_corridor",
+      "path": "ep01/backgrounds/bg_hearing_corridor.png",
+      "kind": "background",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_nari_neutral",
+      "path": "ep01/portraits/chr_nari_neutral.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_nari_distressed",
+      "path": "ep01/portraits/chr_nari_distressed.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_nari_remembering",
+      "path": "ep01/portraits/chr_nari_remembering.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_han_composed",
+      "path": "ep01/portraits/chr_han_composed.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_han_guarded",
+      "path": "ep01/portraits/chr_han_guarded.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_han_strained",
+      "path": "ep01/portraits/chr_han_strained.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_han_admitting",
+      "path": "ep01/portraits/chr_han_admitting.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_min_defensive",
+      "path": "ep01/portraits/chr_min_defensive.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_min_angry",
+      "path": "ep01/portraits/chr_min_angry.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_min_cornered",
+      "path": "ep01/portraits/chr_min_cornered.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_min_resigned",
+      "path": "ep01/portraits/chr_min_resigned.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_yun_firm",
+      "path": "ep01/portraits/chr_yun_firm.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_yun_uneasy",
+      "path": "ep01/portraits/chr_yun_uneasy.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_yun_resolved",
+      "path": "ep01/portraits/chr_yun_resolved.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_park_analytical",
+      "path": "ep01/portraits/chr_park_analytical.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_park_defensive",
+      "path": "ep01/portraits/chr_park_defensive.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_park_shaken",
+      "path": "ep01/portraits/chr_park_shaken.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_park_regretful",
+      "path": "ep01/portraits/chr_park_regretful.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_lee_confident",
+      "path": "ep01/portraits/chr_lee_confident.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_lee_irritated",
+      "path": "ep01/portraits/chr_lee_irritated.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_lee_shaken",
+      "path": "ep01/portraits/chr_lee_shaken.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_seo_calm",
+      "path": "ep01/portraits/chr_seo_calm.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_seo_stern",
+      "path": "ep01/portraits/chr_seo_stern.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_seo_unsettled",
+      "path": "ep01/portraits/chr_seo_unsettled.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_seo_accepting",
+      "path": "ep01/portraits/chr_seo_accepting.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_cho_neutral",
+      "path": "ep01/portraits/chr_cho_neutral.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_cho_firm",
+      "path": "ep01/portraits/chr_cho_firm.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_mira_reserved",
+      "path": "ep01/portraits/chr_mira_reserved.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "chr_mira_grief",
+      "path": "ep01/portraits/chr_mira_grief.png",
+      "kind": "portrait",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_front_base",
+      "path": "ep01/evidence/ev_front_base.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_rear_empty",
+      "path": "ep01/evidence/ev_rear_empty.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_junction_wide",
+      "path": "ep01/evidence/ev_junction_wide.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_cabin_base",
+      "path": "ep01/evidence/ev_cabin_base.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_radar_module",
+      "path": "ep01/evidence/ev_radar_module.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_sensor_mount",
+      "path": "ep01/evidence/ev_sensor_mount.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_vehicle_side",
+      "path": "ep01/evidence/ev_vehicle_side.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_victim_photo",
+      "path": "ep01/evidence/ev_victim_photo.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_phone_base",
+      "path": "ep01/evidence/ev_phone_base.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "ev_service_workbench",
+      "path": "ep01/evidence/ev_service_workbench.png",
+      "kind": "evidence",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "cg_ride_before",
+      "path": "ep01/cg/cg_ride_before.png",
+      "kind": "cg",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "cg_emergency_before",
+      "path": "ep01/cg/cg_emergency_before.png",
+      "kind": "cg",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "cg_scene_after",
+      "path": "ep01/cg/cg_scene_after.png",
+      "kind": "cg",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "cg_hearing_wide",
+      "path": "ep01/cg/cg_hearing_wide.png",
+      "kind": "cg",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    },
+    {
+      "id": "cg_epilogue_window",
+      "path": "ep01/cg/cg_epilogue_window.png",
+      "kind": "cg",
+      "status": "generated_and_reviewed",
+      "sourceTool": "OpenAI built-in image_gen",
+      "promptReference": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
+      "promptNormalization": "문서의 asset별 프롬프트 + 공통 무텍스트·무UI·일관 스타일·안전한 여백 제약"
+    }
+  ]
+}
