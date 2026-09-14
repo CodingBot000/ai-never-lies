@@ -3,6 +3,7 @@ import type { GameSessionApi } from '../../app/useGameSession'
 import type { EvidenceDefinitionDto } from '../../core/content/dto'
 import { EvidenceImage } from '../../shared/assets/EvidenceImage'
 import { assetRegions } from '../../shared/assets/assetCatalog'
+import { overlaysForEvidence } from '../../shared/assets/evidenceOverlays'
 import { Modal } from '../../shared/components/Modal'
 import './evidence.css'
 
@@ -74,6 +75,7 @@ export function EvidencePanel({ api, onClose }: EvidencePanelProps) {
                 <button
                   type="button"
                   className={`anl-evidence__item${selected?.id === evidence.id ? ' anl-evidence__item--active' : ''}`}
+                  data-evidence-id={evidence.id}
                   onClick={() => selectEvidence(evidence)}
                 >
                   <span>{evidence.title}</span>
@@ -112,6 +114,7 @@ export function EvidencePanel({ api, onClose }: EvidencePanelProps) {
                     assetId={selected.imageAssetId}
                     alt={selected.title}
                     regions={assetRegions(selected.imageAssetId)}
+                    overlays={overlaysForEvidence(selected.id)}
                   />
                   {assetRegions(selected.imageAssetId).length > 0 ? (
                     <p className="anl-evidence__note">{index.ui('ui.frames_note')}</p>
@@ -121,7 +124,13 @@ export function EvidencePanel({ api, onClose }: EvidencePanelProps) {
               {selected.id === 'ev35' ? (
                 <div className="anl-evidence__image">
                   <p className="anl-evidence__meta">메시지</p>
-                  <EvidenceImage assetId="ev_phone_base" alt="임도현의 마지막 메시지" showRegions={false} />
+                  <EvidenceImage
+                    assetId="ev_phone_base"
+                    alt="임도현의 마지막 메시지"
+                    regions={assetRegions('ev_phone_base')}
+                    overlays={overlaysForEvidence('ev35_message')}
+                    showRegions={false}
+                  />
                 </div>
               ) : null}
               <dl className="anl-evidence__facts">

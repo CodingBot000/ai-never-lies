@@ -1,16 +1,16 @@
 {
-  "generatedAtUtc": "2026-09-14T07:53:20Z",
+  "generatedAtUtc": "2026-09-14T17:18:23Z",
   "masterDocumentSha256": {
     "path": "docs/00_MASTER_PLAN.md",
-    "actual": "9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786"
+    "actual": "00790af9733c81b7dbc2b3dfcb0c913a27aa1d82880276f8ff303e05bd7d1dce"
   },
   "artInstructionSha256": {
     "path": "docs/01_IMAGE_GENERATION_INSTRUCTIONS.md",
-    "actual": "58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38"
+    "actual": "6cc43d420c3d00c8d58987f5c57a780d54d0f251fa61c0dc7cc355b38ec435af"
   },
   "codeInstructionSha256": {
     "path": "docs/02_CODE_GENERATION_INSTRUCTIONS.md",
-    "actual": "4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951"
+    "actual": "8fcd66f7dc11cb24100f6d315e946501bcd90d7bf12016018faa6f3c83ee04e1"
   },
   "manifestSha256": {
     "path": "handoff/art/manifest.lock.json",
@@ -26,10 +26,10 @@
     "approvedAssetCount": 54,
     "manifestPath": "handoff/art/manifest.lock.json",
     "manifestSha256": "8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3",
-    "masterDocumentSha256": "9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786",
-    "artInstructionSha256": "58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38",
-    "codeInstructionSha256": "4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951",
-    "verifiedAtUtc": "2026-09-14T07:38:19Z",
+    "masterDocumentSha256": "00790af9733c81b7dbc2b3dfcb0c913a27aa1d82880276f8ff303e05bd7d1dce",
+    "artInstructionSha256": "6cc43d420c3d00c8d58987f5c57a780d54d0f251fa61c0dc7cc355b38ec435af",
+    "codeInstructionSha256": "8fcd66f7dc11cb24100f6d315e946501bcd90d7bf12016018faa6f3c83ee04e1",
+    "verifiedAtUtc": "2026-09-14T11:43:39Z",
     "verificationReport": "handoff/art/ART_REVIEW.md",
     "blockers": []
   },
@@ -62,17 +62,17 @@
     {
       "name": "doc.masterDocumentSha256",
       "ok": true,
-      "detail": "expected 9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786 actual 9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786"
+      "detail": "expected 00790af9733c81b7dbc2b3dfcb0c913a27aa1d82880276f8ff303e05bd7d1dce actual 00790af9733c81b7dbc2b3dfcb0c913a27aa1d82880276f8ff303e05bd7d1dce"
     },
     {
       "name": "doc.artInstructionSha256",
       "ok": true,
-      "detail": "expected 58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38 actual 58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38"
+      "detail": "expected 6cc43d420c3d00c8d58987f5c57a780d54d0f251fa61c0dc7cc355b38ec435af actual 6cc43d420c3d00c8d58987f5c57a780d54d0f251fa61c0dc7cc355b38ec435af"
     },
     {
       "name": "doc.codeInstructionSha256",
       "ok": true,
-      "detail": "expected 4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951 actual 4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951"
+      "detail": "expected 8fcd66f7dc11cb24100f6d315e946501bcd90d7bf12016018faa6f3c83ee04e1 actual 8fcd66f7dc11cb24100f6d315e946501bcd90d7bf12016018faa6f3c83ee04e1"
     },
     {
       "name": "manifest.sha256",
@@ -123,7 +123,7 @@
   "runtimePngCount": 54,
   "validateArt": {
     "returncode": 0,
-    "stdout": "{\"ok\": true, \"checked\": 54, \"issues\": 0, \"report\": \"/Users/switch/Development/Game/WebGame/ai-never-lies/handoff/art/ART_REVIEW.md\"}",
+    "stdout": "{\"ok\": true, \"checked\": 54, \"issues\": 0, \"report\": \"/Users/switch/Development/game/webgame/ai-never-lies/handoff/art/ART_REVIEW.md\"}",
     "stderr": ""
   },
   "ok": true,

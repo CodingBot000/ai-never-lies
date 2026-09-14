@@ -4,6 +4,7 @@ import type { EvidenceDefinitionDto, PuzzleDefinitionDto, PuzzleDraftDto, Region
 import type { ContentIndex } from '../../core/content/contentIndex'
 import { EvidenceImage } from '../../shared/assets/EvidenceImage'
 import { assetRegions } from '../../shared/assets/assetCatalog'
+import { investigationOverlays } from '../../shared/assets/evidenceOverlays'
 import { Modal } from '../../shared/components/Modal'
 import './puzzle.css'
 
@@ -69,7 +70,7 @@ function HotspotWidget({ api, puzzle, feedback }: WidgetProps) {
     .filter((region): region is NonNullable<typeof region> => region !== null)
 
   return (
-    <div className="anl-puzzle anl-puzzle--investigation">
+    <div className="anl-puzzle anl-puzzle--investigation" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__canvas" onClick={() => setMessage(index.ui('ui.region_not_related'))}>
         <EvidenceImage
           assetId={bg}
@@ -77,6 +78,7 @@ function HotspotWidget({ api, puzzle, feedback }: WidgetProps) {
           regions={regions}
           activeRegionIds={visited}
           showRegions={showRegions}
+          overlays={showRegions ? investigationOverlays(bg) : []}
           onRegionClick={(regionId) => {
             const result = run('InspectRegion', { targetId: regionId })
             if (result?.message) {
@@ -119,7 +121,7 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
   const testimonies = index.sceneTestimonies(puzzle.sceneId)
 
   return (
-    <div className="anl-puzzle anl-puzzle--three">
+    <div className="anl-puzzle anl-puzzle--three" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
         <h2 className="anl-puzzle__hint">{index.ui('ui.statement_select')}</h2>
         <ul className="anl-statement-list">
@@ -130,6 +132,7 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
                 <button
                   type="button"
                   className={`anl-statement${selected ? ' anl-statement--active' : ''}`}
+                  data-statement-id={statement.id}
                   onClick={() => run('SelectStatement', { targetId: statement.id })}
                 >
                   <strong>{statement.speaker}</strong>
@@ -165,6 +168,7 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
         <button
           type="button"
           className="anl-button anl-button--small"
+          data-action="open-evidence-picker"
           onClick={() => setPicker(true)}
           disabled={(draft?.selectedEvidenceIds.length ?? 0) >= 3}
         >
@@ -206,7 +210,7 @@ function SlotAssignWidget({ api, puzzle, feedback }: WidgetProps) {
   }
 
   return (
-    <div className="anl-puzzle anl-puzzle--two">
+    <div className="anl-puzzle anl-puzzle--two" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
         <PuzzleHeader api={api} puzzle={puzzle} />
         <ul className="anl-slot-list">
@@ -215,6 +219,7 @@ function SlotAssignWidget({ api, puzzle, feedback }: WidgetProps) {
               <button
                 type="button"
                 className={`anl-slot${selectedSlot === pair.key ? ' anl-slot--active' : ''}`}
+                data-slot={pair.key}
                 onClick={() => setSelectedSlot(pair.key)}
               >
                 <span className="anl-slot__key">{slotLabel(pair.key)}</span>
@@ -232,6 +237,7 @@ function SlotAssignWidget({ api, puzzle, feedback }: WidgetProps) {
               key={value}
               type="button"
               className={`anl-candidate${Object.values(placedValues(draft)).includes(value) ? ' anl-candidate--placed' : ''}`}
+              data-value={value}
               onClick={() => {
                 if (!selectedSlot) {
                   setMessage('슬롯을 먼저 선택하십시오.')
@@ -271,7 +277,7 @@ function OrderingWidget({ api, puzzle, index, feedback }: WidgetProps & { index:
     puzzle.type === 'timeline_order' ? 'ui.timeline_interpret' : puzzle.type === 'chronology' ? '최종 상태' : '결론'
 
   return (
-    <div className="anl-puzzle anl-puzzle--three">
+    <div className="anl-puzzle anl-puzzle--three" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
         <h2 className="anl-puzzle__hint">{index.ui('ui.causal_cards')}</h2>
         <div className="anl-candidate-list">
@@ -280,6 +286,7 @@ function OrderingWidget({ api, puzzle, index, feedback }: WidgetProps & { index:
               key={id}
               type="button"
               className={`anl-candidate${placed.includes(id) ? ' anl-candidate--placed' : ''}`}
+              data-value={id}
               onClick={() => run('PlaceCard', { slot: 'order', value: id })}
             >
               {cardLabel(index, id)}
@@ -337,7 +344,7 @@ function CrossCameraWidget({ api, puzzle, index, feedback }: WidgetProps & { ind
   ]
 
   return (
-    <div className="anl-puzzle anl-puzzle--two">
+    <div className="anl-puzzle anl-puzzle--two" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
         <PuzzleHeader api={api} puzzle={puzzle} />
         <h2 className="anl-puzzle__hint">{index.ui('ui.select_time')}</h2>
@@ -347,6 +354,7 @@ function CrossCameraWidget({ api, puzzle, index, feedback }: WidgetProps & { ind
               key={window.id}
               type="button"
               className={`anl-candidate${draft?.comparisonWindowId === window.id ? ' anl-candidate--placed' : ''}`}
+              data-window-id={window.id}
               onClick={() => run('SelectComparisonWindow', { targetId: window.id })}
             >
               {window.label}
@@ -357,7 +365,12 @@ function CrossCameraWidget({ api, puzzle, index, feedback }: WidgetProps & { ind
       <div className="anl-puzzle__col">
         <h2 className="anl-puzzle__hint">{index.ui('ui.compare_window')}</h2>
         <SelectedEvidence api={api} puzzle={puzzle} index={index} />
-        <button type="button" className="anl-button anl-button--small" onClick={() => setPicker(true)}>
+        <button
+          type="button"
+          className="anl-button anl-button--small"
+          data-action="open-evidence-picker"
+          onClick={() => setPicker(true)}
+        >
           {index.ui('ui.compare_add')}
         </button>
         <SubmitButton api={api} feedback={feedback} puzzle={puzzle} />
@@ -394,7 +407,7 @@ function ChoiceWidget({ api, puzzle, feedback }: WidgetProps) {
 
   if (puzzle.type === 'diff_select') {
     return (
-      <div className="anl-puzzle anl-puzzle--diff">
+      <div className="anl-puzzle anl-puzzle--diff" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
         <PuzzleHeader api={api} puzzle={puzzle} />
         <div className="anl-diff">
           <div>
@@ -432,6 +445,7 @@ return emergency_request`}</pre>
           <button
             type="button"
             className={`anl-candidate${(draft?.choiceIds ?? []).includes('health_snapshot_validation') ? ' anl-candidate--placed' : ''}`}
+            data-choice-id="health_snapshot_validation"
             onClick={() => run('SelectChoice', { targetId: 'health_snapshot_validation' })}
           >
             {choiceLabel('health_snapshot_validation')}
@@ -439,6 +453,7 @@ return emergency_request`}</pre>
           <button
             type="button"
             className={`anl-candidate${(draft?.choiceIds ?? []).includes('scalar_compare_cost_21ms') ? ' anl-candidate--placed' : ''}`}
+            data-choice-id="scalar_compare_cost_21ms"
             onClick={() => run('SelectChoice', { targetId: 'scalar_compare_cost_21ms' })}
           >
             {choiceLabel('scalar_compare_cost_21ms')}
@@ -446,6 +461,7 @@ return emergency_request`}</pre>
           <button
             type="button"
             className={`anl-candidate${(draft?.choiceIds ?? []).includes('snapshot_sync_cost') ? ' anl-candidate--placed' : ''}`}
+            data-choice-id="snapshot_sync_cost"
             onClick={() => run('SelectChoice', { targetId: 'snapshot_sync_cost' })}
           >
             {choiceLabel('snapshot_sync_cost')}
@@ -465,7 +481,7 @@ return emergency_request`}</pre>
       { key: 'condition', options: matrix.dimensions.condition },
     ]
     return (
-      <div className="anl-puzzle anl-puzzle--matrix">
+      <div className="anl-puzzle anl-puzzle--matrix" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
         <PuzzleHeader api={api} puzzle={puzzle} />
         <div className="anl-matrix__dims">
           {dims.map((dim) => (
@@ -477,6 +493,8 @@ return emergency_request`}</pre>
                     key={option}
                     type="button"
                     className={`anl-candidate${placedValues(draft)[dim.key] === option ? ' anl-candidate--placed' : ''}`}
+                    data-slot={dim.key}
+                    data-value={option}
                     onClick={() => run('PlaceCard', { slot: dim.key, value: option })}
                   >
                     {optionLabel(option)}
@@ -528,14 +546,19 @@ return emergency_request`}</pre>
 
   const options = CHOICE_OPTIONS[puzzle.id] ?? puzzle.correctChoiceIds
   return (
-    <div className="anl-puzzle anl-puzzle--two">
+    <div className="anl-puzzle anl-puzzle--two" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
         <PuzzleHeader api={api} puzzle={puzzle} />
         <ChoiceButtons api={api} choices={options} />
         {puzzle.type === 'assumption_link' ? (
           <>
             <SelectedEvidence api={api} puzzle={puzzle} index={index} />
-            <button type="button" className="anl-button anl-button--small" onClick={() => setPicker(true)}>
+            <button
+              type="button"
+              className="anl-button anl-button--small"
+              data-action="open-evidence-picker"
+              onClick={() => setPicker(true)}
+            >
               반증 자료 선택
             </button>
           </>
@@ -569,7 +592,7 @@ function CounterfactualWidget({ api, puzzle, feedback }: WidgetProps) {
   const results = puzzle.valuePairs
 
   return (
-    <div className="anl-puzzle anl-puzzle--two">
+    <div className="anl-puzzle anl-puzzle--two" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
         <PuzzleHeader api={api} puzzle={puzzle} />
         <h2 className="anl-puzzle__hint">재구성 사례</h2>
@@ -579,6 +602,7 @@ function CounterfactualWidget({ api, puzzle, feedback }: WidgetProps) {
               key={caseId}
               type="button"
               className={`anl-candidate${ran.includes(caseId) ? ' anl-candidate--placed' : ''}`}
+              data-case-id={caseId}
               onClick={() => run('RunCounterfactualCase', { targetId: caseId })}
             >
               {caseLabel(caseId)} {ran.includes(caseId) ? '· 실행됨' : ''}
@@ -622,7 +646,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
   const nodeLabel = (id: string): string => nodes.find((node) => node.id === id)?.label ?? id
 
   return (
-    <div className="anl-puzzle anl-puzzle--causal">
+    <div className="anl-puzzle anl-puzzle--causal" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col anl-puzzle__col--wide">
         <PuzzleHeader api={api} puzzle={puzzle} />
         <h2 className="anl-puzzle__hint">{index.ui('ui.causal_slots')}</h2>
@@ -630,6 +654,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
           <button
             type="button"
             className={`anl-candidate${mode === 'causal' ? ' anl-candidate--placed' : ''}`}
+            data-edge-kind="causal"
             onClick={() => setMode('causal')}
           >
             인과선
@@ -637,6 +662,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
           <button
             type="button"
             className={`anl-candidate${mode === 'signal' ? ' anl-candidate--placed' : ''}`}
+            data-edge-kind="signal"
             onClick={() => setMode('signal')}
           >
             {index.ui('ui.causal_signal')}
@@ -651,6 +677,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
               key={node.id}
               type="button"
               className={`anl-node${connectFrom === node.id ? ' anl-node--active' : ''}`}
+              data-node-id={node.id}
               onClick={() => {
                 if (!connectFrom) {
                   setConnectFrom(node.id)
@@ -679,7 +706,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
             const key = `${edge.from}|${edge.to}|${edge.kind}`
             return (
               <li key={key} className={proofEdge === key ? 'is-active' : ''}>
-                <button type="button" className="anl-edge" onClick={() => setProofEdge(key)}>
+                <button type="button" className="anl-edge" data-edge-key={key} onClick={() => setProofEdge(key)}>
                   <span>
                     {nodeLabel(edge.from)} → {nodeLabel(edge.to)} ({edge.kind})
                   </span>
@@ -705,6 +732,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
           <button
             type="button"
             className="anl-button anl-button--small"
+            data-action="open-edge-proof-picker"
             disabled={!proofEdge}
             onClick={() => setPicker(true)}
           >
@@ -740,9 +768,9 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
   const placements = new Map((draft?.reportPlacements ?? []).map((item) => [item.item, item.section]))
   const sections = [
     { id: 'direct', label: index.ui('ui.report_direct') },
-    { id: 'contribution', label: index.ui('ui.report_contributions') },
+    { id: 'contributions', label: index.ui('ui.report_contributions') },
     { id: 'organizational', label: index.ui('ui.report_organizational') },
-    { id: 'post', label: index.ui('ui.report_post') },
+    { id: 'postIncident', label: index.ui('ui.report_post') },
     { id: 'limit', label: index.ui('ui.report_limit') },
   ]
   const items = [
@@ -755,7 +783,7 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
   ]
 
   return (
-    <div className="anl-puzzle anl-puzzle--report">
+    <div className="anl-puzzle anl-puzzle--report" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <PuzzleHeader api={api} puzzle={puzzle} />
       <div className="anl-report__sections">
         {sections.map((section) => (
@@ -768,6 +796,7 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
                   key={item}
                   type="button"
                   className="anl-candidate anl-candidate--placed"
+                  data-report-item={item}
                   onClick={() => run('PlaceCard', { slot: section.id, value: item })}
                 >
                   {itemLabel(item)}
@@ -784,6 +813,7 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
               key={item}
               type="button"
               className={`anl-candidate${placements.has(item) ? ' anl-candidate--placed' : ''}`}
+              data-report-item={item}
               onClick={() => setAssignItem(item)}
             >
               {itemLabel(item)}
@@ -800,6 +830,7 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
                 key={section.id}
                 type="button"
                 className="anl-candidate"
+                data-report-section={section.id}
                 onClick={() => {
                   run('PlaceCard', { slot: section.id, value: assignItem })
                   setAssignItem('')
@@ -824,7 +855,12 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
               <span>
                 {itemLabel(proof.item)} · 근거 {ids.length}/3
               </span>
-              <button type="button" className="anl-button anl-button--small" onClick={() => setProofItem(proof.item)}>
+              <button
+                type="button"
+                className="anl-button anl-button--small"
+                data-proof-item={proof.item}
+                onClick={() => setProofItem(proof.item)}
+              >
                 근거 선택
               </button>
             </div>
@@ -879,6 +915,7 @@ function ChoiceButtons({ api, choices }: { api: ScreenProps['api']; choices: str
             key={choiceId}
             type="button"
             className={`anl-candidate${selected ? ' anl-candidate--placed' : ''}`}
+            data-choice-id={choiceId}
             onClick={() => run('SelectChoice', { targetId: choiceId })}
           >
             {choiceLabel(choiceId)}
@@ -938,6 +975,7 @@ function SubmitButton({
       <button
         type="button"
         className="anl-button anl-button--primary"
+        data-action="submit-puzzle"
         onClick={() => {
           const result = run(command)
           if (result) {
@@ -999,6 +1037,7 @@ export function EvidencePickerModal({
               <label className="anl-check">
                 <input
                   type="checkbox"
+                  data-evidence-id={evidence.id}
                   checked={checked}
                   onChange={() => {
                     setSelected((previous) => {
@@ -1015,7 +1054,12 @@ export function EvidencePickerModal({
         })}
       </ul>
       <div className="anl-picker-actions">
-        <button type="button" className="anl-button anl-button--primary" onClick={() => onConfirm(selected)}>
+        <button
+          type="button"
+          className="anl-button anl-button--primary"
+          data-action="confirm-evidence"
+          onClick={() => onConfirm(selected)}
+        >
           확인
         </button>
         <button type="button" className="anl-button" onClick={() => setSelected([])}>

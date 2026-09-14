@@ -1,4 +1,5 @@
 import { assetUrl, getAsset, type AssetRegion } from './assetCatalog'
+import { regionLabel, type EvidenceOverlay } from './evidenceOverlays'
 import { regionToRect } from './regionMath'
 import './evidence-image.css'
 
@@ -10,6 +11,7 @@ interface EvidenceImageProps {
   highlightRegionId?: string
   onRegionClick?: (regionId: string) => void
   showRegions?: boolean
+  overlays?: EvidenceOverlay[]
 }
 
 /** asset ID→URL 카탈로그로만 이미지를 표시하고, region 오버레이는 CSS 픽셀로 계산한다. */
@@ -21,6 +23,7 @@ export function EvidenceImage({
   highlightRegionId,
   onRegionClick,
   showRegions = true,
+  overlays = [],
 }: EvidenceImageProps) {
   const entry = getAsset(assetId)
   const url = assetUrl(assetId)
@@ -35,7 +38,11 @@ export function EvidenceImage({
   const displayed = { x: 0, y: 0, width: 100, height: 100 }
 
   return (
-    <div className="anl-evidence-image" style={{ aspectRatio: `${entry.width} / ${entry.height}` }}>
+    <div
+      className="anl-evidence-image"
+      data-asset-id={assetId}
+      style={{ aspectRatio: `${entry.width} / ${entry.height}` }}
+    >
       <img src={url} alt={alt} width={entry.width} height={entry.height} />
       {showRegions
         ? regions.map((region) => {
@@ -54,13 +61,14 @@ export function EvidenceImage({
                 key={region.regionId}
                 type="button"
                 className={className}
+                data-region-id={region.regionId}
                 style={{
                   left: `${rect.x}%`,
                   top: `${rect.y}%`,
                   width: `${rect.width}%`,
                   height: `${rect.height}%`,
                 }}
-                aria-label={`조사 지점 ${region.regionId}`}
+                aria-label={`조사 지점 ${regionLabel(assetId, region.regionId)}`}
                 onClick={(event) => {
                   event.stopPropagation()
                   onRegionClick?.(region.regionId)
@@ -69,6 +77,32 @@ export function EvidenceImage({
             )
           })
         : null}
+      <div className="anl-image-overlays" aria-label="이미지 판독 정보">
+        {overlays.map((overlay) => {
+          const sourceRect = overlay.regionId
+            ? regions.find((region) => region.regionId === overlay.regionId)
+            : overlay.rect
+          if (!sourceRect) return null
+          const rect = regionToRect(displayed, sourceRect)
+          return (
+            <div
+              key={overlay.id}
+              className={`anl-image-overlay anl-image-overlay--${overlay.variant} anl-image-overlay--${overlay.tone}`}
+              data-annotation-id={overlay.id}
+              style={{
+                left: `${rect.x}%`,
+                top: `${rect.y}%`,
+                width: `${rect.width}%`,
+                height: `${rect.height}%`,
+              }}
+            >
+              {overlay.lines.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

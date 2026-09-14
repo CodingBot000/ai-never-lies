@@ -60,6 +60,25 @@ for (const file of files) {
   }
 }
 
+const workerPath = join(distDir, 'sw.js')
+try {
+  const worker = readFileSync(workerPath, 'utf8')
+  const prefix = 'const PRECACHE_RESOURCES = '
+  const start = worker.indexOf(prefix)
+  const end = worker.indexOf('\n\nself.addEventListener', start)
+  if (start < 0 || end < 0) throw new Error('precache 목록을 찾을 수 없음')
+  const resources = JSON.parse(worker.slice(start + prefix.length, end))
+  if (!Array.isArray(resources) || resources.length !== 73) {
+    throw new Error(`precache 파일 수 ${Array.isArray(resources) ? resources.length : 'invalid'} != 73`)
+  }
+  if (!worker.includes('ignoreVary: true')) throw new Error('폰트 Vary 캐시 대응 누락')
+  if (worker.includes('skipWaiting')) throw new Error('열린 탭 캐시를 깨뜨리는 skipWaiting 사용')
+  console.log('PASS: 서비스워커 73개 선캐시·안전한 업데이트 수명주기 확인')
+} catch (error) {
+  console.error(`FAIL: 서비스워커 릴리스 계약 위반: ${String(error)}`)
+  failures += 1
+}
+
 console.log(`검사 파일 ${files.length}개, 총 ${(totalBytes / 1024 / 1024).toFixed(2)}MB`)
 if (failures > 0) {
   console.error(`FAIL: 릴리스 경계 위반 ${failures}건`)

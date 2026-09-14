@@ -1,15 +1,15 @@
 # ANL Web — 《AI는 거짓말을 하지 않는다》 Episode 01
 
-React + TypeScript + Vite 기반의 정적 웹 게임. 서버·로그인·인터넷 연결 없이 완주 가능한 빌드를 목표로 한다.
+React + TypeScript + Vite 기반의 완성형 정적 웹 게임. 최초 production 로드에서 전체 사건 자산을 선캐시하며 이후 인터넷 연결 없이 재실행·완주할 수 있다.
 
-- 콘텐츠 정본: `<root>/content/ep01/` (W2에서 이전)
+- 콘텐츠 정본: `<root>/content/ep01/`
 - 아트 정본: `<root>/art_delivery/runtime/ep01/`, 배포 사본 `web/public/art/ep01/`
 - 지시문: `docs/00_MASTER_PLAN.md`, `docs/01_IMAGE_GENERATION_INSTRUCTIONS.md`, `docs/02_CODE_GENERATION_INSTRUCTIONS.md`, `docs/03_WEB_MIGRATION_AND_CONTINUATION_PLAN.md`
 
 ## 요구 환경
 
 - Node.js 24 이상 (`.nvmrc` 참조), npm 11 이상
-- 브라우저: Chromium 계열(개발·E2E), Safari(수동 QA)
+- 브라우저: Chromium 계열, Safari/WebKit
 - Python 3.9+ (콘텐츠·아트 검증 도구, `.venv-art` 사용)
 
 ## 처음 실행
@@ -27,6 +27,13 @@ npm run typecheck      # tsc -b (strict)
 npm run test:run       # Vitest 단위·통합
 npm run test:coverage  # 커버리지
 npm run test:e2e       # Playwright (npx playwright install chromium 필요)
+npm run test:e2e:webkit
+npm run test:qa:keyboard
+npm run test:qa:puzzles
+npm run test:qa:responsive
+npm run test:qa:overlays
+npm run test:qa:offline
+npm run test:qa       # 위 QA 5종 전체 실행
 npm run build          # production 정적 빌드 -> dist/
 npm run preview        # dist/ 미리보기 http://localhost:4173
 npm run check:release  # dist/ 릴리스 경계 검사 (테스트 지원 문자열 제거 확인)
@@ -51,8 +58,15 @@ VITE_ANL_TEST_TOOLS=1 npm run dev
 
 - 나눔고딕(NanumGothic) Regular/Bold, SIL Open Font License 1.1 — `public/fonts/`, 라이선스 원문 포함
 
-## 알려진 제한 (W1 시점)
+## production 오프라인
 
-- 타이틀·기본 내비게이션까지만 구현되어 있다. 새 게임/이어하기는 개발 상태 화면을 표시한다.
-- 콘텐츠·아트·코어 로직·게임 화면은 W2~W4에서 구현한다.
-- Unity 소스는 W8에서 제거됐다(기준선 태그 `unity-final-20260914`).
+- `npm run build`가 `dist/sw.js`를 생성하고 73개 정적 파일을 버전별 Cache Storage에 선캐시한다.
+- `npm run test:qa:offline`은 production 서버를 연 뒤 네트워크를 차단하고 앱·54개 아트·11개 콘텐츠·폰트를 재요청한다.
+- 서비스워커는 production에서만 등록되며 개발 서버에는 영향을 주지 않는다.
+
+## 현재 상태와 남은 확인
+
+- Episode 01의 43개 장면, 36개 증거, 20개 퍼즐, 선택 분기와 엔딩이 구현됐다.
+- Chromium·WebKit 자동 E2E, 키보드 완주, 150%·모바일 전 화면, 오프라인 재로드가 통과했다.
+- 사람에게 남은 항목은 실제 Safari 육안 QA, 사람 직접 완주 2회, 최종 사용자 승인이다.
+- Unity 소스는 W8에서 제거됐다. 복구 기준선은 태그 `unity-final-20260914`다.

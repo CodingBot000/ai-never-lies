@@ -59,6 +59,8 @@
   --anl-transition: 200ms ease-out;
 
   --anl-font-sans: 'NanumGothic', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --anl-font-body: var(--anl-font-sans);
+  --anl-font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 }
 
 html[data-text-size='125'] {

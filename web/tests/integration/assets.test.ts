@@ -3,6 +3,12 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import generated from '../../src/shared/assets/assetCatalog.generated.json'
 import { loadContent } from '../../src/content/loadContent'
+import {
+  investigationOverlays,
+  overlayAssetForEvidence,
+  overlayDefinitionIds,
+  overlaysForEvidence,
+} from '../../src/shared/assets/evidenceOverlays'
 
 const ROOT = join(process.cwd(), '..')
 const MANIFEST_PATH = join(ROOT, 'handoff', 'art', 'manifest.lock.json')
@@ -68,6 +74,35 @@ describe('아트 카탈로그 계약 (W2)', () => {
         }
       }
     }
+  })
+
+  it('region이 있는 10개 자산에 코드 오버레이와 사람이 읽을 라벨이 연결된다', () => {
+    const regionAssets = Object.values(catalog.assets).filter((entry) => entry.regions.length > 0)
+    expect(regionAssets).toHaveLength(10)
+
+    const contexts = overlayDefinitionIds()
+    expect(contexts).toEqual(['ev01', 'ev03', 'ev05', 'ev06', 'ev12', 'ev13', 'ev14', 'ev15', 'ev16', 'ev35_message'])
+
+    for (const context of contexts) {
+      const assetId = overlayAssetForEvidence(context)
+      expect(assetId, `${context} asset`).toBeTruthy()
+      const entry = assetId ? catalog.assets[assetId] : undefined
+      expect(entry, `${context} catalog entry`).toBeTruthy()
+      for (const overlay of overlaysForEvidence(context)) {
+        expect(overlay.lines.every((line) => line.trim().length > 0), `${context}.${overlay.id} text`).toBe(true)
+        if (overlay.regionId) {
+          expect(entry?.regions.some((region) => region.regionId === overlay.regionId), `${context}.${overlay.regionId}`).toBe(true)
+        } else {
+          expect(overlay.rect, `${context}.${overlay.id} rect`).toBeTruthy()
+        }
+      }
+    }
+
+    expect(investigationOverlays('bg_crosswalk_dawn').map((overlay) => overlay.regionId)).toEqual([
+      'crosswalk',
+      'signal',
+      'vehicle',
+    ])
   })
 })
 

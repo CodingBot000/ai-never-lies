@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
+import { isEditableTarget } from '../keyboard/isEditableTarget'
 import './modal.css'
 
 interface ModalProps {
@@ -24,6 +25,7 @@ export function Modal({ title, onClose, children, wide = false }: ModalProps) {
     ;(focusables[0] ?? dialog)?.focus()
 
     const handleKeyDown = (event: KeyboardEvent): void => {
+      if (isEditableTarget(event.target)) return
       if (event.key === 'Escape') {
         event.stopPropagation()
         onClose()

@@ -117,6 +117,7 @@ export function DialogueLayer({ api, settings, transient, consumeTransient }: Di
           <button
             type="button"
             className="anl-dialogue__next"
+            data-action="advance-dialogue"
             onClick={(event) => {
               event.stopPropagation()
               advance()
@@ -133,6 +134,8 @@ export function DialogueLayer({ api, settings, transient, consumeTransient }: Di
               key={branch.id}
               type="button"
               className={`anl-choice${branch.advances ? ' anl-choice--advance' : ''}`}
+              data-branch-id={branch.id}
+              data-branch-advances={branch.advances ? 'true' : 'false'}
               disabled={branch.locked || branch.visited}
               onClick={(event) => {
                 event.stopPropagation()
@@ -148,6 +151,7 @@ export function DialogueLayer({ api, settings, transient, consumeTransient }: Di
             <button
               type="button"
               className="anl-dialogue__continue anl-button anl-button--primary"
+              data-action="continue-branches"
               onClick={(event) => {
                 event.stopPropagation()
                 run('ContinueScene')

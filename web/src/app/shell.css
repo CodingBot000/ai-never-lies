@@ -51,6 +51,33 @@
   filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.55));
 }
 
+.anl-stage-record-warning {
+  position: absolute;
+  top: 19%;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--anl-space-1);
+  transform: translateX(-50%);
+  padding: var(--anl-space-3) var(--anl-space-5);
+  background: rgba(13, 10, 4, 0.86);
+  border: 1px solid var(--anl-warning);
+  color: #ffd36d;
+  font-family: var(--anl-font-mono);
+  letter-spacing: 0.08em;
+  text-align: center;
+  box-shadow: 0 0 28px rgba(255, 174, 51, 0.2);
+  pointer-events: none;
+}
+
+.anl-stage-record-warning span {
+  color: var(--anl-text-muted);
+  font-size: var(--anl-text-xs);
+  letter-spacing: 0.02em;
+}
+
 .anl-stage__main {
   position: absolute;
   inset: 0;

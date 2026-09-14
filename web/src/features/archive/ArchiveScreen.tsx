@@ -87,9 +87,9 @@ export function ArchiveScreen({ api }: ScreenProps) {
 function sectionLabel(index: NonNullable<ScreenProps['api']['index']>, section: string): string {
   const labels: Record<string, string> = {
     direct: index.ui('ui.report_direct'),
-    contribution: index.ui('ui.report_contributions'),
+    contributions: index.ui('ui.report_contributions'),
     organizational: index.ui('ui.report_organizational'),
-    post: index.ui('ui.report_post'),
+    postIncident: index.ui('ui.report_post'),
     limit: index.ui('ui.report_limit'),
   }
   return labels[section] ?? section

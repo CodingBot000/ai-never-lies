@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from './app/App'
 import { ErrorBoundary } from './app/ErrorBoundary'
+import { registerServiceWorker } from './app/registerServiceWorker'
 import './shared/styles/fonts.css'
 import './shared/styles/tokens.css'
 import './shared/styles/base.css'
@@ -18,3 +19,5 @@ createRoot(container).render(
     </ErrorBoundary>
   </StrictMode>,
 )
+
+void registerServiceWorker()

@@ -1,8 +1,8 @@
 {
   "ok": true,
-  "plan": "/Users/switch/Development/Game/WebGame/ai-never-lies/handoff/art/manifest.plan.json",
-  "manifest": "/Users/switch/Development/Game/WebGame/ai-never-lies/handoff/art/manifest.lock.json",
-  "root": "/Users/switch/Development/Game/WebGame/ai-never-lies/art_delivery/runtime",
+  "plan": "/Users/switch/Development/game/webgame/ai-never-lies/handoff/art/manifest.plan.json",
+  "manifest": "/Users/switch/Development/game/webgame/ai-never-lies/handoff/art/manifest.lock.json",
+  "root": "/Users/switch/Development/game/webgame/ai-never-lies/art_delivery/runtime",
   "expectedAssetCount": 54,
   "checkedAssetCount": 54,
   "issueCount": 0,

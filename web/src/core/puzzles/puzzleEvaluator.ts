@@ -234,7 +234,7 @@ function evalCrossCamera(puzzle: PuzzleDefinitionDto, draft: PuzzleDraftDto): Pu
   if (draft.comparisonWindowId !== expectedWindow) return wrong(puzzle, '같은 시간 구간의 자료를 비교하십시오.')
   const match = matchEvidenceSet(puzzle.sufficientEvidenceSets, draft.selectedEvidenceIds)
   if (match >= 0) return solved(puzzle, match)
-  return partial('선택한 구간에 필요한 자료를 모두 연결하지 않았습니다.')
+  return partial(puzzle.partialText || '선택한 구간에 필요한 자료를 모두 연결하지 않았습니다.')
 }
 
 function evalArgumentChoice(puzzle: PuzzleDefinitionDto, draft: PuzzleDraftDto): PuzzleEvalResult {
@@ -284,7 +284,7 @@ function evalMatrixGap(puzzle: PuzzleDefinitionDto, draft: PuzzleDraftDto): Puzz
 
 function evalDeploymentChain(puzzle: PuzzleDefinitionDto, draft: PuzzleDraftDto): PuzzleEvalResult {
   if (!sameOrder(puzzle.orderedIds, draft.placedCards, 'order')) {
-    return partial('설계→설치→조건 이행을 각각 확인하십시오.')
+    return partial(puzzle.partialText || '설계→설치→조건 이행을 각각 확인하십시오.')
   }
   if (puzzle.correctChoiceIds) {
     if (puzzle.correctChoiceIds.some((id) => hasChoice(draft, id))) return solved(puzzle)

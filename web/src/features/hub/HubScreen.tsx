@@ -41,6 +41,7 @@ export function HubScreen({ api, feedback }: ScreenProps) {
           <button
             type="button"
             className="anl-button anl-button--primary"
+            data-action="continue-hub"
             disabled={!transition.available}
             onClick={() => run('ContinueScene')}
           >
@@ -63,6 +64,9 @@ export function HubScreen({ api, feedback }: ScreenProps) {
               <button
                 type="button"
                 className={`anl-hub__card${completed ? ' anl-hub__card--done' : ''}`}
+                data-scene-id={id}
+                data-optional={isOptional ? 'true' : 'false'}
+                data-completed={completed ? 'true' : 'false'}
                 disabled={locked}
                 onClick={() => {
                   const result = run('EnterScene', { targetId: id })

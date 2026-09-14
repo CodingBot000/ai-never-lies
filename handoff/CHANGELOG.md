@@ -91,3 +91,19 @@
 **변경:** `Game/`(310개 추적 파일)과 `Builds/`를 제거했다. 기준선 커밋 `3dd0f08`·태그 `unity-final-20260914`가 로컬·원격에 보존되어 있어 복구 가능하다. `.gitignore`·`.vercelignore`·README의 Unity 참조를 정리하고 `reports/W8_UNITY_REMOVAL.md`에 제거 목록과 검증 결과를 기록했다.
 
 **검증:** `Game/`가 없는 작업 트리에서 콘텐츠·아트 검증 4종, lint, typecheck, Vitest 61, Playwright 11, build, release 경계 검사, preview HTTP 200 전부 PASS.
+
+---
+
+## 2026-09-15 — 비인간 잔여 작업 완료 (W5~W7 보완)
+
+**변경:**
+
+- region이 있는 10개 자산에 경고문·보행자 판독 박스·시간·수치·차량/센서 식별·정비 조건·개인 메시지를 코드 오버레이로 연결했다. s010 프롤로그의 차내 경고도 추가했다.
+- production 빌드 파일 73개를 버전별로 선캐시하는 서비스워커와 완전 오프라인 재로드 검증을 추가했다.
+- 키보드 전용 전체 완주, p01~p20 오답·부분답, 43씬+20퍼즐의 150% 데스크톱/모바일 전수 렌더, 10개 오버레이 화면, WebKit 전체 E2E를 추가했다.
+- p20 보고서 구역 ID(`contributions`, `postIncident`) 불일치, p07/p15 부분답 문구 불일치, 입력 중 전역 단축키 문제, 폰트 오프라인 캐시의 `Vary: Origin` 문제와 서비스워커 업데이트 중 빈 화면 경쟁 상태를 수정했다.
+- 현재 상태에 맞게 README·환경·QA·구현 상태 문서를 갱신했다.
+
+**검증:** Vitest 62, Chromium E2E 11, WebKit E2E 11, 키보드 QA 2, 퍼즐 피드백 1, 반응형 전수 1(126화면), 오버레이 1(20화면), 오프라인 1, 실제 Safari 26.5 production 스모크 PASS. lint·typecheck·build·release·콘텐츠·라우트·아트·폰트 검사 PASS.
+
+**사람에게 남은 항목:** 실제 Safari 육안 QA, 사람 직접 완주 2회와 녹화·스크린샷, 최종 사용자 승인. 자동화·구현 잔여는 없다.

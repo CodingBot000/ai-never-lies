@@ -5,6 +5,7 @@ import type { PressLineDto, SceneDefinitionDto } from '../core/content/dto'
 import { Phases } from '../core/state/gameState'
 import { assetUrl } from '../shared/assets/assetCatalog'
 import { Modal } from '../shared/components/Modal'
+import { isEditableTarget } from '../shared/keyboard/isEditableTarget'
 import { ArchiveScreen } from '../features/archive/ArchiveScreen'
 import { DialogueLayer } from '../features/dialogue/DialogueLayer'
 import { lastPortraitBefore, resolveCurrentLine, sceneLines } from '../features/dialogue/dialogueModel'
@@ -76,6 +77,7 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent): void => {
+      if (isEditableTarget(event.target)) return
       if (event.key === 'Escape') {
         if (modal) {
           setModal(null)
@@ -121,7 +123,13 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
   }
 
   return (
-    <div className="anl-shell">
+    <div
+      className="anl-shell"
+      data-current-scene={state.currentSceneId}
+      data-phase={state.phase}
+      data-last-result={api.lastResult?.status ?? ''}
+      data-last-reason={api.lastResult?.reasonCode ?? ''}
+    >
       {testToolsEnabled ? (
         <div className="anl-dev-banner" role="status">
           {index.ui('ui.test_build_badge')} · {index.ui('ui.settings_test_tools')} {index.ui('ui.settings_on')} ·
@@ -149,6 +157,12 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
       ) : (
         <div className="anl-stage">
           {backgroundUrl ? <img className="anl-stage__bg" src={backgroundUrl} alt="" /> : null}
+          {scene?.id === 's010' && backgroundAsset === 'cg_emergency_before' ? (
+            <div className="anl-stage-record-warning" role="status" aria-label="차내 경고 표시">
+              <strong>EMERGENCY MANEUVER</strong>
+              <span>기록 동기화 T-1.79</span>
+            </div>
+          ) : null}
           {portraitUrl ? <img className="anl-stage__portrait" src={portraitUrl} alt="" /> : null}
           <main id="anl-main" className="anl-stage__main">
             {state.phase === Phases.Interaction ? <PuzzleHost {...screenProps} /> : null}
@@ -319,6 +333,7 @@ function TransitionPanel({ api, feedback }: ScreenProps) {
           <button
             type="button"
             className="anl-button anl-button--primary"
+            data-action="continue-scene"
             disabled={!transition.available && !parent}
             onClick={() => {
               if (transition.available) {

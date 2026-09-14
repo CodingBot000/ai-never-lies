@@ -32,7 +32,7 @@ export function computeContainRect(panel: Size, image: Size): Rect {
 }
 
 /** 정규화 region을 표시 사각형 기준 CSS 픽셀 사각형으로 변환한다. 웹은 Y가 아래로 증가한다. */
-export function regionToRect(displayed: Rect, region: AssetRegion): Rect {
+export function regionToRect(displayed: Rect, region: Rect): Rect {
   return {
     x: displayed.x + region.x * displayed.width,
     y: displayed.y + region.y * displayed.height,
