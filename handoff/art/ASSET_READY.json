@@ -8,10 +8,10 @@
   "approvedAssetCount": 54,
   "manifestPath": "handoff/art/manifest.lock.json",
   "manifestSha256": "8d1e4a63829632972187bac6e9538a161dee0b72785859058d5e57ecc1968bc3",
-  "masterDocumentSha256": "9b5d02dfde2215bdbed6612ad2057a16f344e6e754900161d820b2034b8cd786",
-  "artInstructionSha256": "58908697462bd0bdd217b5dc4bf51c9816aaf8742a732393ea2e83b937092a38",
-  "codeInstructionSha256": "4ecda33079e17c7f6a771eb7f9878e81078c7322bee0e9ab5fe4a53ab6ad1951",
-  "verifiedAtUtc": "2026-09-14T07:38:19Z",
+  "masterDocumentSha256": "00790af9733c81b7dbc2b3dfcb0c913a27aa1d82880276f8ff303e05bd7d1dce",
+  "artInstructionSha256": "6cc43d420c3d00c8d58987f5c57a780d54d0f251fa61c0dc7cc355b38ec435af",
+  "codeInstructionSha256": "3b4624c23b59c9ddcdaae92868ed5600070312a0806f93b66a767fcedad8ca18",
+  "verifiedAtUtc": "2026-09-14T11:26:17Z",
   "verificationReport": "handoff/art/ART_REVIEW.md",
   "blockers": []
 }
