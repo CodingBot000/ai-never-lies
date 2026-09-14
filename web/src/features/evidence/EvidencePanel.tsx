@@ -118,6 +118,12 @@ export function EvidencePanel({ api, onClose }: EvidencePanelProps) {
                   ) : null}
                 </div>
               ) : null}
+              {selected.id === 'ev35' ? (
+                <div className="anl-evidence__image">
+                  <p className="anl-evidence__meta">메시지</p>
+                  <EvidenceImage assetId="ev_phone_base" alt="임도현의 마지막 메시지" showRegions={false} />
+                </div>
+              ) : null}
               <dl className="anl-evidence__facts">
                 <dt>{index.ui('ui.evidence_source')}</dt>
                 <dd>{selected.source}</dd>

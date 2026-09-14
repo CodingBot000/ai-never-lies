@@ -99,10 +99,12 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
   const backgroundAsset = backgroundFor(state, scene)
   const backgroundUrl = backgroundAsset ? assetUrl(backgroundAsset) : null
   const lines = sceneLines(state, index)
+  const interactionCue = state.phase === Phases.Interaction ? (INTERACTION_PORTRAIT_CUES[state.currentSceneId] ?? '') : ''
   const portraitAsset =
-    inDialogue && state.phase !== Phases.BranchChoice
+    interactionCue ||
+    (inDialogue && state.phase !== Phases.BranchChoice
       ? currentLine?.portraitAssetId || lastPortraitBefore(lines, state.dialogueCursor)
-      : ''
+      : '')
   const portraitUrl = portraitAsset ? assetUrl(portraitAsset) : null
 
   const newGame = (): void => {
@@ -353,6 +355,13 @@ function goalText(api: GameSessionApi): string {
   if (context.nextAction) parts.push(context.nextAction)
   if (context.levels[0]) parts.push(context.levels[0].text)
   return parts.join(' · ') || index.ui('ui.interaction_hint')
+}
+
+/** 마스터 12.1 표정 cue 중 대사가 아닌 추궁/쟁점 순간에 쓰는 초상 */
+const INTERACTION_PORTRAIT_CUES: Record<string, string> = {
+  s310: 'chr_min_angry',
+  s420: 'chr_lee_irritated',
+  s620: 'chr_seo_unsettled',
 }
 
 function backgroundFor(state: { currentSceneId: string; dialogueCursor: number }, scene: SceneDefinitionDto | null): string {
