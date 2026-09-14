@@ -84,3 +84,10 @@
 
 **남은 항목:** 선택 장면 E2E, 오답 복귀 E2E, Safari·키보드·150%·오프라인 검수, 사람 완주 2회 → W5 최종 판정 후 W8 Unity 제거.
 
+---
+
+## 2026-09-14 — W8 Unity 제거
+
+**변경:** `Game/`(310개 추적 파일)과 `Builds/`를 제거했다. 기준선 커밋 `3dd0f08`·태그 `unity-final-20260914`가 로컬·원격에 보존되어 있어 복구 가능하다. `.gitignore`·`.vercelignore`·README의 Unity 참조를 정리하고 `reports/W8_UNITY_REMOVAL.md`에 제거 목록과 검증 결과를 기록했다.
+
+**검증:** `Game/`가 없는 작업 트리에서 콘텐츠·아트 검증 4종, lint, typecheck, Vitest 61, Playwright 11, build, release 경계 검사, preview HTTP 200 전부 PASS.

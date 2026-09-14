@@ -1,25 +1,4 @@
-# Unity generated
-Game/[Ll]ibrary/
-Game/[Tt]emp/
-Game/[Oo]bj/
-Game/[Bb]uild/
-Game/[Bb]uilds/
-Game/[Ll]ogs/
-Game/[Uu]ser[Ss]ettings/
-Game/[Mm]emoryCaptures/
-Game/[Rr]ecordings/
-*.csproj
-*.sln
-*.suo
-*.user
-*.userprefs
-*.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
-*.opendb
-*.VC.db
+# Unity는 W8에서 제거됨 (Game/ 폴더 없음)
 .vs/
 .idea/
 .vscode/
