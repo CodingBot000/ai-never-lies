@@ -141,12 +141,20 @@ test('실제 입력으로 1장(경고→조사→심문)을 완주한다', async
   await page.locator('.anl-hub__card', { hasText: 's120' }).click()
   await progressToPuzzle(page)
   await expect(page.locator('.anl-puzzle')).toBeVisible()
-  await page.locator('.anl-statement', { hasText: '아무런 반응도 없었어요' }).click()
+
+  // 오답: 다른 증언으로 제시 → 피드백 → 증언만 수정해 재제출
+  await page.locator('.anl-statement', { hasText: '사람이 바로 앞에 나타났어요' }).click()
   await page.getByRole('button', { name: '증거 선택' }).click()
   const picker = page.getByRole('dialog', { name: '제시할 증거' })
   await expect(picker).toBeVisible()
   await picker.getByText('승객 휴대전화 영상').click()
   await picker.getByRole('button', { name: '확인' }).click()
+  await page.getByRole('button', { name: '증거 제시' }).click()
+  await expect(page.locator('.anl-toast')).toContainText('직접 충돌하지 않습니다')
+  await dismissToast(page)
+  await expect(page.locator('.anl-puzzle')).toBeVisible()
+
+  await page.locator('.anl-statement', { hasText: '아무런 반응도 없었어요' }).click()
   await page.getByRole('button', { name: '증거 제시' }).click()
   await drainDialogue(page)
   await pressContinue(page)

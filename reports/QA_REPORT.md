@@ -9,7 +9,7 @@
 | 린트 | `npm run lint` | PASS 0 warnings |
 | 타입 | `npm run typecheck` | PASS |
 | 단위·통합 | `npm run test:run` | PASS 61 |
-| E2E | `npm run test:e2e` | PASS 9 |
+| E2E | `npm run test:e2e` | PASS 11 |
 | 정적 검증 | `validate:content`·`assets:check`·`fonts:check` | PASS |
 | 빌드·경계 | `npm run build` + `npm run check:release` | PASS |
 | 배포 | Vercel production (`ai-never-lies.vercel.app`) | READY, `/`·콘텐츠·이미지·폰트 200 |
@@ -18,7 +18,8 @@
 
 - `title.spec.ts`: 타이틀·콘솔 오류 0·모바일 오버플로 0·새 게임 경고.
 - `assets.spec.ts`: 54 이미지·콘텐츠 JSON 404 없음, 추측 경로 미제공.
-- `chapter1.spec.ts`: 실제 클릭으로 경고→s010→s020 분기·필수 열람→s100 허브→s110 조사(p01)→s120 심문(p02), 외부 도메인 요청 0.
+- `chapter1.spec.ts`: 실제 클릭으로 경고→s010→s020 분기·필수 열람→s100 허브→s110 조사(p01)→s120 심문(p02)에서 오답 제시→피드백→수정→성공, 외부 도메인 요청 0.
+- `optional.spec.ts`: s520 방문(ev34 지급), s530 자료 수신(ev35 지급) / 거절 시 미지급 E2E.
 - `resume.spec.ts`: 새 게임→새로고침→이어하기→자동 저장 복원.
 - `walkthrough.spec.ts`: s000→s710 자동 진행, 퍼즐 20/20, 콘솔 오류 0.
 - `screenshots.spec.ts`: W4 대표 화면 10장 (`reports/screenshots/web_w4_*`).

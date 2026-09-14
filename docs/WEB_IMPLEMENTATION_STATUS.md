@@ -11,7 +11,7 @@
 | 43개 서사 씬 진행 | DONE | `walkthrough.spec.ts` 시작→s710 자동 진행, `contentContract` CT01/CT03/CT07 |
 | 36개 증거(원문·요약·출처·한계) | DONE | `EvidencePanel`, ev34/35 선택 획득 단위 테스트(ST14) |
 | 20개 퍼즐(정답·부분·오답·복귀) | DONE | Vitest ST/CT/HI 43개 + `PuzzleHost` 위젯 15종, 전체 진행 E2E 20/20 |
-| 필수·선택 분기 | PARTIAL | 필수 경로 E2E 완주, 선택 장면(s520/s530)은 단위 테스트만 |
+| 필수·선택 분기 | DONE | 필수 경로 E2E 완주, 선택 장면 s520·s530 수용/거절 E2E(`optional.spec.ts`) |
 | H1~H3 힌트 | DONE | `HintPanel`, HI01~HI03 |
 | 세이브·로드·자동저장·손상 복구 | DONE | SV01~SV10, `resume.spec.ts`(새로고침 복원) |
 | 설정(글자 100/125/150·출력 속도·자동 진행·동작 줄이기) | DONE | `SettingsPanel`, 설정 단위 테스트 |
@@ -30,15 +30,15 @@
 | `npm run lint` | PASS (0 warnings) |
 | `npm run typecheck` | PASS |
 | `npm run test:run` | PASS 61 (EditMode 43 의미 이전 포함) |
-| `npm run test:e2e` | PASS 9 (chromium) |
+| `npm run test:e2e` | PASS 11 (chromium) |
 | `npm run build` | PASS (JS 353KB/gzip 106KB, CSS 29KB) |
 | `npm run check:release` | PASS (개발 도구 문자열 없음) |
 | `validate:content` / `assets:check` / `fonts:check` | PASS |
 
 ## 3. 미완료·후속 (다음 작업)
 
-1. 선택 장면 s520/s530 실제 UI 완주 E2E 1회.
-2. 오답→피드백→수정→성공 경로 E2E (현재 단위 테스트).
+1. 완료: 선택 장면 s520/s530 실제 UI 완주 E2E(`optional.spec.ts`).
+2. 완료: 오답→피드백→수정→성공 경로 E2E(`chapter1.spec.ts` p02).
 3. 키보드 전용 완주, 150% 글자 전 화면, 모바일 전 화면 스크린샷 검수.
 4. Safari 데스크톱 수동 QA.
 5. 오프라인 재실행이 필요하면 서비스워커 추가(계약 변경: 오프라인 완주 요구 충족).
