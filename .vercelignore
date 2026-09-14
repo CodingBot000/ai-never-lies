@@ -1,0 +1,22 @@
+# Vercel 업로드 제외 (빌드에 불필요한 대용량/생성물)
+Game/
+art_source/
+Builds/
+.venv-art/
+.venv/
+reports/screenshots/
+reports/*.log
+web/node_modules/
+web/dist/
+web/coverage/
+web/playwright-report/
+web/test-results/
+
+# 생성 자산: 빌드 시 tools/sync_web_assets.py가 정본에서 다시 만든다
+web/public/art/
+web/public/content/
+
+.DS_Store
+.git/
+.env
+.env.*
