@@ -73,3 +73,14 @@
 **검증:** Vitest 61 PASS, Playwright 6 PASS(신규 전체 진행 E2E 포함: 시작→s710, 퍼즐 20/20), lint·typecheck·build·check:release PASS(릴리스 번들에 개발 도구 미포함). 화면은 실제 렌더 스크린샷으로 육안 확인.
 
 **남은 W4 후속:** 모든 screenType의 스크린샷 확대, 모바일 폭 전 화면 검수, 키보드 전용 완주 점검은 W5~W7에서 수행.
+
+---
+
+## 2026-09-14 — W5~W7 진행분 (자동 검증)
+
+**변경:** 분기 화면에 `계속` 진행 버튼 추가(비진행 분기만 있는 장면의 진행 막힘 수정). 실제 클릭 기반 1장 완주 E2E(`chapter1.spec.ts`), 새로고침 복원 E2E(`resume.spec.ts`) 추가. `docs/WEB_IMPLEMENTATION_STATUS.md`, `reports/QA_REPORT.md` 작성.
+
+**검증:** Vitest 61, Playwright 9 PASS, lint·typecheck·build·check:release PASS. Vercel production 재배포.
+
+**남은 항목:** 선택 장면 E2E, 오답 복귀 E2E, Safari·키보드·150%·오프라인 검수, 사람 완주 2회 → W5 최종 판정 후 W8 Unity 제거.
+

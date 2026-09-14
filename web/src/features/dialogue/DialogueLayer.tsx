@@ -86,6 +86,17 @@ export function DialogueLayer({ api, settings, transient, consumeTransient }: Di
     return items
   }, [index, state, api.revision])
 
+  const canContinue = useMemo(() => {
+    if (!index || !state || state.phase !== Phases.BranchChoice) return false
+    const scene = index.scene(state.currentSceneId)
+    if (!scene) return false
+    for (const groupId of scene.advancingGroupIds ?? []) {
+      const group = index.branchGroup(groupId)
+      if (!group.some((branch) => state.isTopicVisited(branch.id))) return false
+    }
+    return true
+  }, [index, state, api.revision])
+
   if (!state || !index) return null
   const hasDialogue = line !== null
   const showBranches = state.phase === Phases.BranchChoice
@@ -133,6 +144,20 @@ export function DialogueLayer({ api, settings, transient, consumeTransient }: Di
               {branch.locked ? <span className="anl-choice__tag">잠김</span> : null}
             </button>
           ))}
+          {canContinue ? (
+            <button
+              type="button"
+              className="anl-dialogue__continue anl-button anl-button--primary"
+              onClick={(event) => {
+                event.stopPropagation()
+                run('ContinueScene')
+              }}
+            >
+              계속
+            </button>
+          ) : (
+            <p className="anl-muted">필수 질문에 모두 답한 뒤 진행할 수 있습니다.</p>
+          )}
         </div>
       ) : null}
     </div>
