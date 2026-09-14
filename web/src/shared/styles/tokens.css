@@ -1,0 +1,77 @@
+/* ANL 디자인 토큰 — 00_MASTER_PLAN 4장 화면·연출 규칙 기준 */
+:root {
+  /* 배경·표면 */
+  --anl-bg-deep: #070b10;
+  --anl-bg: #0d141c;
+  --anl-bg-raised: #16202b;
+  --anl-surface: rgba(16, 25, 34, 0.94);
+  --anl-surface-soft: rgba(22, 32, 43, 0.82);
+  --anl-overlay: rgba(4, 8, 12, 0.72);
+  --anl-border: #2c3b4b;
+  --anl-border-strong: #3f5468;
+
+  /* 텍스트 */
+  --anl-text: #e9eff5;
+  --anl-text-muted: #a5b6c6;
+  --anl-text-faint: #74879a;
+  --anl-text-inverse: #0d141c;
+
+  /* 의미색: 청록=선택/정보, 주황=주의, 적색=모순/위험 */
+  --anl-accent: #35bfae;
+  --anl-accent-soft: rgba(53, 191, 174, 0.16);
+  --anl-accent-strong: #63dfd0;
+  --anl-warning: #e0913a;
+  --anl-warning-soft: rgba(224, 145, 58, 0.16);
+  --anl-danger: #d95d55;
+  --anl-danger-soft: rgba(217, 93, 85, 0.16);
+  --anl-focus: #8ed6ff;
+
+  /* 글자 크기. html[data-text-size]로 100/125/150% 전환 */
+  --anl-font-scale: 1;
+  --anl-text-xs: calc(0.8125rem * var(--anl-font-scale));
+  --anl-text-sm: calc(0.9375rem * var(--anl-font-scale));
+  --anl-text-md: calc(1.0625rem * var(--anl-font-scale));
+  --anl-text-lg: calc(1.25rem * var(--anl-font-scale));
+  --anl-text-xl: calc(1.5rem * var(--anl-font-scale));
+  --anl-text-2xl: calc(2rem * var(--anl-font-scale));
+  --anl-text-3xl: calc(2.75rem * var(--anl-font-scale));
+  --anl-line: 1.6;
+
+  /* 간격·반경·그림자 */
+  --anl-space-1: 4px;
+  --anl-space-2: 8px;
+  --anl-space-3: 12px;
+  --anl-space-4: 16px;
+  --anl-space-5: 24px;
+  --anl-space-6: 32px;
+  --anl-space-7: 48px;
+  --anl-radius-sm: 4px;
+  --anl-radius-md: 8px;
+  --anl-radius-lg: 14px;
+  --anl-shadow-1: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --anl-shadow-2: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* 조작 영역: 표시 기준 44px 상당 */
+  --anl-hit: 44px;
+
+  /* 전환: 동작 줄이기에서 0으로 덮어씀 */
+  --anl-transition-fast: 120ms ease-out;
+  --anl-transition: 200ms ease-out;
+
+  --anl-font-sans: 'NanumGothic', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}
+
+html[data-text-size='125'] {
+  --anl-font-scale: 1.25;
+}
+
+html[data-text-size='150'] {
+  --anl-font-scale: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --anl-transition-fast: 0ms linear;
+    --anl-transition: 0ms linear;
+  }
+}

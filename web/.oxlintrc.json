@@ -1,0 +1,21 @@
+{
+  "plugins": ["react", "react-hooks", "typescript", "unicorn"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "no-console": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/only-export-components": "off",
+    "unicorn/prefer-node-protocol": "warn"
+  },
+  "ignorePatterns": [
+    "dist",
+    "coverage",
+    "node_modules",
+    "playwright-report",
+    "test-results",
+    "public"
+  ]
+}

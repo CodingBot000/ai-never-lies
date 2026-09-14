@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--anl-bg-deep);
+  color: var(--anl-text);
+  font-family: var(--anl-font-sans);
+  font-size: var(--anl-text-md);
+  line-height: var(--anl-line);
+  overflow-wrap: anywhere;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--anl-focus);
+  outline-offset: 2px;
+}
+
+.anl-skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--anl-space-4);
+  z-index: 1000;
+  padding: var(--anl-space-2) var(--anl-space-4);
+  background: var(--anl-accent);
+  color: var(--anl-text-inverse);
+  border-radius: var(--anl-radius-sm);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.anl-skip-link:focus-visible {
+  top: var(--anl-space-4);
+}
+
+.anl-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.anl-app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(53, 191, 174, 0.08), transparent 60%),
+    var(--anl-bg-deep);
+}
+
+.anl-app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.anl-dev-banner {
+  padding: var(--anl-space-2) var(--anl-space-4);
+  background: var(--anl-warning-soft);
+  border-bottom: 1px solid var(--anl-warning);
+  color: var(--anl-warning);
+  font-size: var(--anl-text-sm);
+  text-align: center;
+}
+
+.anl-error-boundary {
+  max-width: 720px;
+  margin: 10vh auto;
+  padding: var(--anl-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--anl-space-4);
+  background: var(--anl-surface);
+  border: 1px solid var(--anl-danger);
+  border-radius: var(--anl-radius-lg);
+}
+
+.anl-error-boundary h1 {
+  font-size: var(--anl-text-xl);
+}
+
+.anl-error-boundary button {
+  align-self: flex-start;
+  min-height: var(--anl-hit);
+  padding: var(--anl-space-2) var(--anl-space-5);
+  background: var(--anl-accent);
+  color: var(--anl-text-inverse);
+  border: none;
+  border-radius: var(--anl-radius-md);
+  font-weight: 700;
+}
+
+.anl-error-boundary__detail {
+  max-height: 40vh;
+  overflow: auto;
+  padding: var(--anl-space-3);
+  background: var(--anl-bg-deep);
+  border: 1px solid var(--anl-border);
+  border-radius: var(--anl-radius-sm);
+  font-size: var(--anl-text-xs);
+  white-space: pre-wrap;
+}
