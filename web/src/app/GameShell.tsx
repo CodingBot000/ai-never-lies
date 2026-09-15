@@ -315,7 +315,7 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
   )
 }
 
-function TransitionPanel({ api, feedback }: ScreenProps) {
+function TransitionPanel({ api, openModal }: ScreenProps) {
   const { session, index, run } = api
   if (!session || !index) return null
   const state = session.state
@@ -323,6 +323,7 @@ function TransitionPanel({ api, feedback }: ScreenProps) {
   if (!scene) return null
   const parent = [...index.scenes.values()].find((candidate) => candidate.childSceneIds?.includes(scene.id))?.id
   const transition = session.dispatcher.transitionAvailable()
+  const blocked = !transition.available && !parent
 
   return (
     <div className="anl-transition">
@@ -345,20 +346,38 @@ function TransitionPanel({ api, feedback }: ScreenProps) {
           >
             {transition.available ? index.ui('ui.continue_scene') : parent ? index.ui('ui.return_to_hub') : index.ui('ui.continue_scene')}
           </button>
-          {!transition.available && !parent ? (
-            <button
-              type="button"
-              className="anl-button"
-              onClick={() => feedback(transition.reason)}
-            >
-              {transition.reason || 'blocked'}
-            </button>
+          {blocked ? (
+            <>
+              <p className="anl-feedback">{blockedMessage(index, state, transition.reason)}</p>
+              <button type="button" className="anl-button" onClick={() => openModal('evidence')}>
+                {index.ui('ui.evidence')} {index.ui('ui.confirm')}
+              </button>
+            </>
           ) : null}
         </div>
       </div>
     </div>
   )
 }
+
+function blockedMessage(index: NonNullable<GameSessionApi['index']>, state: GameSessionState, reason: string): string {
+  if (reason.startsWith('need_read:')) {
+    const id = reason.slice('need_read:'.length)
+    return `필수 자료를 열람하세요: ${index.evidenceDef(id)?.title ?? id}`
+  }
+  if (reason.startsWith('remaining:')) return index.ui('ui.hub_locked_reason')
+  if (reason === 'conditions_not_met') {
+    const scene = index.scene(state.currentSceneId)
+    const unread = (scene?.requiredReadEvidenceIds ?? [])
+      .filter((id) => !state.hasRead(id))
+      .map((id) => index.evidenceDef(id)?.title ?? id)
+    if (unread.length > 0) return `필수 자료를 열람하세요: ${unread.join(', ')}`
+    return '아직 진행 조건이 충족되지 않았습니다. 필요한 조사와 증거를 확인하세요.'
+  }
+  return index.ui('ui.interaction_hint')
+}
+
+type GameSessionState = GameSessionApi['session'] extends { state: infer S } | null ? S : never
 
 function goalText(api: GameSessionApi): string {
   const session = api.session

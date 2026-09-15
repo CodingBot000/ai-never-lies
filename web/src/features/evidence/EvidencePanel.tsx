@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { GameSessionApi } from '../../app/useGameSession'
 import type { EvidenceDefinitionDto } from '../../core/content/dto'
 import { EvidenceImage } from '../../shared/assets/EvidenceImage'
@@ -42,6 +42,13 @@ export function EvidencePanel({ api, onClose }: EvidencePanelProps) {
     : owned.length > 0
       ? (owned[0] ?? null)
       : null
+
+  // 상세가 실제로 표시된 증거는 열람으로 기록한다(자동 표시 포함).
+  useEffect(() => {
+    if (selected && !state.hasRead(selected.id)) {
+      run('OpenEvidence', { targetId: selected.id })
+    }
+  }, [selected?.id, run, state])
 
   const selectEvidence = (evidence: EvidenceDefinitionDto): void => {
     setSelectedId(evidence.id)
