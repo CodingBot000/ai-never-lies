@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--anl-space-4);
-  padding: var(--anl-space-5);
+  padding: var(--anl-top-safe) var(--anl-space-4) var(--anl-space-3);
   overflow-y: auto;
   background: linear-gradient(180deg, rgba(7, 11, 16, 0.72), rgba(7, 11, 16, 0.94));
 }
@@ -49,6 +49,27 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--anl-space-4);
   list-style: none;
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .anl-hub__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--anl-space-2);
+  }
+
+  .anl-hub__card {
+    min-height: 96px;
+    padding: var(--anl-space-2);
+  }
+
+  .anl-hub__thumb {
+    flex: 0 0 96px;
+    height: 76px;
+  }
+
+  .anl-hub__header {
+    padding: var(--anl-space-2) var(--anl-space-3);
+  }
 }
 
 .anl-hub__card {

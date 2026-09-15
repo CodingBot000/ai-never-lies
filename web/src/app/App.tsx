@@ -3,6 +3,7 @@ import { GameShell } from './GameShell'
 import { applySettings, loadSettings, saveSettings, type AppSettings } from './settings'
 import { useGameSession } from './useGameSession'
 import { ErrorBoundary } from './ErrorBoundary'
+import { PortraitNotice } from './PortraitNotice'
 import { APP_TITLE } from './env'
 import './shell.css'
 
@@ -50,6 +51,7 @@ export function App() {
 
   return (
     <ErrorBoundary>
+      <PortraitNotice />
       <GameShell api={api} settings={settings} onSettingsChange={updateSettings} />
     </ErrorBoundary>
   )

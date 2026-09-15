@@ -54,6 +54,11 @@
   /* 조작 영역: 표시 기준 44px 상당 */
   --anl-hit: 44px;
 
+  /* 상단 HUD·대화 영역 높이 예산 (모바일 가로에서 재정의) */
+  --anl-hud-h: 56px;
+  --anl-top-safe: 72px;
+  --anl-dialogue-h: 260px;
+
   /* 전환: 동작 줄이기에서 0으로 덮어씀 */
   --anl-transition-fast: 120ms ease-out;
   --anl-transition: 200ms ease-out;

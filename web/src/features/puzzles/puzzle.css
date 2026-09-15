@@ -3,7 +3,7 @@
   inset: 0;
   display: grid;
   gap: var(--anl-space-4);
-  padding: calc(var(--anl-space-6) + var(--anl-space-3)) var(--anl-space-5) 240px;
+  padding: var(--anl-top-safe) var(--anl-space-4) calc(var(--anl-dialogue-h) + var(--anl-space-4));
   overflow-y: auto;
   background: linear-gradient(180deg, rgba(7, 11, 16, 0.78), rgba(7, 11, 16, 0.9));
 }
@@ -37,8 +37,9 @@
   background: rgba(10, 16, 23, 0.9);
   border: 1px solid var(--anl-border);
   border-radius: var(--anl-radius-md);
-  max-height: calc(100vh - 300px);
+  max-height: calc(100dvh - var(--anl-top-safe) - var(--anl-dialogue-h) - var(--anl-space-4));
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .anl-puzzle__col--wide {
@@ -50,7 +51,7 @@
   align-items: center;
   justify-content: center;
   min-width: 0;
-  max-height: calc(100vh - 300px);
+  max-height: calc(100dvh - var(--anl-top-safe) - var(--anl-dialogue-h) - var(--anl-space-4));
   overflow: hidden;
   border: 1px solid var(--anl-border);
   border-radius: var(--anl-radius-md);
@@ -406,6 +407,27 @@
 .anl-picker-actions {
   display: flex;
   gap: var(--anl-space-2);
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .anl-puzzle--two,
+  .anl-puzzle--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .anl-puzzle__col,
+  .anl-puzzle__side {
+    padding: var(--anl-space-2);
+    gap: var(--anl-space-2);
+  }
+
+  .anl-candidate,
+  .anl-statement,
+  .anl-slot {
+    min-height: 40px;
+    padding: var(--anl-space-1) var(--anl-space-2);
+    font-size: var(--anl-text-sm);
+  }
 }
 
 @media (max-width: 1100px) {

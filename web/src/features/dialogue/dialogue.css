@@ -12,8 +12,8 @@
 
 .anl-dialogue__box {
   position: relative;
-  min-height: 180px;
-  max-height: 38vh;
+  min-height: 150px;
+  max-height: min(38vh, var(--anl-dialogue-h));
   overflow-y: auto;
   margin: 0 var(--anl-space-4) var(--anl-space-4);
   padding: var(--anl-space-4) var(--anl-space-5) var(--anl-space-5);
@@ -114,4 +114,21 @@
 .anl-choice__tag {
   font-size: var(--anl-text-xs);
   color: var(--anl-text-faint);
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .anl-dialogue__box {
+    min-height: 84px;
+    max-height: 42vh;
+    padding: var(--anl-space-2) var(--anl-space-4) var(--anl-space-3);
+  }
+
+  .anl-dialogue__text {
+    font-size: var(--anl-text-md);
+  }
+
+  .anl-dialogue__choices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
