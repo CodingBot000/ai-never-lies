@@ -3,8 +3,7 @@
   inset: 0;
   display: grid;
   gap: var(--anl-space-4);
-  padding: var(--anl-space-5);
-  padding-bottom: 240px;
+  padding: calc(var(--anl-space-6) + var(--anl-space-3)) var(--anl-space-5) 240px;
   overflow-y: auto;
   background: linear-gradient(180deg, rgba(7, 11, 16, 0.78), rgba(7, 11, 16, 0.9));
 }
