@@ -36,6 +36,7 @@ test('가로 모바일에서 HUD와 본문이 겹치지 않고 진행된다', as
   // 세로 안내 → 가로 전환 시 해제
   await page.setViewportSize({ width: 412, height: 915 })
   await expect(page.locator('.anl-portrait-notice')).toBeVisible()
+  await expect(page.getByRole('button', { name: '가로로 시작' })).toBeVisible()
   await page.setViewportSize({ width: 915, height: 412 })
   await expect(page.locator('.anl-portrait-notice')).toHaveCount(0)
 
