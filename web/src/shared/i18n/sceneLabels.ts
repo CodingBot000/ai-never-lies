@@ -61,3 +61,40 @@ export function sceneLabel(id: string | null | undefined, locale: Locale = 'ko')
   if (!entry) return id
   return entry[locale] ?? entry.ko
 }
+
+export const SCREEN_TYPE_LABELS: Record<string, LocalizedText> = {
+  title: { ko: '시작' },
+  cinematic: { ko: '프롤로그' },
+  cinematic_replay: { ko: '기록 재생' },
+  dialogue: { ko: '대화' },
+  dialogue_choice: { ko: '선택 대화' },
+  hub: { ko: '조사 허브' },
+  investigation: { ko: '현장 조사' },
+  interview: { ko: '면담' },
+  interview_document: { ko: '자료 면담' },
+  interview_log: { ko: '기록 면담' },
+  document_interview: { ko: '문서 면담' },
+  hearing: { ko: '공개심리' },
+  log: { ko: '기록 열람' },
+  timeline: { ko: '시간축' },
+  comparison: { ko: '비교' },
+  diff: { ko: '변경 비교' },
+  test_matrix: { ko: '시험표' },
+  deployment: { ko: '배포 경로' },
+  counterfactual: { ko: '반사실' },
+  causal_board: { ko: '인과판' },
+  report: { ko: '보고서' },
+  case_readiness: { ko: '최종 쟁점' },
+  decision: { ko: '결정' },
+  reconstruction_preview: { ko: '재구성 미리보기' },
+  statistics_document: { ko: '통계 자료' },
+  document: { ko: '문서' },
+  case_archive: { ko: '사건 기록' },
+}
+
+export function screenTypeLabel(type: string | null | undefined, locale: Locale = 'ko'): string {
+  if (!type) return ''
+  const entry = SCREEN_TYPE_LABELS[type]
+  if (!entry) return type
+  return entry[locale] ?? entry.ko
+}

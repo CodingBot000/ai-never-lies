@@ -1,7 +1,7 @@
 import type { ScreenProps } from '../types'
 import { allConditionsMet } from '../../core/conditions/conditionEvaluator'
 import { assetUrl, getAsset } from '../../shared/assets/assetCatalog'
-import { sceneLabel } from '../../shared/i18n/sceneLabels'
+import { sceneLabel, screenTypeLabel } from '../../shared/i18n/sceneLabels'
 import './hub.css'
 
 export function HubScreen({ api, feedback }: ScreenProps) {
@@ -90,7 +90,7 @@ export function HubScreen({ api, feedback }: ScreenProps) {
                     {isOptional ? <em className="anl-tag anl-tag--optional">{index.ui('ui.hub_optional')}</em> : null}
                     {visited && !completed ? <em className="anl-tag">{index.ui('ui.hub_visit')}</em> : null}
                   </span>
-                  {thumbEntry ? <span className="anl-hub__card-note">{child.screenType}</span> : null}
+                  {thumbEntry ? <span className="anl-hub__card-note">{screenTypeLabel(child.screenType)}</span> : null}
                 </span>
               </button>
             </li>

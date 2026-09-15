@@ -21,7 +21,8 @@ body {
   font-family: var(--anl-font-sans);
   font-size: var(--anl-text-md);
   line-height: var(--anl-line);
-  overflow-wrap: anywhere;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 img,
