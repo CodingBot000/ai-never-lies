@@ -1,14 +1,8 @@
-import type { AppSettings, TextSize, TextSpeed } from '../../app/settings'
+import type { AppSettings, TextSpeed } from '../../app/settings'
 
 interface SettingsPanelProps {
   settings: AppSettings
   onChange: (patch: Partial<AppSettings>) => void
-}
-
-const TEXT_SIZE_LABELS: Record<TextSize, string> = {
-  '100': '100%',
-  '125': '125%',
-  '150': '150%',
 }
 
 const TEXT_SPEED_LABELS: Record<TextSpeed, string> = {
@@ -21,24 +15,6 @@ const TEXT_SPEED_LABELS: Record<TextSpeed, string> = {
 export function SettingsPanel({ settings, onChange }: SettingsPanelProps) {
   return (
     <div className="anl-settings">
-      <fieldset className="anl-settings__group">
-        <legend>글자 크기</legend>
-        <div className="anl-settings__options">
-          {(Object.keys(TEXT_SIZE_LABELS) as TextSize[]).map((size) => (
-            <label key={size} className="anl-settings__option">
-              <input
-                type="radio"
-                name="text-size"
-                value={size}
-                checked={settings.textSize === size}
-                onChange={() => onChange({ textSize: size })}
-              />
-              <span>{TEXT_SIZE_LABELS[size]}</span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
       <fieldset className="anl-settings__group">
         <legend>대사 출력 속도</legend>
         <div className="anl-settings__options">

@@ -38,13 +38,13 @@ describe('타이틀과 기본 내비게이션', () => {
     ).toBeInTheDocument()
   })
 
-  it('설정 모달에서 글자 크기를 바꾸면 html에 반영되고 저장된다', async () => {
+  it('설정 모달에서 대사 출력 속도를 바꾸면 저장된다', async () => {
     const user = await renderApp()
     await user.click(screen.getByRole('button', { name: /설정/ }))
     expect(screen.getByRole('dialog', { name: '메뉴' })).toBeInTheDocument()
-    await user.click(screen.getByRole('radio', { name: '150%' }))
-    expect(document.documentElement.dataset.textSize).toBe('150')
-    expect(window.localStorage.getItem('anl.ep01.settings')).toContain('150')
+    expect(screen.queryByRole('radio', { name: '150%' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('radio', { name: '즉시 표시' }))
+    expect(window.localStorage.getItem('anl.ep01.settings')).toContain('instant')
   })
 
   it('정보 모달을 Esc로 닫는다', async () => {
