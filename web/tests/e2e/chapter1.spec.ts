@@ -124,7 +124,7 @@ test('실제 입력으로 1장(경고→조사→심문)을 완주한다', async
   // s100 허브 → s110 조사
   await expect(page.locator('.anl-hub')).toBeVisible()
   await drainDialogue(page)
-  await page.locator('.anl-hub__card', { hasText: 's110' }).click()
+  await page.locator('.anl-hub__card[data-scene-id="s110"]').click()
   await progressToPuzzle(page)
   const regions = page.locator('.anl-region')
   await expect(regions.first()).toBeVisible()
@@ -138,7 +138,7 @@ test('실제 입력으로 1장(경고→조사→심문)을 완주한다', async
   // s120 심문 → p02 해결
   await expect(page.locator('.anl-hub')).toBeVisible()
   await drainDialogue(page)
-  await page.locator('.anl-hub__card', { hasText: 's120' }).click()
+  await page.locator('.anl-hub__card[data-scene-id="s120"]').click()
   await progressToPuzzle(page)
   await expect(page.locator('.anl-puzzle')).toBeVisible()
 

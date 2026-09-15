@@ -63,14 +63,14 @@ test('선택 조사 s520·s530(자료 수신)을 클릭으로 완주한다', asy
   await expect(page.locator('.anl-hub')).toBeVisible()
 
   // s520: 방문하면 dlg_s520_007에서 ev34를 지급하고 s500으로 복귀
-  await page.locator('.anl-hub__card', { hasText: 's520' }).click()
+  await page.locator('.anl-hub__card[data-scene-id="s520"]').click()
   await drainDialogue(page)
   await pressContinue(page)
   expect(await evidencePanelText(page)).toContain('승객 보충 진술')
 
   // s530: 유족 자료 수신(ev35)
   await expect(page.locator('.anl-hub')).toBeVisible()
-  await page.locator('.anl-hub__card', { hasText: 's530' }).click()
+  await page.locator('.anl-hub__card[data-scene-id="s530"]').click()
   await drainDialogue(page)
   await page.locator('.anl-choice', { hasText: '유족이 제공한 자료만 수신' }).click()
   await drainDialogue(page)
@@ -93,7 +93,7 @@ test('s530에서 개인 자료를 거절하면 ev35가 지급되지 않는다', 
   await drainDialogue(page)
   await expect(page.locator('.anl-hub')).toBeVisible()
 
-  await page.locator('.anl-hub__card', { hasText: 's530' }).click()
+  await page.locator('.anl-hub__card[data-scene-id="s530"]').click()
   await drainDialogue(page)
   await page.locator('.anl-choice', { hasText: '개인 자료를 받지 않고 이야기만 듣기' }).click()
   await drainDialogue(page)

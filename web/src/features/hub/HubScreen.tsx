@@ -1,6 +1,7 @@
 import type { ScreenProps } from '../types'
 import { allConditionsMet } from '../../core/conditions/conditionEvaluator'
 import { assetUrl, getAsset } from '../../shared/assets/assetCatalog'
+import { sceneLabel } from '../../shared/i18n/sceneLabels'
 import './hub.css'
 
 export function HubScreen({ api, feedback }: ScreenProps) {
@@ -32,7 +33,7 @@ export function HubScreen({ api, feedback }: ScreenProps) {
     <section className="anl-hub" aria-label={`조사 허브 ${scene.id}`}>
       <header className="anl-hub__header">
         <div>
-          <h1 className="anl-hub__title">{scene.id} · Act {scene.act}</h1>
+          <h1 className="anl-hub__title">{sceneLabel(scene.id)} · Act {scene.act}</h1>
           <p className="anl-hub__progress">
             필수 {done}/{required.length} 완료
           </p>
@@ -77,7 +78,7 @@ export function HubScreen({ api, feedback }: ScreenProps) {
                   {thumb ? <img src={thumb} alt="" /> : <span className="anl-hub__thumb-empty" />}
                 </span>
                 <span className="anl-hub__card-body">
-                  <strong>{id}</strong>
+                  <strong>{sceneLabel(id)}</strong>
                   <span className="anl-hub__card-tags">
                     {completed ? (
                       <em className="anl-tag anl-tag--done">{index.ui('ui.hub_done')}</em>

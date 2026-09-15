@@ -6,6 +6,7 @@ import { EvidenceImage } from '../../shared/assets/EvidenceImage'
 import { assetRegions } from '../../shared/assets/assetCatalog'
 import { investigationOverlays } from '../../shared/assets/evidenceOverlays'
 import { Modal } from '../../shared/components/Modal'
+import { sceneLabel } from '../../shared/i18n/sceneLabels'
 import './puzzle.css'
 
 export function PuzzleHost(props: ScreenProps) {
@@ -893,7 +894,7 @@ export function PuzzleHeader({ api, puzzle }: { api: ScreenProps['api']; puzzle:
   return (
     <header className="anl-puzzle__header">
       <h1>
-        {scene?.id} · {typeLabel(puzzle.type)}
+        {scene ? sceneLabel(scene.id) : ''} · {typeLabel(puzzle.type)}
       </h1>
       {scene?.tipText ? <p className="anl-puzzle__tip">{scene.tipText}</p> : null}
     </header>
