@@ -3,6 +3,7 @@ import type { GameSessionApi } from '../../app/useGameSession'
 import { planTestAssist } from '../../core/commands/testAssistPlanner'
 import { Modal } from '../../shared/components/Modal'
 import { testToolsEnabled } from '../../app/env'
+import { formatContentText } from '../../shared/i18n/contentText'
 
 interface HintPanelProps {
   api: GameSessionApi
@@ -23,7 +24,7 @@ export function HintPanel({ api, onClose }: HintPanelProps) {
   return (
     <Modal title={index.ui('ui.hints')} onClose={onClose}>
       <div className="anl-hint">
-        <p className="anl-hint__scene">{context.sceneTip || index.ui('ui.tip_scene_help')}</p>
+        <p className="anl-hint__scene">{context.sceneTip ? formatContentText(context.sceneTip, index) : index.ui('ui.tip_scene_help')}</p>
         {context.nextAction ? (
           <p className="anl-hint__next">
             <strong>{index.ui('ui.hint_scene')}:</strong> {context.nextAction}

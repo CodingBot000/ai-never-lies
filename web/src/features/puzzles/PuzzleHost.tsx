@@ -4,9 +4,12 @@ import type { EvidenceDefinitionDto, PuzzleDefinitionDto, PuzzleDraftDto, Region
 import type { ContentIndex } from '../../core/content/contentIndex'
 import { EvidenceImage } from '../../shared/assets/EvidenceImage'
 import { assetRegions } from '../../shared/assets/assetCatalog'
+import { regionLabel } from '../../shared/assets/evidenceOverlays'
 import { investigationOverlays } from '../../shared/assets/evidenceOverlays'
 import { Modal } from '../../shared/components/Modal'
 import { sceneLabel } from '../../shared/i18n/sceneLabels'
+import { puzzleLabel } from '../../shared/i18n/puzzleLabels'
+import { formatContentText } from '../../shared/i18n/contentText'
 import './puzzle.css'
 
 export function PuzzleHost(props: ScreenProps) {
@@ -101,7 +104,7 @@ function HotspotWidget({ api, puzzle, feedback }: WidgetProps) {
         <ul className="anl-visit-list">
           {regions.map((region) => (
             <li key={region.regionId} className={visited.includes(region.regionId) ? 'is-done' : ''}>
-              {region.regionId} {visited.includes(region.regionId) ? '· 확인' : ''}
+              {regionLabel(bg, region.regionId)} {visited.includes(region.regionId) ? '· 확인' : ''}
             </li>
           ))}
         </ul>
@@ -894,9 +897,9 @@ export function PuzzleHeader({ api, puzzle }: { api: ScreenProps['api']; puzzle:
   return (
     <header className="anl-puzzle__header">
       <h1>
-        {scene ? sceneLabel(scene.id) : ''} · {typeLabel(puzzle.type)}
+        {scene ? sceneLabel(scene.id) : ''} · {puzzleLabel(puzzle.id)}
       </h1>
-      {scene?.tipText ? <p className="anl-puzzle__tip">{scene.tipText}</p> : null}
+      {scene?.tipText ? <p className="anl-puzzle__tip">{formatContentText(scene.tipText, index)}</p> : null}
     </header>
   )
 }

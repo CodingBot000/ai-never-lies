@@ -5,6 +5,7 @@ import type { PressLineDto, SceneDefinitionDto } from '../core/content/dto'
 import { Phases } from '../core/state/gameState'
 import { assetUrl } from '../shared/assets/assetCatalog'
 import { sceneLabel } from '../shared/i18n/sceneLabels'
+import { formatContentText } from '../shared/i18n/contentText'
 import { Modal } from '../shared/components/Modal'
 import { isEditableTarget } from '../shared/keyboard/isEditableTarget'
 import { ArchiveScreen } from '../features/archive/ArchiveScreen'
@@ -330,7 +331,7 @@ function TransitionPanel({ api, openModal }: ScreenProps) {
     <div className="anl-transition">
       <div className="anl-transition__panel">
         <h1>{sceneLabel(scene.id)}</h1>
-        {scene.tipText ? <p className="anl-muted">{scene.tipText}</p> : null}
+        {scene.tipText ? <p className="anl-muted">{formatContentText(scene.tipText, index)}</p> : null}
         <div className="anl-transition__actions">
           <button
             type="button"
