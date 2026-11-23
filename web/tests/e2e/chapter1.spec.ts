@@ -27,7 +27,7 @@ async function chooseAllBranches(page: Page): Promise<void> {
 async function pressContinue(page: Page): Promise<void> {
   for (let i = 0; i < 4; i++) {
     const primary = page.locator('.anl-transition .anl-button--primary')
-    if ((await primary.count()) === 0 || !(await primary.isVisible())) return
+    if (!(await primary.isVisible()) || !(await primary.isEnabled())) return
     await primary.click()
     await page.waitForTimeout(250)
   }
@@ -101,9 +101,8 @@ test('실제 입력으로 1장(경고→조사→심문)을 완주한다', async
   await page.goto('/')
   await page.getByRole('button', { name: /새 게임/ }).click()
   await drainDialogue(page)
-  // 경고 4줄 완료 후 타이틀 메뉴로 복귀 → s010 프롤로그 시작
-  await page.getByRole('button', { name: /새 게임/ }).click()
-  await drainDialogue(page)
+  // 안내와 프롤로그가 순서대로 재생된다.
+  await expect(page.locator('.anl-transition')).toContainText('비 오는 귀갓길')
   // s010 완료 → s020으로 이동
   await pressContinue(page)
   await expect(page.locator('.anl-dialogue')).toBeVisible()

@@ -169,6 +169,7 @@ export function solveSceneTo(dispatcher: CommandDispatcher, state: GameState, ta
     switch (state.phase) {
       case Phases.PreDialogue:
       case Phases.PostDialogue:
+      case Phases.BranchDialogue:
         expectAccepted(send(dispatcher, CommandKinds.AdvanceDialogue), `AdvanceDialogue at ${state.currentSceneId}`)
         break
       case Phases.Interaction:
@@ -218,6 +219,7 @@ export function finishScene(dispatcher: CommandDispatcher, state: GameState): vo
     switch (state.phase) {
       case Phases.PreDialogue:
       case Phases.PostDialogue:
+      case Phases.BranchDialogue:
         expectAccepted(send(dispatcher, CommandKinds.AdvanceDialogue), `AdvanceDialogue at ${state.currentSceneId}`)
         break
       case Phases.BranchChoice:
@@ -238,7 +240,7 @@ export function finishScene(dispatcher: CommandDispatcher, state: GameState): vo
 
 export function advanceUntilChoiceOrInteraction(dispatcher: CommandDispatcher, state: GameState): void {
   for (let i = 0; i < 500; i++) {
-    if (state.phase === Phases.PreDialogue || state.phase === Phases.PostDialogue) {
+    if (state.phase === Phases.PreDialogue || state.phase === Phases.PostDialogue || state.phase === Phases.BranchDialogue) {
       expectAccepted(send(dispatcher, CommandKinds.AdvanceDialogue), `AdvanceDialogue at ${state.currentSceneId}`)
       continue
     }
@@ -263,6 +265,7 @@ function stepToInteraction(dispatcher: CommandDispatcher, state: GameState): voi
     switch (state.phase) {
       case Phases.PreDialogue:
       case Phases.PostDialogue:
+      case Phases.BranchDialogue:
         expectAccepted(send(dispatcher, CommandKinds.AdvanceDialogue), `AdvanceDialogue at ${state.currentSceneId}`)
         break
       case Phases.BranchChoice:

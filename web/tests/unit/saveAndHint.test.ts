@@ -32,6 +32,57 @@ function newSaves(): SaveService {
 }
 
 describe('SV — 저장·복원', () => {
+  it.each(['s130', 's340', 's700'])('%s의 구형 조기 종료 저장에서 필수 선택으로 복귀한다', (sceneId) => {
+    const index = loadTestContent()
+    const saves = newSaves()
+    const state = new GameState()
+    state.currentSceneId = sceneId
+    state.phase = Phases.ReadyToExit
+    state.preDialogueDone.push(sceneId)
+    state.postDialogueDone.push(sceneId)
+    state.completedScenes.push(sceneId)
+    state.addOwned('ev01')
+    expect(saves.save(state, Slot)).toBe(true)
+    const session = new GameSession(index, saves, CONTENT_VERSION, '')
+    expect(session.loadGame(Slot).loaded).toBe(true)
+    expect(session.state.phase).toBe(Phases.BranchChoice)
+    expect(session.state.isSceneCompleted(sceneId)).toBe(false)
+    expect(session.state.owns('ev01')).toBe(true)
+    expect(session.execute(CommandKinds.ContinueScene).reasonCode).toBe('advancing_choice_required')
+    expect(saves.load(Slot).snapshot?.phase).toBe(Phases.ReadyToExit)
+  })
+
+  it('선택 응답 중 저장하면 같은 줄에서 복원된다', () => {
+    const index = loadTestContent()
+    const saves = newSaves()
+    const session = new GameSession(index, saves, CONTENT_VERSION, '')
+    session.dispatcher.enterScene('s340')
+    while (session.state.phase === Phases.PreDialogue) session.execute(CommandKinds.AdvanceDialogue)
+    expectAccepted(session.execute(CommandKinds.ChooseBranch, { targetId: 'b_s340_single' }))
+    expect(session.state.phase).toBe(Phases.BranchDialogue)
+    expect(saves.load('autosave').snapshot?.phase).toBe(Phases.BranchChoice)
+    expect(session.loadGame('autosave').loaded).toBe(true)
+    expect(session.state.branchResponseId).toBe('b_s340_single')
+    expectAccepted(session.execute(CommandKinds.AdvanceDialogue))
+    expect(session.state.phase).toBe(Phases.BranchChoice)
+    expect(session.dispatcher.canFinishChoices()).toBe(false)
+  })
+
+  it('보고서에 이전 입증 근거를 가져와도 기존 선택과 이후 삭제를 존중한다', () => {
+    const index = loadTestContent()
+    const { dispatcher, state } = freshDispatcher(index)
+    ensureInteraction(dispatcher, state, 'p20')
+    expectAccepted(send(dispatcher, CommandKinds.SelectEvidence, { targetId: 'misleading_public_summary', ids: ['ev02'] }))
+    expectAccepted(send(dispatcher, CommandKinds.ImportInvestigation))
+    const draft = state.getDraft('p20', false)
+    expect(draft?.reportEvidence).toContainEqual({ item: 'misleading_public_summary', evidenceIds: ['ev02'] })
+    expect(draft?.reportEvidence).toContainEqual({ item: 'known_risk_continued', evidenceIds: ['ev29', 'ev30'] })
+    expect(draft?.reportPlacements).toEqual([])
+    expectAccepted(send(dispatcher, CommandKinds.SelectEvidence, { targetId: 'known_risk_continued', ids: [] }))
+    expectAccepted(send(dispatcher, CommandKinds.ImportInvestigation))
+    expect(draft?.reportEvidence).toContainEqual({ item: 'known_risk_continued', evidenceIds: [] })
+  })
+
   it('SV01 스냅샷 왕복이 컬렉션을 보존한다', () => {
     const index = loadTestContent()
     const { dispatcher, state } = freshDispatcher(index)

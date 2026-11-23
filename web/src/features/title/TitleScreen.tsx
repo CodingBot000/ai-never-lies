@@ -52,13 +52,13 @@ export function TitleScreen({
           <li className="anl-title__item">
             <button type="button" className="anl-menu-button" onClick={onArchive} disabled={!archiveEnabled}>
               <span>사건 기록</span>
-              <span className="anl-menu-button__hint">Episode 01 완료 후 열립니다</span>
+              <span className="anl-menu-button__hint">{archiveEnabled ? '완료한 조사 다시 보기' : 'Episode 01 완료 후 열립니다'}</span>
             </button>
           </li>
           <li className="anl-title__item">
             <button type="button" className="anl-menu-button" onClick={onSettings}>
               <span>설정</span>
-              <span className="anl-menu-button__hint">글자 크기·출력 속도</span>
+              <span className="anl-menu-button__hint">대사 출력 속도·동작 줄이기</span>
             </button>
           </li>
           <li className="anl-title__item">

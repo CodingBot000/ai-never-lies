@@ -149,7 +149,7 @@ async function readAllEvidence(page: Page): Promise<void> {
   await activate(page, dialog.getByRole('button', { name: '닫기' }))
 }
 
-test('[qa:keyboard] 마우스 포인터 없이 시작부터 사건 기록까지 완주한다', async ({ page }) => {
+async function completeWithKeyboard(page: Page, textSize: '100' | '150') {
   test.setTimeout(300_000)
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(String(error)))
@@ -157,16 +157,16 @@ test('[qa:keyboard] 마우스 포인터 없이 시작부터 사건 기록까지 
     if (message.type() === 'error') errors.push(message.text())
   })
   page.on('dialog', (dialog) => dialog.accept())
-  await page.addInitScript(() => {
+  await page.addInitScript((size) => {
     localStorage.setItem(
       'anl.ep01.settings',
-      JSON.stringify({ textSize: '100', textSpeed: 'instant', autoAdvance: false, reducedMotion: true }),
+      JSON.stringify({ textSize: size, textSpeed: 'instant', autoAdvance: false, reducedMotion: true }),
     )
     ;(window as unknown as { anlPointerDowns: number }).anlPointerDowns = 0
     document.addEventListener('pointerdown', () => {
       ;(window as unknown as { anlPointerDowns: number }).anlPointerDowns++
     })
-  })
+  }, textSize)
 
   await page.goto('/')
   await activate(page, page.getByRole('button', { name: /새 게임/ }))
@@ -248,6 +248,15 @@ test('[qa:keyboard] 마우스 포인터 없이 시작부터 사건 기록까지 
   expect(reachedArchive).toBe(true)
   expect(await page.evaluate(() => (window as unknown as { anlPointerDowns: number }).anlPointerDowns)).toBe(0)
   expect(errors).toEqual([])
+}
+
+test('[qa:keyboard] 마우스 포인터 없이 시작부터 사건 기록까지 완주한다', async ({ page }) => {
+  await completeWithKeyboard(page, '100')
+})
+
+test('[qa:keyboard] 가로 844×390과 기존 150% 설정에서 모든 퍼즐을 완주한다', async ({ page }) => {
+  await page.setViewportSize({ width: 844, height: 390 })
+  await completeWithKeyboard(page, '150')
 })
 
 test('[qa:keyboard] 입력 필드에서는 전역 Space·Esc 단축키를 실행하지 않는다', async ({ page }) => {

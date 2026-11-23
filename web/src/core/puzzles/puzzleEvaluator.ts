@@ -190,7 +190,21 @@ function evalStatement(puzzle: PuzzleDefinitionDto, draft: PuzzleDraftDto, index
   const match = matchEvidenceSet(puzzle.sufficientEvidenceSets, draft.selectedEvidenceIds)
   if (match >= 0) return solved(puzzle, match)
   if (anyRequiredEvidenceSelected(puzzle.sufficientEvidenceSets, draft.selectedEvidenceIds)) {
-    return partial(puzzle.partialText || '제출한 근거가 충분하지 않습니다.')
+    if (puzzle.id === 'p09' && !draft.selectedEvidenceIds.includes('ev18')) {
+      return partial('위험 보고를 확인한 기록은 있습니다. 실제 운행 해제가 이루어진 근거를 확인하세요.')
+    }
+    if (puzzle.id === 'p18') return partial('구체적인 위험을 알았다는 기록과 운영을 유지했다는 결정을 함께 입증하세요.')
+    if (puzzle.id === 'p19') return partial('발표 내용, 자료가 만들어진 조건, 수정 승인 기록을 함께 확인하세요.')
+    const references = [...puzzle.partialText.matchAll(/\bev\d{2}\b/g)].map(([id]) => id)
+    return partial((references.every((id) => draft.selectedEvidenceIds.includes(id)) ? puzzle.partialText : '') ||
+      '관련 근거가 일부 있습니다. 이 주장에 빠진 사실을 다른 자료로 확인하세요.')
+  }
+  if (puzzle.id === 'p02' && draft.selectedEvidenceIds.includes('ev03')) {
+    return wrong(puzzle, '전방 사고 영상으로는 차 안의 경고를 확인할 수 없습니다.')
+  }
+  const reference = [...puzzle.wrongText.matchAll(/\bev\d{2}\b/g)].map(([id]) => id)
+  if (reference.length && !reference.every((id) => draft.selectedEvidenceIds.includes(id))) {
+    return wrong(puzzle, index.ui('ui.statement_unrelated'))
   }
   return wrong(puzzle, puzzle.wrongText || index.ui('ui.statement_unrelated'))
 }
@@ -301,6 +315,10 @@ function evalCounterfactual(puzzle: PuzzleDefinitionDto, draft: PuzzleDraftDto):
 
 function evalCausalGraph(puzzle: PuzzleDefinitionDto, draft: PuzzleDraftDto): PuzzleEvalResult {
   if (!puzzle.requiredEdges || puzzle.requiredEdges.length === 0) return wrong(puzzle)
+  if ((draft.edges ?? []).some((edge) => !puzzle.requiredEdges.some((required) =>
+    required.from === edge.from && required.to === edge.to && required.kind === edge.kind))) {
+    return partial('근거가 뒷받침하지 않는 연결이 있습니다. 인과선과 신호선의 역할을 다시 확인하세요.')
+  }
   let connected = 0
   for (const edge of puzzle.requiredEdges) {
     if (hasEdge(draft, edge.from, edge.to, edge.kind)) connected++

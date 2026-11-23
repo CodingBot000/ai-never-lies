@@ -27,7 +27,7 @@
       "speakerId": "system",
       "speaker": "시스템",
       "textId": "dlg_s000_003",
-      "text": "읽기 속도, 글자 크기, 화면 흔들림, 점멸과 힌트 수준은 언제든 바꿀 수 있습니다.",
+      "text": "메뉴에서 대사 출력 속도와 동작 줄이기를 설정할 수 있습니다.",
       "portraitAssetId": "",
       "phase": "pre"
     },
@@ -37,7 +37,7 @@
       "speakerId": "system",
       "speaker": "시스템",
       "textId": "dlg_s000_004",
-      "text": "테스트 지원이 켜진 빌드입니다. 팁에서 정답을 확인하거나 현재 문제의 정답 행동을 실행할 수 있습니다.",
+      "text": "막히면 현재 목표를 확인하고, 필요할 때만 팁을 단계별로 열어 보세요.",
       "portraitAssetId": "",
       "phase": "pre"
     },
@@ -707,7 +707,7 @@
       "speakerId": "investigator",
       "speaker": "조사관",
       "textId": "dlg_s160_001",
-      "text": "1.82초 전 요청, 0.46초 전 강한 제동. 차이는 1.36초.",
+      "text": "제동을 요청한 때부터 실제로 강하게 감속하기까지 무슨 일이 있었는지 기록을 맞춰 보자.",
       "portraitAssetId": "",
       "phase": "pre"
     },
@@ -1057,7 +1057,7 @@
       "speakerId": "yun",
       "speaker": "윤해린",
       "textId": "dlg_s230_007",
-      "text": "재시험 전 금지였습니다. 비가 오자 재발했고, 그때는 이전 승인도 철회했습니다.",
+      "text": "재시험 전에 비가 왔습니다. 그때 남긴 기록에 운행 조건을 어떻게 바꿨는지 적혀 있어요.",
       "portraitAssetId": "chr_yun_uneasy",
       "phase": "pre"
     },
@@ -1447,7 +1447,7 @@
       "speakerId": "investigator",
       "speaker": "조사관",
       "textId": "dlg_s410_001",
-      "text": "현재 버전에는 건강정보 확인 경로가 없습니다.",
+      "text": "이전 버전과 사고 차량의 버전에서 제동 요청을 처리하는 방식을 대조해보죠.",
       "portraitAssetId": "",
       "phase": "pre"
     },
@@ -1457,7 +1457,7 @@
       "speakerId": "park",
       "speaker": "박도윤",
       "textId": "dlg_s410_002",
-      "text": "원래 설계에는 있었습니다. 저는 없애면 안 된다고 했습니다.",
+      "text": "그때 제가 남긴 변경 검토와 성능 측정 기록도 같이 보시죠.",
       "portraitAssetId": "chr_park_analytical",
       "phase": "pre"
     },
@@ -1747,7 +1747,7 @@
       "speakerId": "deploy_log",
       "speaker": "배포 기록",
       "textId": "dlg_s440_001",
-      "text": "NV-017: pilot-12. 제동 조정기 3.5. 설치 해시와 사고 레코더 build_id 일치.",
+      "text": "저장소의 변경이 사고 차량에도 적용됐는지, 설치 이력과 사고 레코더를 대조하겠습니다.",
       "portraitAssetId": "",
       "phase": "pre"
     },

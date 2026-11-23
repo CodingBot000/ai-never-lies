@@ -27,28 +27,26 @@ export function EvidencePanel({ api, onClose }: EvidencePanelProps) {
   const [filter, setFilter] = useState<(typeof KIND_TABS)[number]>('all')
   const [selectedId, setSelectedId] = useState<string>('')
   const [tab, setTab] = useState<'summary' | 'original'>('summary')
-  if (!session || !index) return null
-  const state = session.state
+  const state = session?.state
 
   const owned = useMemo(() => {
+    if (!state || !index) return []
     return state.ownedEvidence
       .map((id) => index.evidenceDef(id))
       .filter((item): item is EvidenceDefinitionDto => item !== null)
       .filter((item) => filter === 'all' || item.kind === filter)
-  }, [state.ownedEvidence, index, filter, api.revision])
+  }, [state, index, filter, api.revision])
 
-  const selected = selectedId
-    ? index.evidenceDef(selectedId)
-    : owned.length > 0
-      ? (owned[0] ?? null)
-      : null
+  const selected = owned.find((evidence) => evidence.id === selectedId) ?? owned[0] ?? null
 
   // 상세가 실제로 표시된 증거는 열람으로 기록한다(자동 표시 포함).
   useEffect(() => {
-    if (selected && !state.hasRead(selected.id)) {
+    if (selected && state && !state.hasRead(selected.id)) {
       run('OpenEvidence', { targetId: selected.id })
     }
   }, [selected?.id, run, state])
+
+  if (!session || !index || !state) return null
 
   const selectEvidence = (evidence: EvidenceDefinitionDto): void => {
     setSelectedId(evidence.id)

@@ -3,6 +3,7 @@ import type { PressLineDto } from '../content/dto'
 export const CommandKinds = {
   StartEpisode: 'StartEpisode',
   AdvanceDialogue: 'AdvanceDialogue',
+  SkipCinematic: 'SkipCinematic',
   ChooseTopic: 'ChooseTopic',
   InspectRegion: 'InspectRegion',
   OpenEvidence: 'OpenEvidence',
@@ -18,6 +19,7 @@ export const CommandKinds = {
   SelectComparisonWindow: 'SelectComparisonWindow',
   RunCounterfactualCase: 'RunCounterfactualCase',
   SubmitPuzzle: 'SubmitPuzzle',
+  ImportInvestigation: 'ImportInvestigation',
   SelectChoice: 'SelectChoice',
   ChooseBranch: 'ChooseBranch',
   ContinueScene: 'ContinueScene',

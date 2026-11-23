@@ -54,8 +54,6 @@ test('선택 조사 s520·s530(자료 수신)을 클릭으로 완주한다', asy
   await page.goto('/')
   await page.getByRole('button', { name: /새 게임/ }).click()
   await drainDialogue(page)
-  await page.getByRole('button', { name: /새 게임/ }).click()
-  await drainDialogue(page)
   // s520/s530 진입 조건(SceneCompleted s460) 충족
   await jumpTo(page, 's460', true)
   await jumpTo(page, 's500')
@@ -83,8 +81,6 @@ test('s530에서 개인 자료를 거절하면 ev35가 지급되지 않는다', 
   test.setTimeout(180_000)
   page.on('dialog', (dialog) => dialog.accept())
   await page.goto('/')
-  await page.getByRole('button', { name: /새 게임/ }).click()
-  await drainDialogue(page)
   await page.getByRole('button', { name: /새 게임/ }).click()
   await drainDialogue(page)
   // s520/s530 진입 조건(SceneCompleted s460) 충족

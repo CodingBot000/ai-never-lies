@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { AppSettings } from './settings'
 import type { GameSessionApi } from './useGameSession'
-import type { PressLineDto, SceneDefinitionDto } from '../core/content/dto'
+import type { PressLineDto, ProgressSnapshot, SceneDefinitionDto } from '../core/content/dto'
 import { Phases } from '../core/state/gameState'
+import { investigationNotes } from '../core/state/investigationNotes'
 import { assetUrl } from '../shared/assets/assetCatalog'
 import { sceneLabel } from '../shared/i18n/sceneLabels'
 import { formatContentText } from '../shared/i18n/contentText'
@@ -35,7 +36,7 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
   const [transient, setTransient] = useState<PressLineDto[]>([])
   const [feedback, setFeedback] = useState('')
   const [goalOpen, setGoalOpen] = useState(false)
-  const [archiveOpen, setArchiveOpen] = useState(false)
+  const [archiveSnapshot, setArchiveSnapshot] = useState<ProgressSnapshot | null>(null)
   const [log, setLog] = useState<{ speaker: string; text: string }[]>([])
   const [lastSaveMessage, setLastSaveMessage] = useState('')
 
@@ -57,10 +58,15 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
   }, [currentLine?.text, currentLine?.speaker, currentLine?.transient])
 
   const inDialogue =
-    state?.phase === Phases.PreDialogue || state?.phase === Phases.PostDialogue || state?.phase === Phases.BranchChoice
-  const showTitle = !state?.currentSceneId || scene?.screenType === 'title'
-  const titleCaseReady =
-    scene?.screenType === 'title' && (state?.phase === Phases.ReadyToExit || state?.phase === Phases.Completed)
+    state?.phase === Phases.PreDialogue || state?.phase === Phases.PostDialogue ||
+    state?.phase === Phases.BranchChoice || state?.phase === Phases.BranchDialogue
+  const showTitle = !state?.currentSceneId || (scene?.screenType === 'title' && !inDialogue)
+  const showTransition = !!scene && !['title', 'hub', 'case_archive'].includes(scene.screenType) &&
+    state?.phase !== Phases.Interaction && state?.phase !== Phases.HubActive && !inDialogue
+
+  useEffect(() => {
+    setFeedback('')
+  }, [state?.currentSceneId])
 
   const pushTransient = useCallback((lines: PressLineDto[]) => {
     if (lines.length > 0) setTransient((previous) => [...previous, ...lines])
@@ -99,6 +105,8 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
   }, [modal, inDialogue, transient.length, run])
 
   if (!session || !index || !state) return null
+  const notes = modal === 'log' ? investigationNotes(state, index) : []
+  const completedSave = showTitle ? session.saves.latestCompletedEpisode() : null
 
   const backgroundAsset = backgroundFor(state, scene)
   const backgroundUrl = backgroundAsset ? assetUrl(backgroundAsset) : null
@@ -112,11 +120,14 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
   const portraitUrl = portraitAsset ? assetUrl(portraitAsset) : null
 
   const newGame = (): void => {
-    if (!window.confirm(index.ui('ui.new_game_confirm'))) return
+    if (session.saves.exists('autosave') && !window.confirm(index.ui('ui.new_game_confirm'))) return
     session.newGame()
     session.autoSave()
     setTransient([])
     setLog([])
+    setFeedback('')
+    setLastSaveMessage('')
+    setGoalOpen(false)
     api.refresh()
   }
 
@@ -144,17 +155,11 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
       {showTitle ? (
         <TitleScreen
           canContinue={session.saves.exists('autosave') || ['slot_01', 'slot_02', 'slot_03'].some((slot) => session.saves.exists(slot))}
-          onNewGame={() => {
-            if (titleCaseReady) {
-              run('ContinueScene')
-            } else {
-              newGame()
-            }
-          }}
+          onNewGame={newGame}
           onContinue={continueGame}
-          onArchive={() => setArchiveOpen(true)}
+          onArchive={() => setArchiveSnapshot(completedSave)}
           onSettings={() => setModal('menu')}
-          archiveEnabled={false}
+          archiveEnabled={!!completedSave}
         />
       ) : (
         <div className="anl-stage">
@@ -177,19 +182,10 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
             state.phase !== Phases.Interaction &&
             state.phase !== Phases.HubActive &&
             (scene.screenType === 'case_archive' || scene.id === 's710') ? (
-              <ArchiveScreen {...screenProps} />
+              <ArchiveScreen {...screenProps} onReturn={() => run('ContinueScene')} />
             ) : null}
-            {scene &&
-            scene.screenType !== 'title' &&
-            scene.screenType !== 'hub' &&
-            state.phase !== Phases.Interaction &&
-            state.phase !== Phases.HubActive &&
-            state.phase !== Phases.PreDialogue &&
-            state.phase !== Phases.PostDialogue &&
-            state.phase !== Phases.BranchChoice &&
-            scene.screenType !== 'case_archive' &&
-            scene.id !== 's710' ? (
-              <TransitionPanel {...screenProps} />
+            {showTransition ? (
+              <TransitionPanel {...screenProps} notice={feedback} />
             ) : null}
           </main>
         </div>
@@ -235,7 +231,7 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
         </div>
       ) : null}
 
-      {feedback ? (
+      {feedback && !showTransition ? (
         <div className="anl-toast" role="status" aria-live="polite">
           <span>{feedback}</span>
           <button type="button" className="anl-button anl-button--small" onClick={() => setFeedback('')}>
@@ -261,6 +257,14 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
       ) : null}
       {modal === 'log' ? (
         <Modal title={index.ui('ui.notebook')} onClose={() => setModal(null)} wide>
+          {notes.length ? (
+            <section>
+              <h3>확인한 쟁점과 근거</h3>
+              <ol className="anl-log">
+                {notes.map((note) => <li key={note.detail}><strong>{note.title}</strong><p>{note.detail}</p></li>)}
+              </ol>
+            </section>
+          ) : null}
           <ol className="anl-log">
             {log.length === 0 ? <li className="anl-muted">기록된 대사가 없습니다.</li> : null}
             {log.map((entry, position) => (
@@ -284,11 +288,7 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
               className="anl-button"
               onClick={() => {
                 setModal(null)
-                if (window.confirm(index.ui('ui.new_game_confirm'))) {
-                  session.newGame()
-                  session.autoSave()
-                  api.refresh()
-                }
+                newGame()
               }}
             >
               {index.ui('ui.new_case')}
@@ -308,16 +308,16 @@ export function GameShell({ api, settings, onSettingsChange }: GameShellProps) {
         </Modal>
       ) : null}
       {modal === 'dev' && testToolsEnabled ? <DevPanel api={api} onClose={() => setModal(null)} /> : null}
-      {archiveOpen ? (
-        <Modal title={index.ui('ui.archive_title')} onClose={() => setArchiveOpen(false)} wide>
-          <ArchiveScreen {...screenProps} />
+      {archiveSnapshot ? (
+        <Modal title={index.ui('ui.archive_title')} onClose={() => setArchiveSnapshot(null)} wide>
+          <ArchiveScreen {...screenProps} snapshot={archiveSnapshot} />
         </Modal>
       ) : null}
     </div>
   )
 }
 
-function TransitionPanel({ api, openModal }: ScreenProps) {
+function TransitionPanel({ api, openModal, notice }: ScreenProps & { notice: string }) {
   const { session, index, run } = api
   if (!session || !index) return null
   const state = session.state
@@ -325,28 +325,43 @@ function TransitionPanel({ api, openModal }: ScreenProps) {
   if (!scene) return null
   const parent = [...index.scenes.values()].find((candidate) => candidate.childSceneIds?.includes(scene.id))?.id
   const transition = session.dispatcher.transitionAvailable()
-  const blocked = !transition.available && !parent
+  const readCheck = state.phase === Phases.ReadCheck
+  const available = readCheck ? session.dispatcher.canContinue().can : transition.available
+  const blocked = !available && !parent
 
   return (
     <div className="anl-transition">
       <div className="anl-transition__panel">
         <h1>{sceneLabel(scene.id)}</h1>
-        {scene.tipText ? <p className="anl-muted">{formatContentText(scene.tipText, index)}</p> : null}
+        {notice ? <p className="anl-feedback" role="status">{notice}</p> : null}
+        <p className="anl-muted">{session.hints.resolve(state).sceneTip}</p>
+        {scene.id === 's650' ? (
+          <details>
+            <summary>검증한 사고 경로 다시 보기</summary>
+            <ul>
+              {state.getDraft('p17', false)?.edges.map((edge) => (
+                <li key={`${edge.from}|${edge.to}`}>
+                  {index.graphNodes().find((node) => node.id === edge.from)?.label} → {index.graphNodes().find((node) => node.id === edge.to)?.label}
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : null}
         <div className="anl-transition__actions">
           <button
             type="button"
             className="anl-button anl-button--primary"
             data-action="continue-scene"
-            disabled={!transition.available && !parent}
+            disabled={!available && !parent}
             onClick={() => {
-              if (transition.available) {
+              if (available) {
                 run('ContinueScene')
               } else {
                 run('ReturnToHub')
               }
             }}
           >
-            {transition.available ? index.ui('ui.continue_scene') : parent ? index.ui('ui.return_to_hub') : index.ui('ui.continue_scene')}
+            {available ? index.ui('ui.continue_scene') : parent ? index.ui('ui.return_to_hub') : index.ui('ui.continue_scene')}
           </button>
           {blocked ? (
             <>
@@ -388,8 +403,7 @@ function goalText(api: GameSessionApi): string {
   const context = session.hints.resolve(session.state)
   const parts: string[] = []
   if (context.sceneTip) parts.push(context.sceneTip)
-  if (context.nextAction) parts.push(context.nextAction)
-  if (context.levels[0]) parts.push(context.levels[0].text)
+  if (context.nextAction) parts.push(formatContentText(context.nextAction, index))
   return parts.join(' · ') || index.ui('ui.interaction_hint')
 }
 

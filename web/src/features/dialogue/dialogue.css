@@ -132,3 +132,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.anl-dialogue__skip {
+  position: absolute;
+  left: var(--anl-space-6);
+  bottom: var(--anl-space-6);
+  pointer-events: auto;
+}
+
+.anl-dialogue:has(.anl-dialogue__skip) .anl-dialogue__box {
+  padding-bottom: calc(var(--anl-hit) + var(--anl-space-4));
+}
