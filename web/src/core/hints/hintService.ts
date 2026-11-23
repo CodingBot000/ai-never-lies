@@ -1,6 +1,7 @@
 import type { HintDefinitionDto } from '../content/dto'
 import type { ContentIndex } from '../content/contentIndex'
 import { GameState, Phases } from '../state/gameState'
+import { PUZZLE_OBJECTIVES } from './puzzleObjectives'
 
 export interface HintContext {
   scopeType: string
@@ -30,7 +31,7 @@ export class HintService {
     }
     const scene = this.index.scene(state.currentSceneId)
     context.title = scene ? scene.id : ''
-    context.sceneTip = scene ? scene.tipText : ''
+    context.sceneTip = scene ? '대화를 읽고 새로 확인한 사실을 살펴보세요.' : '새 조사를 시작하거나 저장된 사건을 이어가세요.'
 
     switch (state.phase) {
       case Phases.Interaction: {
@@ -39,6 +40,7 @@ export class HintService {
           context.scopeType = 'puzzle'
           context.scopeId = puzzle.id
           context.title = puzzle.id
+          context.sceneTip = PUZZLE_OBJECTIVES[puzzle.id] ?? '현재 조사에서 필요한 근거를 연결하세요.'
           for (const hint of this.index.allHints()) {
             if (hint.scopeType === 'puzzle' && hint.scopeId === puzzle.id) context.levels.push(hint)
           }
@@ -47,6 +49,7 @@ export class HintService {
         break
       }
       case Phases.HubActive: {
+        context.sceneTip = '해결하고 싶은 질문에 해당하는 조사 장소를 고르세요.'
         const hub = this.index.scene(state.currentSceneId)
         if (hub?.childSceneIds) {
           for (const childId of hub.childSceneIds) {
@@ -60,6 +63,7 @@ export class HintService {
         break
       }
       case Phases.ReadCheck: {
+        context.sceneTip = '증거책에서 아직 읽지 않은 필수 자료를 열어 보세요.'
         const current = this.index.scene(state.currentSceneId)
         if (current?.requiredReadEvidenceIds) {
           for (const evidenceId of current.requiredReadEvidenceIds) {
@@ -73,39 +77,17 @@ export class HintService {
         break
       }
       case Phases.BranchChoice: {
-        const current = this.index.scene(state.currentSceneId)
-        if (current?.advancingGroupIds) {
-          for (const groupId of current.advancingGroupIds) {
-            const group = this.index.branchGroup(groupId)
-            for (const branch of group) {
-              if (!state.isTopicVisited(branch.id)) {
-                context.nextAction = branch.label
-                break
-              }
-            }
-          }
-        }
+        context.sceneTip = '확인하고 싶은 질문이나 답변을 고르세요.'
         break
       }
       case Phases.ReadyToExit:
       case Phases.Completed: {
-        const current = this.index.scene(state.currentSceneId)
-        if (current?.transitions && current.transitions.length > 0) {
-          context.nextAction = current.transitions[0]?.target ?? ''
-        }
-        if (context.levels.length === 0) {
-          const hint = this.sceneHint(state.currentSceneId)
-          if (hint) context.levels.push(hint)
-        }
+        context.sceneTip = '확인한 내용을 정리하고 다음 단계로 이동하세요.'
         break
       }
       default:
         context.nextAction = state.currentSceneId
         break
-    }
-    if (context.levels.length === 0) {
-      const sceneHint = this.sceneHint(state.currentSceneId)
-      if (sceneHint) context.levels.push(sceneHint)
     }
     return context
   }

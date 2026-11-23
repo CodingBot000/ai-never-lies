@@ -17,6 +17,10 @@ const FOCUSABLE =
  */
 export function Modal({ title, onClose, children, wide = false }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
+  const closeRef = useRef(onClose)
+  useEffect(() => {
+    closeRef.current = onClose
+  }, [onClose])
 
   useEffect(() => {
     const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null
@@ -28,7 +32,7 @@ export function Modal({ title, onClose, children, wide = false }: ModalProps) {
       if (isEditableTarget(event.target)) return
       if (event.key === 'Escape') {
         event.stopPropagation()
-        onClose()
+        closeRef.current()
         return
       }
       if (event.key !== 'Tab' || !dialog) return
@@ -54,7 +58,7 @@ export function Modal({ title, onClose, children, wide = false }: ModalProps) {
       document.removeEventListener('keydown', handleKeyDown, true)
       previouslyFocused?.focus()
     }
-  }, [onClose])
+  }, [])
 
   return (
     <div className="anl-modal" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>

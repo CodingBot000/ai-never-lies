@@ -8,7 +8,8 @@ import {
 } from '../core/commands/commandTypes'
 import type { ContentIndex } from '../core/content/contentIndex'
 import { HintService } from '../core/hints/hintService'
-import { GameState } from '../core/state/gameState'
+import { GameState, Phases } from '../core/state/gameState'
+import { isRequiredBranchResolved } from '../core/conditions/branchProgress'
 import { Diag } from '../shared/diagnostics'
 import type { LoadOutcome, SaveService } from '../shared/save/saveService'
 
@@ -117,10 +118,27 @@ export class GameSession {
     }
 
     this.state = GameState.fromSnapshot(snapshot)
+    const scene = this.content.scene(this.state.currentSceneId)
+    if (scene?.advancingGroupIds?.length &&
+        this.state.phase === Phases.ReadyToExit &&
+        (scene.id !== 's130' || !this.state.isSceneVisited('s140')) &&
+        !isRequiredBranchResolved(scene, this.state, this.content)) {
+      this.state.phase = Phases.BranchChoice
+      for (const flags of [this.state.completedScenes, this.state.postDialogueDone]) {
+        const position = flags.indexOf(scene.id)
+        if (position >= 0) flags.splice(position, 1)
+      }
+    }
+    if (scene?.id === 's700' && this.state.phase === Phases.PreDialogue && this.state.dialogueCursor > 0) {
+      this.state.dialogueCursor = -1
+    }
     this.dispatcher = new CommandDispatcher(this.content, this.state)
     this.wireDispatcher()
     this.commandCounter = 0
     this.blockingError = ''
+    if (this.state.currentSceneId === 's000' && this.state.phase === Phases.ReadyToExit) {
+      this.dispatcher.enterScene('s010')
+    }
     this.onExecuted?.(null)
     return { loaded: true, outcome: 'Ok' }
   }
@@ -143,7 +161,9 @@ export class GameSession {
   private handleCheckpoint(result: CommandResult | null): void {
     if (!result || result.status === ResultStatus.Rejected) return
 
-    let checkpoint = result.reasonCode === 'branch_advanced'
+    let checkpoint = result.reasonCode === 'branch_advanced' ||
+      result.reasonCode === 'branch_retry' || result.reasonCode === 'branch_dialogue_complete' ||
+      result.reasonCode === 'investigation_imported'
     if (!checkpoint) {
       for (const event of result.events) {
         if (event.kind === 'evidence_granted' || event.kind === 'puzzle_solved' || event.kind === 'scene_completed') {

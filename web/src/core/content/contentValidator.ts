@@ -114,6 +114,14 @@ export function validateContent(index: ContentIndex, assetIds: string[] | null =
   // branch references
   for (const [branchId, branch] of index.branches) {
     if (!index.hasScene(branch.sceneId)) errors.push(`branch ${branchId}: unknown scene ${branch.sceneId}`)
+    for (const condition of branch.condition ?? []) {
+      if (condition.kind === 'EvidenceOwned' && !evidenceSet.has(condition.id)) {
+        errors.push(`branch ${branchId}: unknown prerequisite evidence ${condition.id}`)
+      }
+      if (condition.kind === 'PuzzleSolved' && !index.hasPuzzle(condition.id)) {
+        errors.push(`branch ${branchId}: unknown prerequisite puzzle ${condition.id}`)
+      }
+    }
     if (branch.effects) {
       for (const effect of branch.effects) {
         if (effect.kind === 'GrantEvidence' && !evidenceSet.has(effect.id)) {

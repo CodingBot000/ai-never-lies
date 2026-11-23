@@ -11,6 +11,7 @@ export const Phases = {
   Entering: 'entering',
   PreDialogue: 'pre_dialogue',
   BranchChoice: 'branch_choice',
+  BranchDialogue: 'branch_dialogue',
   Interaction: 'interaction',
   PostDialogue: 'post_dialogue',
   ReadCheck: 'read_check',
@@ -45,6 +46,7 @@ export class GameState {
   phase: string = Phases.Entering
   dialogueCursor = 0
   activePuzzleId = ''
+  branchResponseId = ''
 
   readonly ownedEvidence: string[] = []
   readonly readEvidence: string[] = []
@@ -155,9 +157,11 @@ export class GameState {
       artManifestSha256,
       slotId,
       currentSceneId: this.currentSceneId,
-      phase: this.phase,
+      // Older clients still recognize the choice screen when opening a v1 save.
+      phase: this.phase === Phases.BranchDialogue ? Phases.BranchChoice : this.phase,
       dialogueCursor: this.dialogueCursor,
       activePuzzleId: this.activePuzzleId,
+      ...(this.branchResponseId ? { branchResponseId: this.branchResponseId } : {}),
       ownedEvidenceIds: [...this.ownedEvidence],
       readEvidenceIds: [...this.readEvidence],
       visitedSceneIds: [...this.visitedScenes],
@@ -182,6 +186,8 @@ export class GameState {
     state.phase = snapshot.phase || Phases.Entering
     state.dialogueCursor = snapshot.dialogueCursor ?? 0
     state.activePuzzleId = snapshot.activePuzzleId ?? ''
+    state.branchResponseId = snapshot.branchResponseId ?? ''
+    if (state.branchResponseId && state.phase === Phases.BranchChoice) state.phase = Phases.BranchDialogue
     fill(state.ownedEvidence, snapshot.ownedEvidenceIds)
     fill(state.readEvidence, snapshot.readEvidenceIds)
     fill(state.visitedScenes, snapshot.visitedSceneIds)

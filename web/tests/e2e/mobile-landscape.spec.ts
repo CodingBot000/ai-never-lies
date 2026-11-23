@@ -44,8 +44,6 @@ test('가로 모바일에서 HUD와 본문이 겹치지 않고 진행된다', as
   await noOverflow(page, 'title')
   await page.getByRole('button', { name: /새 게임/ }).click()
   await drainDialogue(page)
-  await page.getByRole('button', { name: /새 게임/ }).click()
-  await drainDialogue(page)
   await noOverflow(page, 's010')
 
   // HUD가 본문 위에 보이고 가려지지 않는다

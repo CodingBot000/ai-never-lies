@@ -187,6 +187,16 @@ export class SaveService {
     return [...ALL_SLOTS]
   }
 
+  latestCompletedEpisode(): ProgressSnapshot | null {
+    let latest: ProgressSnapshot | null = null
+    for (const slot of ALL_SLOTS) {
+      const { snapshot } = this.load(slot)
+      if (!snapshot?.completedSceneIds?.includes('s710')) continue
+      if (!latest || snapshot.savedAtUtc > latest.savedAtUtc) latest = snapshot
+    }
+    return latest
+  }
+
   readSlotTimestamp(slotId: string): string {
     const raw = this.storage?.getItem(saveKeyFor(slotId))
     if (!raw) return ''

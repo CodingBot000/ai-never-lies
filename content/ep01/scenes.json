@@ -681,7 +681,7 @@
         "dlg_s220_001",
         "dlg_s220_002"
       ],
-      "branchGroupIds": [],
+      "branchGroupIds": ["cg_s220"],
       "advancingGroupIds": [],
       "interactionIds": [
         "p07"
@@ -2089,14 +2089,7 @@
         }
       ],
       "preDialogueIds": [
-        "dlg_s700_001",
-        "dlg_s700_002",
-        "dlg_s700_003",
-        "dlg_s700_004",
-        "dlg_s700_005",
-        "dlg_s700_006",
-        "dlg_s700_007",
-        "dlg_s700_008"
+        "dlg_s700_001"
       ],
       "branchGroupIds": [
         "cg_s700"
@@ -2105,7 +2098,13 @@
         "cg_s700"
       ],
       "interactionIds": [],
-      "postDialogueIds": [],
+      "postDialogueIds": [
+        "dlg_s700_004",
+        "dlg_s700_005",
+        "dlg_s700_006",
+        "dlg_s700_007",
+        "dlg_s700_008"
+      ],
       "grants": [],
       "requiredReadEvidenceIds": [],
       "childSceneIds": [],

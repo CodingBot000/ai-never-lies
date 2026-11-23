@@ -415,6 +415,7 @@ function runEnding(index: ContentIndex, branchId: string): RunResult {
   advanceUntilChoiceOrInteraction(dispatcher, state)
   expect(state.phase).toBe(Phases.BranchChoice)
   expectAccepted(send(dispatcher, CommandKinds.ChooseBranch, { targetId: branchId }))
+  advanceUntilChoiceOrInteraction(dispatcher, state)
   expectAccepted(send(dispatcher, CommandKinds.ContinueScene))
   return capture(state)
 }

@@ -2,6 +2,8 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
 import type { PuzzleDefinitionDto } from '../../src/core/content/dto'
+import { loadTestContent } from '../helpers/testContent'
+import { formatContentText } from '../../src/shared/i18n/contentText'
 
 const puzzles = (
   JSON.parse(readFileSync(join(process.cwd(), '../content/ep01/puzzles.json'), 'utf8')) as {
@@ -9,6 +11,7 @@ const puzzles = (
   }
 ).items
 const puzzleById = new Map(puzzles.map((puzzle) => [puzzle.id, puzzle]))
+const content = loadTestContent()
 const DECLARED_PARTIAL_IDS = new Set(['p04', 'p07', 'p09', 'p15', 'p18', 'p19'])
 
 async function dismissToast(page: Page): Promise<void> {
@@ -47,7 +50,10 @@ async function submitDeclaredPartial(page: Page, puzzle: PuzzleDefinitionDto): P
 
   await root.locator('[data-action="submit-puzzle"]').click()
   await expect(page.locator('.anl-shell')).toHaveAttribute('data-last-result', 'Partial')
-  await expect(page.locator('.anl-toast')).toContainText(puzzle.partialText)
+  const expected = puzzle.id === 'p18' ? '위험을 알았다는 기록' :
+    puzzle.id === 'p19' ? '수정 승인 기록' :
+    puzzle.id === 'p09' ? '실제 운행 해제가 이루어진 근거' : formatContentText(puzzle.partialText, content)
+  await expect(page.locator('.anl-toast')).toContainText(expected)
   await expect(root).toBeVisible()
 
   if (puzzle.id === 'p15') await root.locator('.anl-order-item').click()

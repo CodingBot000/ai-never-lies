@@ -93,7 +93,7 @@ test('[qa:responsive] 43개 장면과 20개 퍼즐이 150% 데스크톱·모바�
 
   const viewports = [
     { name: 'desktop-150', width: 1920, height: 1080 },
-    { name: 'mobile-150', width: 390, height: 844 },
+    { name: 'mobile-150', width: 844, height: 390 },
   ]
 
   for (const viewport of viewports) {
@@ -110,6 +110,13 @@ test('[qa:responsive] 43개 장면과 20개 퍼즐이 150% 데스크톱·모바�
     for (const puzzle of puzzles) {
       await reachPuzzle(page, puzzle)
       await expectNoViewportOverflow(page, `${viewport.name}/${puzzle.id}`)
+      if (viewport.width < 1000) {
+        const panels = await page.locator('[data-puzzle-id]').evaluate((root) =>
+          [...root.querySelectorAll('.anl-puzzle__col, .anl-puzzle__side, .anl-puzzle__canvas')]
+            .map((element) => element.getBoundingClientRect().height),
+        )
+        expect(panels.every((height) => height >= 40), `${puzzle.id} compressed panels: ${panels.join(', ')}`).toBe(true)
+      }
       await page.screenshot({
         path: join(screenshotDir, `${viewport.name}-puzzle-${puzzle.id}.png`),
         animations: 'disabled',

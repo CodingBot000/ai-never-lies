@@ -77,6 +77,40 @@
   padding-top: var(--anl-space-3);
 }
 
+.anl-card-source {
+  display: block;
+  margin-top: var(--anl-space-1);
+  color: var(--anl-text-muted);
+}
+
+.anl-picker-list > li,
+.anl-case {
+  padding: var(--anl-space-2);
+  border-bottom: 1px solid var(--anl-border);
+}
+
+.anl-evidence-preview {
+  margin-top: var(--anl-space-2);
+  max-width: 620px;
+}
+
+.anl-comparison-frames {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: var(--anl-space-2);
+}
+
+.anl-comparison-frames figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.anl-case label,
+.anl-case select {
+  display: block;
+  margin-bottom: var(--anl-space-2);
+}
+
 .anl-candidate-list {
   display: flex;
   flex-direction: column;
@@ -444,6 +478,17 @@
   }
 
   .anl-puzzle {
-    padding-bottom: 260px;
+    grid-auto-rows: max-content;
+    align-content: start;
+    padding-bottom: max(var(--anl-space-4), env(safe-area-inset-bottom));
+  }
+
+  .anl-shell:has(.anl-dialogue__box) .anl-puzzle {
+    padding-bottom: calc(var(--anl-dialogue-h) + var(--anl-space-4));
+  }
+
+  .anl-puzzle__col,
+  .anl-puzzle__side {
+    overflow: visible;
   }
 }

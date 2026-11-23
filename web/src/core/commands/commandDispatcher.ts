@@ -5,6 +5,8 @@ import {
   remainingRequiredChildren,
 } from '../conditions/conditionEvaluator'
 import { evaluatePuzzle, PuzzleTypes } from '../puzzles/puzzleEvaluator'
+import { importInvestigation } from '../puzzles/investigationCarryover'
+import { branchResponseLines, isAutomaticFamilyIntroduction, isRequiredBranchResolved } from '../conditions/branchProgress'
 import { GameState, Phases } from '../state/gameState'
 import {
   accept,
@@ -78,11 +80,12 @@ export class CommandDispatcher {
     switch (this.state.phase) {
       case Phases.PreDialogue:
       case Phases.PostDialogue:
+      case Phases.BranchDialogue:
         return { can: false, reason: 'dialogue_not_finished' }
       case Phases.Interaction:
         return { can: false, reason: 'puzzle_active' }
       case Phases.BranchChoice:
-        return { can: false, reason: 'choice_pending' }
+        return { can: this.canFinishChoices(), reason: 'choice_pending' }
       case Phases.ReadCheck:
         return this.requiredReadSatisfied()
       case Phases.ReadyToExit:
@@ -101,6 +104,10 @@ export class CommandDispatcher {
         return this.doStartEpisode()
       case CommandKinds.AdvanceDialogue:
         return this.doAdvanceDialogue()
+      case CommandKinds.SkipCinematic:
+        if (this.state.phase !== Phases.PreDialogue ||
+            (this.state.currentSceneId !== 's010' && this.state.currentSceneId !== 's650')) return reject('skip_unavailable')
+        return this.finishPreDialogue()
       case CommandKinds.ContinueScene:
         return this.doContinueScene()
       case CommandKinds.ReturnToHub:
@@ -160,6 +167,13 @@ export class CommandDispatcher {
         return this.doRunCase(puzzle, draft, command)
       case CommandKinds.SubmitPuzzle:
         return this.doSubmit(puzzle, draft)
+      case CommandKinds.ImportInvestigation: {
+        if (puzzle.id !== 'p17' && puzzle.id !== 'p20') return reject('unsupported_command')
+        const imported = importInvestigation(puzzle, draft, this.state, this.index)
+        return accept('investigation_imported', imported
+          ? `앞선 조사에서 확인한 근거 ${imported}곳을 가져왔습니다. 남은 항목을 확인하세요.`
+          : '추가로 가져올 수 있는 근거가 없습니다.')
+      }
       default:
         return reject('unsupported_command', command.type)
     }
@@ -220,6 +234,7 @@ export class CommandDispatcher {
     const scene = this.index.scene(sceneId)
     this.state.currentSceneId = sceneId
     this.state.activePuzzleId = ''
+    this.state.branchResponseId = ''
     if (!this.state.isSceneVisited(sceneId)) this.state.visitedScenes.push(sceneId)
     if (!scene) {
       this.state.phase = Phases.Completed
@@ -231,7 +246,7 @@ export class CommandDispatcher {
       this.applyGrants(scene, 'scene_start')
       if (scene.preDialogueIds && scene.preDialogueIds.length > 0) {
         this.state.phase = Phases.PreDialogue
-        this.state.dialogueCursor = 0
+        this.state.dialogueCursor = sceneId === 's700' ? -1 : 0
         this.applyLineGrants(scene.preDialogueIds[0] ?? '')
       } else {
         this.completePreDialogue(scene)
@@ -241,6 +256,11 @@ export class CommandDispatcher {
 
     if (scene.screenType === 'hub') {
       this.state.phase = Phases.HubActive
+      return
+    }
+    if (scene.branchGroupIds?.length && !this.state.isSceneCompleted(sceneId) && !isRequiredBranchResolved(scene, this.state, this.index) &&
+        (sceneId !== 's440' || this.state.isPuzzleSolved('p15'))) {
+      this.state.phase = Phases.BranchChoice
       return
     }
     const pending = this.hasUnsolvedInteraction()
@@ -270,13 +290,22 @@ export class CommandDispatcher {
   private doAdvanceDialogue(): CommandResult {
     const scene = this.index.scene(this.state.currentSceneId)
     if (!scene) return reject('unknown_scene')
+    if (this.state.phase === Phases.BranchDialogue) {
+      const branch = this.index.branch(this.state.branchResponseId)
+      if (!branch || branch.sceneId !== scene.id) return reject('unknown_branch')
+      this.state.dialogueCursor++
+      if (this.state.dialogueCursor < branchResponseLines(branch).length) return accept('dialogue_advanced')
+      this.state.branchResponseId = ''
+      this.state.phase = Phases.BranchChoice
+      if (branch.advances && this.canFinishChoices()) this.continueAfterChoices(scene)
+      const result = accept('branch_dialogue_complete')
+      result.events.push(this.phaseEvent())
+      return result
+    }
     if (this.state.phase === Phases.PreDialogue) {
       this.state.dialogueCursor++
       if (!scene.preDialogueIds || this.state.dialogueCursor >= scene.preDialogueIds.length) {
-        this.completePreDialogue(scene)
-        const result = accept('pre_dialogue_complete')
-        result.events.push(this.phaseEvent())
-        return result
+        return this.finishPreDialogue()
       }
       this.applyLineGrants(scene.preDialogueIds[this.state.dialogueCursor] ?? '')
       return accept('dialogue_advanced')
@@ -296,6 +325,20 @@ export class CommandDispatcher {
     return reject('not_in_dialogue')
   }
 
+  private finishPreDialogue(): CommandResult {
+    const scene = this.index.scene(this.state.currentSceneId)
+    if (!scene) return reject('unknown_scene')
+    this.completePreDialogue(scene)
+    const result = accept('pre_dialogue_complete')
+    if (this.state.isSceneCompleted(scene.id)) result.events.push({ kind: 'scene_completed', id: scene.id, message: '' })
+    if (scene.id === 's000') {
+      const transition = this.doTransition()
+      if (transition.status !== ResultStatus.Rejected) result.events.push(...transition.events)
+    }
+    result.events.push(this.phaseEvent())
+    return result
+  }
+
   private phaseEvent(): DomainEvent {
     return { kind: 'phase', id: this.state.phase, message: this.state.currentSceneId }
   }
@@ -305,7 +348,7 @@ export class CommandDispatcher {
     this.applyGrants(scene, 'interaction_start')
 
     const hasBranches = !!scene.branchGroupIds && scene.branchGroupIds.length > 0
-    if (hasBranches) {
+    if (hasBranches && scene.id !== 's440') {
       this.state.phase = Phases.BranchChoice
       return
     }
@@ -316,6 +359,10 @@ export class CommandDispatcher {
     const pending = this.hasUnsolvedInteraction()
     if (pending.has) {
       this.startPuzzle(pending.puzzleId)
+      return
+    }
+    if (scene.id === 's440' && !this.canFinishChoices()) {
+      this.state.phase = Phases.BranchChoice
       return
     }
     if (this.requiredReadOutstanding(scene)) {
@@ -379,7 +426,7 @@ export class CommandDispatcher {
       case Phases.BranchChoice: {
         const scene = this.index.scene(this.state.currentSceneId)
         if (!scene) return reject('unknown_scene')
-        if (!this.allAdvancingGroupsResolved(scene)) return reject('advancing_choice_required')
+        if (!this.canFinishChoices()) return reject('advancing_choice_required')
         this.continueAfterChoices(scene)
         return accept('choices_done', this.phaseMessage())
       }
@@ -405,14 +452,9 @@ export class CommandDispatcher {
     return `${this.state.currentSceneId}:${this.state.phase}`
   }
 
-  private allAdvancingGroupsResolved(scene: SceneDefinitionDto | null): boolean {
-    if (!scene?.advancingGroupIds || scene.advancingGroupIds.length === 0) return true
-    for (const groupId of scene.advancingGroupIds) {
-      const group = this.index.branchGroup(groupId)
-      const resolved = group.some((branch) => this.state.isTopicVisited(branch.id))
-      if (!resolved) return false
-    }
-    return true
+  canFinishChoices(): boolean {
+    const scene = this.index.scene(this.state.currentSceneId)
+    return !!scene && isRequiredBranchResolved(scene, this.state, this.index)
   }
 
   transitionAvailable(): { available: boolean; target: string; reason: string } {
@@ -443,6 +485,9 @@ export class CommandDispatcher {
     }
     const previous = this.state.currentSceneId
     this.enterScene(transition.target)
+    if (previous === 's710' && transition.target === this.index.episode.startSceneId) {
+      this.state.phase = Phases.Completed
+    }
     const result = accept('scene_transition')
     result.events.push({ kind: 'scene_entered', id: transition.target, message: previous })
     result.events.push(this.phaseEvent())
@@ -475,6 +520,7 @@ export class CommandDispatcher {
     if (this.state.phase !== Phases.BranchChoice) return reject('not_choosing')
     const branch = command.targetId ? this.index.branch(command.targetId) : null
     if (!branch || branch.sceneId !== this.state.currentSceneId) return reject('unknown_branch')
+    if (isAutomaticFamilyIntroduction(branch.id)) return reject('automatic_dialogue')
     if (this.state.isTopicVisited(branch.id)) return reject('duplicate_choice')
     if (!allConditionsMet(branch.condition, this.state, this.index)) return reject('choice_locked')
 
@@ -488,9 +534,14 @@ export class CommandDispatcher {
       result.message = branch.feedback
       result.events.push({ kind: 'feedback', id: branch.id, message: branch.feedback })
     }
-    if (branch.advances) {
+    if (branchResponseLines(branch).length > 0) {
+      this.state.branchResponseId = branch.id
+      this.state.dialogueCursor = 0
+      this.state.phase = Phases.BranchDialogue
+      result.events.push(this.phaseEvent())
+    } else if (branch.advances) {
       const scene = this.index.scene(this.state.currentSceneId)
-      if (scene && this.allAdvancingGroupsResolved(scene)) {
+      if (scene && this.canFinishChoices()) {
         this.continueAfterChoices(scene)
         result.events.push(this.phaseEvent())
       } else {
@@ -674,9 +725,12 @@ export class CommandDispatcher {
       const exists = cards.some((card) => card.slot === slot && card.value === value)
       if (exists) {
         for (let i = cards.length - 1; i >= 0; i--) {
-          if (cards[i]?.slot === slot && cards[i]?.value === value) cards.splice(i, 1)
+        if (cards[i]?.value === value) cards.splice(i, 1)
         }
       } else if (value) {
+        for (let i = cards.length - 1; i >= 0; i--) {
+          if (cards[i]?.value === value) cards.splice(i, 1)
+        }
         cards.push({ slot, value })
       }
       syncReportPlacements(draft, cards)

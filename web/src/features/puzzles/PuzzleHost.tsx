@@ -4,12 +4,14 @@ import type { EvidenceDefinitionDto, PuzzleDefinitionDto, PuzzleDraftDto, Region
 import type { ContentIndex } from '../../core/content/contentIndex'
 import { EvidenceImage } from '../../shared/assets/EvidenceImage'
 import { assetRegions } from '../../shared/assets/assetCatalog'
-import { regionLabel } from '../../shared/assets/evidenceOverlays'
+import { overlaysForEvidence, regionLabel } from '../../shared/assets/evidenceOverlays'
 import { investigationOverlays } from '../../shared/assets/evidenceOverlays'
 import { Modal } from '../../shared/components/Modal'
 import { sceneLabel } from '../../shared/i18n/sceneLabels'
 import { puzzleLabel } from '../../shared/i18n/puzzleLabels'
 import { formatContentText } from '../../shared/i18n/contentText'
+import { PUZZLE_OBJECTIVES } from '../../core/hints/puzzleObjectives'
+import { itemLabel } from '../../shared/i18n/reportLabels'
 import './puzzle.css'
 
 export function PuzzleHost(props: ScreenProps) {
@@ -78,7 +80,7 @@ function HotspotWidget({ api, puzzle, feedback }: WidgetProps) {
       <div className="anl-puzzle__canvas" onClick={() => setMessage(index.ui('ui.region_not_related'))}>
         <EvidenceImage
           assetId={bg}
-          alt={puzzle.id}
+          alt="사고 교차로"
           regions={regions}
           activeRegionIds={visited}
           showRegions={showRegions}
@@ -88,9 +90,9 @@ function HotspotWidget({ api, puzzle, feedback }: WidgetProps) {
             if (result?.message) {
               setMessage(result.message)
               feedback(result.message)
-            } else {
-              setMessage('')
-            }
+            } else setMessage('')
+            const newEvidence = result?.events.find((event) => event.kind === 'evidence_granted')
+            if (newEvidence) setMessage(`자료 확보 · ${index.evidenceDef(newEvidence.id)?.title}`)
           }}
         />
       </div>
@@ -127,6 +129,7 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
   return (
     <div className="anl-puzzle anl-puzzle--three" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
+        <PuzzleHeader api={api} puzzle={puzzle} />
         <h2 className="anl-puzzle__hint">{index.ui('ui.statement_select')}</h2>
         <ul className="anl-statement-list">
           {testimonies.map((statement) => {
@@ -137,6 +140,7 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
                   type="button"
                   className={`anl-statement${selected ? ' anl-statement--active' : ''}`}
                   data-statement-id={statement.id}
+                  aria-pressed={selected}
                   onClick={() => run('SelectStatement', { targetId: statement.id })}
                 >
                   <strong>{statement.speaker}</strong>
@@ -162,19 +166,20 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
       </div>
       <div className="anl-puzzle__col">
         <SelectedSummary api={api} puzzle={puzzle} index={index} />
+        <InvestigationExcerpt api={api} evidenceId={puzzle.id === 'p12' ? 'ev23' :
+          puzzle.id === 'p18' ? 'ev29' : puzzle.id === 'p19' ? 'ev36' : undefined} />
       </div>
       <div className="anl-puzzle__col">
         <h2 className="anl-puzzle__hint">{index.ui('ui.evidence')}</h2>
         <SelectedEvidence api={api} puzzle={puzzle} index={index} />
         {puzzle.correctChoiceIds.length > 0 ? (
-          <ChoiceButtons api={api} choices={puzzle.correctChoiceIds} />
+          <ChoiceButtons api={api} choices={CHOICE_OPTIONS[puzzle.id] ?? puzzle.correctChoiceIds} />
         ) : null}
         <button
           type="button"
           className="anl-button anl-button--small"
           data-action="open-evidence-picker"
           onClick={() => setPicker(true)}
-          disabled={(draft?.selectedEvidenceIds.length ?? 0) >= 3}
         >
           증거 선택
         </button>
@@ -185,6 +190,8 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
           api={api}
           index={index}
           max={3}
+          initialIds={draft?.selectedEvidenceIds}
+          subject={index.testimony(draft?.selectedStatementId)?.text}
           onClose={() => setPicker(false)}
           onConfirm={(ids) => {
             run('SelectEvidence', { ids })
@@ -200,13 +207,13 @@ function StatementWidget({ api, puzzle, index, feedback, onTransient }: WidgetPr
 
 function SlotAssignWidget({ api, puzzle, feedback }: WidgetProps) {
   const { session, index, run } = api
-  const [selectedSlot, setSelectedSlot] = useState('')
-  const [message, setMessage] = useState('')
+  const [selectedSlot, setSelectedSlot] = useState(puzzle.valuePairs[0]?.key ?? '')
   if (!session || !index) return null
   const draft = session.state.getDraft(puzzle.id, false)
   const placed = (key: string): string => draft?.placedCards.find((card) => card.slot === key)?.value ?? ''
 
   const candidates = puzzle.valuePairs.map((pair) => pair.value).filter(Boolean)
+    .filter((value) => !index.hasEvidence(value) || session.state.owns(value))
   if (puzzle.type === 'trace_mapping') {
     for (const moduleId of ['perception', 'planner', 'brake_supervisor', 'vehicle_controller']) {
       if (!candidates.includes(moduleId)) candidates.push(moduleId)
@@ -227,14 +234,14 @@ function SlotAssignWidget({ api, puzzle, feedback }: WidgetProps) {
                 onClick={() => setSelectedSlot(pair.key)}
               >
                 <span className="anl-slot__key">{slotLabel(pair.key)}</span>
-                <span className="anl-slot__value">{placed(pair.key) || '-'}</span>
+                <span className="anl-slot__value">{placed(pair.key) ? valueLabel(index, placed(pair.key)) : '미선택'}</span>
               </button>
             </li>
           ))}
         </ul>
       </div>
       <div className="anl-puzzle__col">
-        <h2 className="anl-puzzle__hint">값 선택</h2>
+        <h2 className="anl-puzzle__hint">{selectedSlot ? `${slotLabel(selectedSlot)}에 배치할 항목` : '배치할 항목'}</h2>
         <div className="anl-candidate-list">
           {candidates.map((value) => (
             <button
@@ -243,19 +250,15 @@ function SlotAssignWidget({ api, puzzle, feedback }: WidgetProps) {
               className={`anl-candidate${Object.values(placedValues(draft)).includes(value) ? ' anl-candidate--placed' : ''}`}
               data-value={value}
               onClick={() => {
-                if (!selectedSlot) {
-                  setMessage('슬롯을 먼저 선택하십시오.')
-                  return
-                }
-                setMessage('')
+                if (!selectedSlot) return
                 run('PlaceCard', { slot: selectedSlot, value })
               }}
             >
-              {valueLabel(value)}
+              {valueLabel(index, value)}
+              {index.evidenceDef(value)?.source ? <small className="anl-card-source">{index.evidenceDef(value)?.source}</small> : null}
             </button>
           ))}
         </div>
-        {message ? <p className="anl-feedback">{message}</p> : null}
         <SubmitButton api={api} feedback={feedback} puzzle={puzzle} />
       </div>
     </div>
@@ -316,10 +319,10 @@ function OrderingWidget({ api, puzzle, index, feedback }: WidgetProps & { index:
         </ol>
         {puzzle.valuePairs.length > 0 ? (
           <dl className="anl-annotation">
-            {puzzle.valuePairs.map((pair) => (
+            {puzzle.valuePairs.filter((pair) => pair.key !== 'limit_rearRiskScore' || session.state.owns('ev10')).map((pair) => (
               <div key={pair.key}>
                 <dt>{annotationLabel(pair.key)}</dt>
-                <dd>{pair.value}</dd>
+                <dd>{pair.value}{pair.key === 'requestToStrongMs' ? ' ms' : ''}</dd>
               </div>
             ))}
           </dl>
@@ -327,7 +330,7 @@ function OrderingWidget({ api, puzzle, index, feedback }: WidgetProps & { index:
       </div>
       <div className="anl-puzzle__col">
         <h2 className="anl-puzzle__hint">{index.ui(choiceTitle)}</h2>
-        <ChoiceButtons api={api} choices={puzzle.correctChoiceIds} />
+        <ChoiceButtons api={api} choices={CHOICE_OPTIONS[puzzle.id] ?? puzzle.correctChoiceIds} />
         <SubmitButton api={api} feedback={feedback} puzzle={puzzle} />
       </div>
     </div>
@@ -368,6 +371,20 @@ function CrossCameraWidget({ api, puzzle, index, feedback }: WidgetProps & { ind
       </div>
       <div className="anl-puzzle__col">
         <h2 className="anl-puzzle__hint">{index.ui('ui.compare_window')}</h2>
+        {draft?.comparisonWindowId === 't_minus_2_to_minus_0_3' ? (
+          <div className="anl-comparison-frames">
+            {['ev12', 'ev13', 'ev14'].filter((id) => session.state.owns(id)).map((id) => {
+              const evidence = index.evidenceDef(id)
+              return evidence ? (
+                <figure key={id}>
+                  <EvidenceImage assetId={evidence.imageAssetId} alt={evidence.title} regions={assetRegions(evidence.imageAssetId)}
+                    overlays={overlaysForEvidence(id)} showRegions={false} />
+                  <figcaption>{evidence.title}</figcaption>
+                </figure>
+              ) : null
+            })}
+          </div>
+        ) : draft?.comparisonWindowId ? <p className="anl-muted">이 구간에는 같은 시각으로 대조한 프레임이 없습니다.</p> : null}
         <SelectedEvidence api={api} puzzle={puzzle} index={index} />
         <button
           type="button"
@@ -384,6 +401,7 @@ function CrossCameraWidget({ api, puzzle, index, feedback }: WidgetProps & { ind
           api={api}
           index={index}
           max={3}
+          initialIds={draft?.selectedEvidenceIds}
           onClose={() => setPicker(false)}
           onConfirm={(ids) => {
             run('SelectEvidence', { ids })
@@ -398,9 +416,13 @@ function CrossCameraWidget({ api, puzzle, index, feedback }: WidgetProps & { ind
 // ---------------------------------------------------------------- choice
 
 const CHOICE_OPTIONS: Record<string, string[]> = {
+  p05: ['none_until_impact', 'weak_then_strong', 'network_gap'],
+  p08: ['conditional_active', 'withdrawn', 'permanent'],
   p10: ['safe_by_count', 'all_certainly_unsafe', 'exposure_not_equivalent'],
+  p12: ['never_approved', 'conditional_approval_unverified', 'unconditional_approval'],
   p13: ['faulty_vehicle_not_dispatched', 'perfect_ai', 'never_rains', 'human_driver_present'],
   p14: ['all_tests_fake', 'validated_all', 'unvalidated_combination'],
+  p15: ['merely_proposed', 'unknown_build', 'deployed_with_open_conditions'],
 }
 
 function ChoiceWidget({ api, puzzle, feedback }: WidgetProps) {
@@ -553,6 +575,12 @@ return emergency_request`}</pre>
     <div className="anl-puzzle anl-puzzle--two" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col">
         <PuzzleHeader api={api} puzzle={puzzle} />
+        {puzzle.id === 'p10' && session.state.owns('ev20') ? (
+          <details>
+            <summary>{index.evidenceDef('ev20')?.title}</summary>
+            <p>{index.evidenceDef('ev20')?.body}</p>
+          </details>
+        ) : null}
         <ChoiceButtons api={api} choices={options} />
         {puzzle.type === 'assumption_link' ? (
           <>
@@ -574,6 +602,7 @@ return emergency_request`}</pre>
           api={api}
           index={index}
           max={3}
+          initialIds={draft?.selectedEvidenceIds}
           onClose={() => setPicker(false)}
           onConfirm={(ids) => {
             run('SelectEvidence', { ids })
@@ -589,6 +618,7 @@ return emergency_request`}</pre>
 
 function CounterfactualWidget({ api, puzzle, feedback }: WidgetProps) {
   const { session, index, run } = api
+  const [predictions, setPredictions] = useState<Record<string, string>>({})
   if (!session || !index) return null
   const draft = session.state.getDraft(puzzle.id, false)
   const ran = draft?.ranCaseIds ?? []
@@ -602,7 +632,18 @@ function CounterfactualWidget({ api, puzzle, feedback }: WidgetProps) {
         <h2 className="anl-puzzle__hint">재구성 사례</h2>
         <div className="anl-candidate-list">
           {caseIds.map((caseId) => (
-            <button
+            <div key={caseId} className="anl-case">
+              {!ran.includes(caseId) ? <label>
+                {caseLabel(caseId)} 예상 결과 (선택)
+                <select value={predictions[caseId] ?? ''} onChange={(event) => {
+                  const value = event.target.value
+                  setPredictions((previous) => ({ ...previous, [caseId]: value }))
+                }}>
+                  <option value="">선택 안 함</option>
+                  {['collision', 'avoidable_under_assumptions', 'no_trip'].map((value) => <option key={value} value={value}>{masterLabel(value)}</option>)}
+                </select>
+              </label> : null}
+              <button
               key={caseId}
               type="button"
               className={`anl-candidate${ran.includes(caseId) ? ' anl-candidate--placed' : ''}`}
@@ -610,7 +651,8 @@ function CounterfactualWidget({ api, puzzle, feedback }: WidgetProps) {
               onClick={() => run('RunCounterfactualCase', { targetId: caseId })}
             >
               {caseLabel(caseId)} {ran.includes(caseId) ? '· 실행됨' : ''}
-            </button>
+              </button>
+            </div>
           ))}
         </div>
       </div>
@@ -623,6 +665,7 @@ function CounterfactualWidget({ api, puzzle, feedback }: WidgetProps) {
                 <th>{caseLabel(pair.key)}</th>
                 <td>
                   {ran.includes(pair.key) ? masterLabel(pair.value) : '미실행'}
+                  {ran.includes(pair.key) && predictions[pair.key] ? <small className="anl-card-source">내 예상 · {masterLabel(predictions[pair.key] ?? '')}</small> : null}
                 </td>
               </tr>
             ))}
@@ -653,6 +696,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
     <div className="anl-puzzle anl-puzzle--causal" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <div className="anl-puzzle__col anl-puzzle__col--wide">
         <PuzzleHeader api={api} puzzle={puzzle} />
+        <ImportInvestigationButton api={api} draft={draft} feedback={feedback} />
         <h2 className="anl-puzzle__hint">{index.ui('ui.causal_slots')}</h2>
         <div className="anl-edge-actions" role="group" aria-label="연결 종류">
           <button
@@ -714,12 +758,8 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
                   <span>
                     {nodeLabel(edge.from)} → {nodeLabel(edge.to)} ({edge.kind})
                   </span>
-                  <small>
-                    근거{' '}
-                    {draft?.edgeProofs.find((proof) => `${proof.from}|${proof.to}|${proof.kind}` === key)?.evidenceIds
-                      .length ?? 0}
-                    개
-                  </small>
+                  <small>근거 · {evidenceNames(index, draft?.edgeProofs.find((proof) =>
+                    `${proof.from}|${proof.to}|${proof.kind}` === key)?.evidenceIds)}</small>
                 </button>
                 <button
                   type="button"
@@ -750,6 +790,7 @@ function CausalWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
           api={api}
           index={index}
           max={3}
+          initialIds={draft?.edgeProofs.find((proof) => `${proof.from}|${proof.to}|${proof.kind}` === proofEdge)?.evidenceIds}
           onClose={() => setPicker(false)}
           onConfirm={(ids) => {
             run('SelectEvidence', { targetId: proofEdge, ids })
@@ -767,6 +808,7 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
   const { session, run } = api
   const [assignItem, setAssignItem] = useState('')
   const [proofItem, setProofItem] = useState('')
+  const [reviewing, setReviewing] = useState(false)
   if (!session || !index) return null
   const draft = session.state.getDraft(puzzle.id, false)
   const placements = new Map((draft?.reportPlacements ?? []).map((item) => [item.item, item.section]))
@@ -789,6 +831,7 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
   return (
     <div className="anl-puzzle anl-puzzle--report" data-puzzle-id={puzzle.id} data-puzzle-type={puzzle.type}>
       <PuzzleHeader api={api} puzzle={puzzle} />
+      <ImportInvestigationButton api={api} draft={draft} feedback={feedback} />
       <div className="anl-report__sections">
         {sections.map((section) => (
           <div key={section.id} className="anl-report__section">
@@ -854,10 +897,19 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
         <p className="anl-muted">{index.ui('ui.report_evidence_max3')}</p>
         {puzzle.reportProofRequirements.map((proof) => {
           const ids = draft?.reportEvidence.find((entry) => entry.item === proof.item)?.evidenceIds ?? []
+          const placement = placements.get(proof.item)
+          const proofMatches = proof.sufficientEvidenceSets.some((set) => set.requiredIds.every((id) => ids.includes(id)))
           return (
             <div key={proof.item} className="anl-report__proof">
               <span>
-                {itemLabel(proof.item)} · 근거 {ids.length}/3
+                {itemLabel(proof.item)}
+                <small className="anl-card-source">근거 · {evidenceNames(index, ids)}</small>
+                {reviewing && (!placement || placement !== proof.section || !proofMatches) ? (
+                  <small className="anl-card-source">
+                    {!placement ? '구역에 배치하세요. ' : placement !== proof.section ? '보고서 구역을 다시 확인하세요. ' : ''}
+                    {!proofMatches ? '이 항목을 뒷받침하는 근거를 확인하세요.' : ''}
+                  </small>
+                ) : null}
               </span>
               <button
                 type="button"
@@ -871,12 +923,16 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
           )
         })}
       </div>
-      <SubmitButton api={api} feedback={feedback} puzzle={puzzle} />
+      {reviewing && placements.get('no_intent_or_criminal_verdict') !== 'limit' ? (
+        <p className="anl-muted">보고서에 판단할 수 없는 범위도 남기세요.</p>
+      ) : null}
+      <SubmitButton api={api} feedback={feedback} puzzle={puzzle} onSubmit={() => setReviewing(true)} />
       {proofItem ? (
         <EvidencePickerModal
           api={api}
           index={index}
           max={3}
+          initialIds={draft?.reportEvidence.find((entry) => entry.item === proofItem)?.evidenceIds}
           onClose={() => setProofItem('')}
           onConfirm={(ids) => {
             run('SelectEvidence', { targetId: proofItem, ids })
@@ -890,6 +946,41 @@ function ReportWidget({ api, puzzle, index, feedback }: WidgetProps & { index: C
 
 // ---------------------------------------------------------------- shared
 
+function evidenceNames(index: ContentIndex, ids: string[] = []): string {
+  return ids.map((id) => index.evidenceDef(id)?.title).filter(Boolean).join(', ') || '미선택'
+}
+
+function InvestigationExcerpt({ api, evidenceId }: { api: ScreenProps['api']; evidenceId?: string }) {
+  if (!evidenceId || !api.session?.state.owns(evidenceId)) return null
+  const evidence = api.index?.evidenceDef(evidenceId)
+  if (!evidence) return null
+  return (
+    <details className="anl-selected-summary" onToggle={(event) => {
+      if (event.currentTarget.open && !api.session?.state.hasRead(evidenceId)) api.run('OpenEvidence', { targetId: evidenceId })
+    }}>
+      <summary>이전 조사 자료 · {evidence.title}</summary>
+      <p>{evidence.body}</p>
+    </details>
+  )
+}
+
+function ImportInvestigationButton({ api, draft, feedback }: {
+  api: ScreenProps['api']
+  draft: PuzzleDraftDto | null
+  feedback: ScreenProps['feedback']
+}) {
+  return (
+    <button type="button" className="anl-button anl-button--small"
+      disabled={draft?.investigationImported}
+      onClick={() => {
+        const result = api.run('ImportInvestigation')
+        if (result?.message) feedback(result.message)
+      }}>
+      이전 조사 근거 가져오기
+    </button>
+  )
+}
+
 export function PuzzleHeader({ api, puzzle }: { api: ScreenProps['api']; puzzle: PuzzleDefinitionDto }) {
   const { session, index } = api
   if (!session || !index) return null
@@ -899,7 +990,7 @@ export function PuzzleHeader({ api, puzzle }: { api: ScreenProps['api']; puzzle:
       <h1>
         {scene ? sceneLabel(scene.id) : ''} · {puzzleLabel(puzzle.id)}
       </h1>
-      {scene?.tipText ? <p className="anl-puzzle__tip">{formatContentText(scene.tipText, index)}</p> : null}
+      <p className="anl-puzzle__tip">{PUZZLE_OBJECTIVES[puzzle.id]}</p>
     </header>
   )
 }
@@ -966,10 +1057,12 @@ function SubmitButton({
   api,
   feedback,
   puzzle,
+  onSubmit,
 }: {
   api: ScreenProps['api']
   feedback: (message: string) => void
   puzzle: PuzzleDefinitionDto
+  onSubmit?: () => void
 }) {
   const { session, index, run } = api
   if (!session || !index) return null
@@ -981,10 +1074,11 @@ function SubmitButton({
         className="anl-button anl-button--primary"
         data-action="submit-puzzle"
         onClick={() => {
+          onSubmit?.()
           const result = run(command)
           if (result) {
             const message = result.message || result.reasonCode
-            feedback(message)
+            feedback(formatContentText(message, index))
           }
         }}
       >
@@ -1014,25 +1108,31 @@ export function EvidencePickerModal({
   api,
   index,
   max,
+  initialIds,
+  subject,
   onClose,
   onConfirm,
 }: {
   api: ScreenProps['api']
   index: ContentIndex
   max: number
+  initialIds?: string[]
+  subject?: string
   onClose: () => void
   onConfirm: (ids: string[]) => void
 }) {
-  const { session } = api
-  const [selected, setSelected] = useState<string[]>([])
+  const { session, run } = api
+  const [selected, setSelected] = useState<string[]>(() => [...(initialIds ?? [])])
+  const [previewId, setPreviewId] = useState('')
   if (!session) return null
   const owned = session.state.ownedEvidence
     .map((id) => index.evidenceDef(id))
     .filter((item): item is EvidenceDefinitionDto => item !== null)
 
   return (
-    <Modal title="제시할 증거" onClose={onClose}>
-      <p className="anl-muted">{index.ui('ui.select_up_to_3')}</p>
+    <Modal title="제시할 증거" onClose={onClose} wide>
+      {subject ? <p>검증할 주장 · {subject}</p> : null}
+      <p className="anl-muted">{index.ui('ui.select_up_to_3')} · {selected.length}/{max} 선택</p>
       <ul className="anl-picker-list">
         {owned.map((evidence) => {
           const checked = selected.includes(evidence.id)
@@ -1043,6 +1143,7 @@ export function EvidencePickerModal({
                   type="checkbox"
                   data-evidence-id={evidence.id}
                   checked={checked}
+                  disabled={!checked && selected.length >= max}
                   onChange={() => {
                     setSelected((previous) => {
                       if (previous.includes(evidence.id)) return previous.filter((id) => id !== evidence.id)
@@ -1053,6 +1154,27 @@ export function EvidencePickerModal({
                 />
                 <span>{evidence.title}</span>
               </label>
+              <span className="anl-card-source">{evidence.source}</span>
+              <button type="button" className="anl-button anl-button--small" aria-expanded={previewId === evidence.id}
+                aria-label={`${evidence.title} 미리 보기`}
+                onClick={() => {
+                  if (previewId === evidence.id) {
+                    setPreviewId('')
+                    return
+                  }
+                  setPreviewId(evidence.id)
+                  if (!session.state.hasRead(evidence.id)) run('OpenEvidence', { targetId: evidence.id })
+                }}>
+                {previewId === evidence.id ? '미리 보기 닫기' : '미리 보기'}
+              </button>
+              {previewId === evidence.id ? (
+                <div className="anl-evidence-preview">
+                  {evidence.imageAssetId ? <EvidenceImage assetId={evidence.imageAssetId} alt={evidence.title}
+                    regions={assetRegions(evidence.imageAssetId)} overlays={overlaysForEvidence(evidence.id)} showRegions={false} /> : null}
+                  <p>{evidence.body}</p>
+                  <p className="anl-muted">{evidence.limits}</p>
+                </div>
+              ) : null}
             </li>
           )
         })}
@@ -1111,6 +1233,7 @@ export function choiceLabel(id: string): string {
     safe_by_count: '46대가 무사했으니 해제는 안전했다',
     all_certainly_unsafe: '47대 모두 같은 사고가 날 상태였다',
     exposure_not_equivalent: '동일 위험 조건에 노출되었다는 근거가 없다',
+    health_snapshot_validation: '센서 상태를 받아 확인하는 경로',
     scalar_compare_cost_21ms: '부등식 계산 한 번에 21ms',
     snapshot_sync_cost: '상태 동기화 대기·검증 경로에서 21ms',
     faulty_vehicle_not_dispatched: '결함 차량은 배차되지 않는다',
@@ -1123,25 +1246,6 @@ export function choiceLabel(id: string): string {
     merely_proposed: '문서로만 제안',
     deployed_with_open_conditions: '실제 배포됐고 조건 미완료',
     unknown_build: '차량 버전을 확인 못 함',
-  }
-  return labels[id] ?? id
-}
-
-function itemLabel(id: string): string {
-  const labels: Record<string, string> = {
-    unsafe_brake_limiting: '결함 후방 입력이 긴급제동 제한에 사용됨',
-    radar_fault: '없는 객체를 보고한 센서 결함',
-    override_after_warning: '위험 보고 확인 후 차량 운행중지 해제',
-    health_check_removed: '제동 경계에서 건강정보 확인 경로 제거',
-    release_conditions_open: '조건부 승인 사항을 완료하지 않은 배포',
-    conflicting_kpi: '안전 운휴와 충돌한 가동률·비용 관리',
-    known_risk_continued: '결합 위험과 중지 권고 인지 후 운영 유지',
-    misleading_public_summary: '사후 재분석을 당시 판단처럼 제시한 공개',
-    no_intent_or_criminal_verdict: '고의·형사 죄명을 확정하지 않고 사실과 증거를 이관',
-    no_one_responsible: '시스템 문제이므로 아무의 책임도 없음',
-    all_ai_innocent: '모든 AI가 항상 올바르고 안전함',
-    intentional_murder_proven: '회사가 피해자를 의도적으로 살해함',
-    publicity_caused_collision: '사후 발표 편집이 사고의 물리 원인임',
   }
   return labels[id] ?? id
 }
@@ -1175,16 +1279,17 @@ function slotLabel(key: string): string {
     live: '사고 당시 판단',
     reanalysis: '사후 재분석',
     provenance: '출처 확인',
-    inputRequest: '-8.1 요청',
+    inputRequest: '긴급제동 요청 강도',
     modifiedBy: '변경 모듈',
-    allowedRequest: '-2.0 허용',
-    actualStrong: '-6.2 실제 강한 감속',
+    allowedRequest: '조정기가 허용한 강도',
+    actualStrong: '실제 강한 감속',
   }
   return labels[key] ?? key
 }
 
-function valueLabel(value: string): string {
-  return moduleLabel(value) || optionLabel(value) || value
+function valueLabel(index: ContentIndex, value: string): string {
+  if (/^-?\d+\.\d+$/.test(value)) return `${value} m/s²`
+  return index.evidenceDef(value)?.title || moduleLabel(value) || optionLabel(value) || value
 }
 
 function optionLabel(id: string): string {

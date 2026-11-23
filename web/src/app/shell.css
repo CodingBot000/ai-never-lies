@@ -165,10 +165,25 @@
   border-color: var(--anl-accent);
 }
 
+@media (orientation: landscape) and (max-height: 520px) {
+  .anl-toast {
+    left: var(--anl-space-3);
+    transform: none;
+    max-width: min(42vw, 420px);
+    pointer-events: none;
+  }
+
+  .anl-toast > button {
+    pointer-events: auto;
+  }
+}
+
 .anl-transition {
   flex: 1;
   display: grid;
-  place-items: center;
+  justify-items: center;
+  align-items: safe center;
+  overflow-y: auto;
   padding: var(--anl-top-safe) var(--anl-space-5) var(--anl-space-4);
 }
 

@@ -2,6 +2,7 @@ import type { ContentIndex } from '../../core/content/contentIndex'
 import type { DialogueLineDto, PressLineDto } from '../../core/content/dto'
 import type { GameState } from '../../core/state/gameState'
 import { Phases } from '../../core/state/gameState'
+import { branchResponseLines } from '../../core/conditions/branchProgress'
 
 export interface CurrentLine {
   speaker: string
@@ -30,6 +31,15 @@ export function resolveCurrentLine(
   const first = transient[0]
   if (first) {
     return { speaker: first.speaker, text: first.text, portraitAssetId: '', transient: true }
+  }
+  if (state.phase === Phases.BranchDialogue) {
+    const branch = index.branch(state.branchResponseId)
+    const response = branch && branchResponseLines(branch)[state.dialogueCursor]
+    return response ? { ...response, portraitAssetId: '', transient: false } : null
+  }
+  if (state.currentSceneId === 's700' && state.phase === Phases.PreDialogue && state.dialogueCursor === -1) {
+    const intro = index.branch(state.isSceneCompleted('s530') ? 'b_s700_visited' : 'b_s700_unvisited')?.dialogue[0]
+    return intro ? { ...intro, portraitAssetId: 'chr_mira_grief', transient: false } : null
   }
   const lines = sceneLines(state, index)
   if (lines.length === 0) return null

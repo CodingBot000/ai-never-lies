@@ -35,6 +35,7 @@ export function advanceCurrentScene(index: ContentIndex, state: GameState, dispa
     switch (state.phase) {
       case Phases.PreDialogue:
       case Phases.PostDialogue:
+      case Phases.BranchDialogue:
         if (send(dispatcher, CommandKinds.AdvanceDialogue).status === ResultStatus.Rejected) return 'stuck:dialogue'
         break
       case Phases.Interaction: {

@@ -90,7 +90,8 @@ export function HubScreen({ api, feedback }: ScreenProps) {
                     {isOptional ? <em className="anl-tag anl-tag--optional">{index.ui('ui.hub_optional')}</em> : null}
                     {visited && !completed ? <em className="anl-tag">{index.ui('ui.hub_visit')}</em> : null}
                   </span>
-                  {thumbEntry ? <span className="anl-hub__card-note">{screenTypeLabel(child.screenType)}</span> : null}
+                  <span className="anl-hub__card-note">{investigationQuestion(id, state.ownedEvidence) ||
+                    (thumbEntry ? screenTypeLabel(child.screenType) : '')}</span>
                 </span>
               </button>
             </li>
@@ -99,4 +100,23 @@ export function HubScreen({ api, feedback }: ScreenProps) {
       </ul>
     </section>
   )
+}
+
+function investigationQuestion(id: string, evidence: string[]): string {
+  switch (id) {
+    case 's110': return '사고 지점에서 어떤 기록을 찾을 수 있을까?'
+    case 's120': return '승객은 어떤 반응을 기억하는가?'
+    case 's130': return evidence.includes('ev05') ? '회사는 차내 경고를 어떻게 설명하는가?' : '회사의 발표 수치는 어디서 나왔는가?'
+    case 's210': return evidence.includes('ev13') ? '영상과 다른 후방 입력이 어디에서 쓰였는가?' : '제동 요청 강도는 어디에서 바뀌었는가?'
+    case 's220': return evidence.includes('ev10') ? '제동을 제한한 후방 입력이 영상에서도 보이는가?' : '독립 기록에서도 뒤차가 보이는가?'
+    case 's230': return '어떤 조건에서 운행이 허용됐는가?'
+    case 's310': return '담당자는 무엇을 알고 운행을 허용했는가?'
+    case 's320': return '다른 차량도 같은 위험 조건에 있었는가?'
+    case 's330': return '진술에서 어떤 행위를 확인할 수 있는가?'
+    case 's410': return '두 버전 사이에 어떤 검사가 달라졌는가?'
+    case 's411': return '승인에는 어떤 조건이 붙어 있었는가?'
+    case 's420': return '변경 당시의 가정은 실제로 지켜졌는가?'
+    case 's430': return '시험은 사고 당시의 조합을 포함했는가?'
+    default: return ''
+  }
 }

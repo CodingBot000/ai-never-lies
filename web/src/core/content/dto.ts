@@ -345,6 +345,7 @@ export interface ReportEvidenceDto {
 
 export interface PuzzleDraftDto {
   puzzleId: string
+  investigationImported?: boolean
   selectedStatementId: string
   selectedEvidenceIds: string[]
   choiceIds: string[]
@@ -375,6 +376,7 @@ export interface ProgressSnapshot {
   phase: string
   dialogueCursor: number
   activePuzzleId: string
+  branchResponseId?: string
   ownedEvidenceIds: string[]
   readEvidenceIds: string[]
   visitedSceneIds: string[]

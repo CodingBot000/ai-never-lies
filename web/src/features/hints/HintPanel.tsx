@@ -19,7 +19,7 @@ export function HintPanel({ api, onClose }: HintPanelProps) {
   const usage = state.getHintUsage(context.scopeId, false)
   const levels = context.levels
 
-  const plan = planTestAssist(index, state)
+  const plan = testToolsEnabled ? planTestAssist(index, state) : null
 
   return (
     <Modal title={index.ui('ui.hints')} onClose={onClose}>
@@ -27,27 +27,30 @@ export function HintPanel({ api, onClose }: HintPanelProps) {
         <p className="anl-hint__scene">{context.sceneTip ? formatContentText(context.sceneTip, index) : index.ui('ui.tip_scene_help')}</p>
         {context.nextAction ? (
           <p className="anl-hint__next">
-            <strong>{index.ui('ui.hint_scene')}:</strong> {context.nextAction}
+            <strong>{index.ui('ui.hint_scene')}:</strong> {formatContentText(context.nextAction, index)}
           </p>
         ) : null}
         {levels.length === 0 ? <p className="anl-muted">{index.ui('ui.no_active_puzzle')}</p> : null}
         {levels.map((hint) => {
           const opened = (usage?.maxLevel ?? 0) >= hint.level
+          const locked = (usage?.maxLevel ?? 0) + 1 < hint.level
+          const concealed = [...hint.text.matchAll(/\bev\d{2}\b/g)].some(([id]) => !state.owns(id))
           return (
             <div key={hint.id} className="anl-hint__level">
               <button
                 type="button"
                 className="anl-button anl-button--small"
                 onClick={() => run('OpenHint', { targetId: context.scopeId, numeric: hint.level })}
-                disabled={opened}
+                disabled={opened || locked}
               >
                 {hint.level === 1 ? index.ui('ui.hint_h1') : hint.level === 2 ? index.ui('ui.hint_h2') : index.ui('ui.hint_h3')}
               </button>
-              {opened ? <p>{hint.text}</p> : <p className="anl-muted">{index.ui('ui.hint_locked')}</p>}
+              {opened ? <p>{concealed ? '관련 자료를 확보하면 이 힌트를 읽을 수 있습니다.' : formatContentText(hint.text, index)}</p> :
+                locked ? <p className="anl-muted">{index.ui('ui.hint_locked')}</p> : null}
             </div>
           )
         })}
-        {testToolsEnabled ? (
+        {plan ? (
           <div className="anl-hint__assist">
             <button
               type="button"
